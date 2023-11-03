@@ -1,6 +1,7 @@
-{ device, lib, tmpfsSize ? "2G", ... }:
+{ device, inputs, lib, tmpfsSize ? "2G", ... }:
 {
   imports = [
+    inputs.disko.nixosModules.disko
     ./persistence.nix
   ];
 

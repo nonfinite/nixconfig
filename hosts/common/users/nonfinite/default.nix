@@ -10,4 +10,6 @@ in
       hashedPassword = "$y$jFT$Lcu/HJfbqNAZwh3hSJjZn.$tXbVgaKhg8fOKPvTDlGuDxfmZnRazn9m/q9cz7FNdID";
     };
   };
+
+  home-manager.users.nonfinite = import ../../../../home/nonfinite/vbox.nix;
 }

@@ -7,13 +7,19 @@ in
     (modulesPath + "/installer/scan/not-detected.nix")
     (modulesPath + "/profiles/qemu-guest.nix")
     ./hardware-configuration.nix
+
     (import ../common/disk-configs/impermanent (args // { device = device; }))
 
+    ../common/global
     ../common/users/nonfinite
     (import ../common/users/autologin.nix (args // { user = "nonfinite"; }))
   ];
 
-  networking.hostName = "vbox";
+  networking = {
+    hostName = "vbox";
+    useDHCP = true;
+  };
+
   security.sudo.wheelNeedsPassword = false;
 
   boot.loader.grub = {
