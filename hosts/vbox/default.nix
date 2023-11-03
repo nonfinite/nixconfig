@@ -7,7 +7,8 @@ in
     (modulesPath + "/installer/scan/not-detected.nix")
     (modulesPath + "/profiles/qemu-guest.nix")
     ./hardware-configuration.nix
-    (import ./disk-config.nix (args // { device = device; }))
+    (import ../common/disk-configs/impermanent (args // { device = device; }))
+
     ../common/users/nonfinite
     (import ../common/users/autologin.nix (args // { user = "nonfinite"; }))
   ];

@@ -1,5 +1,9 @@
-{ device, lib, ... }:
+{ device, lib, tmpfsSize ? "2G", ... }:
 {
+  imports = [
+    ./persistence.nix
+  ];
+
   disko.devices = {
     disk.main = {
       device = lib.mkDefault device;
@@ -51,7 +55,7 @@
     nodev."/" = {
       fsType = "tmpfs";
       mountOptions = [
-        "size=2G"
+        "size=${tmpfsSize}"
         "defaults"
         "mode=755"
       ];
