@@ -1,4 +1,4 @@
-args@{ modulesPath, pkgs, ... }:
+args@{ lib, modulesPath, pkgs, ... }:
 let
   device = "/dev/sda";
 in
@@ -13,11 +13,13 @@ in
     ../common/global
     ../common/users/nonfinite
     (import ../common/users/autologin.nix (args // { user = "nonfinite"; }))
+
+    ../common/desktop/gnome
   ];
 
   networking = {
     hostName = "vbox";
-    useDHCP = true;
+    useDHCP = lib.mkDefault true;
   };
 
   security.sudo.wheelNeedsPassword = false;
