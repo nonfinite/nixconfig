@@ -1,0 +1,13 @@
+{ pkgs, config, ... }:
+let ifTheyExist = groups: builtins.filter (group: builtins.hasAttr group config.users.groups) groups;
+in
+{
+  users = {
+    mutableUsers = false;
+    users.nonfinite = {
+      isNormalUser = true;
+      extraGroups = [ "wheel" ] ++ ifTheyExist [ "networkmanager" "vboxsf" ];
+      hashedPassword = "$y$jFT$Lcu/HJfbqNAZwh3hSJjZn.$tXbVgaKhg8fOKPvTDlGuDxfmZnRazn9m/q9cz7FNdID";
+    };
+  };
+}
