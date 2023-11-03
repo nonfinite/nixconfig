@@ -26,8 +26,15 @@
             name = "root";
             size = "100%";
             content = {
-              type = "lvm_pv";
-              vg = "pool";
+              type = "luks";
+              name = "crypted";
+              extraOpenArgs = [ "--allow-discards" ];
+              askPassword = true;
+              initrdUnlock = true;
+              content = {
+                type = "lvm_pv";
+                vg = "pool";
+              };
             };
           };
         };

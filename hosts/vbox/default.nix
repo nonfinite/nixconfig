@@ -1,9 +1,13 @@
-args@{ modulesPath, pkgs, ... }: {
+args@{ modulesPath, pkgs, ... }:
+let
+  device = "/dev/sda";
+in
+{
   imports = [
     (modulesPath + "/installer/scan/not-detected.nix")
     (modulesPath + "/profiles/qemu-guest.nix")
     ./hardware-configuration.nix
-    (import ./disk-config.nix (args // { device = "/dev/sda"; }))
+    (import ./disk-config.nix (args // { device = device; }))
     ../common/users/nonfinite
     (import ../common/users/autologin.nix (args // { user = "nonfinite"; }))
   ];
@@ -12,6 +16,7 @@ args@{ modulesPath, pkgs, ... }: {
   security.sudo.wheelNeedsPassword = false;
 
   boot.loader.grub = {
+    device = device;
     efiSupport = true;
     efiInstallAsRemovable = true;
   };
