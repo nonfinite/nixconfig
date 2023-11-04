@@ -17,9 +17,18 @@
     let
       inherit (self) outputs;
       lib = nixpkgs.lib // home-manager.lib;
+      systems = [ "x86_64-linux" ];
+      forEachSystem = f: lib.genAttrs systems (system: f pkgsFor.${system});
+      pkgsFor = lib.genAttrs systems (system: import nixpkgs {
+        inherit system;
+        config.allowUnfree = true;
+      });
     in
     {
       inherit lib;
+
+      devShells = forEachSystem (pkgs: import ./shell.nix { inherit pkgs; });
+      formatter = forEachSystem (pkgs: pkgs.nixpkgs-fmt);
 
       nix = {
         settings = {
@@ -33,6 +42,14 @@
           system = lib.mkDefault "x86_64-linux";
           modules = [ ./hosts/vbox ];
           specialArgs = { inherit inputs outputs; };
+        };
+      };
+
+      homeConfigurations = {
+        "nonfinite@vbox" = lib.homeManagerConfiguration {
+          modules = [ ./home/nonfinite/vbox.nix ];
+          pkgs = pkgsFor.x86_64-linux;
+          extraSpecialArgs = { inherit inputs outputs; };
         };
       };
     };
