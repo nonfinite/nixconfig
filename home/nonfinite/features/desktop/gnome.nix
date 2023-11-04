@@ -15,6 +15,9 @@
       font-antialiasing = "grayscale";
       font-hinting = "slight";
     };
+    "org/gnome/desktop/screensaver" = {
+      lock-enabled = false;
+    };
     "org/gnome/desktop/wm/keybindings" = {
       toggle-maximized = [ "<Super>Down" ];
       unmaximize = [ ];
