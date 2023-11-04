@@ -5,6 +5,7 @@
     ./discord.nix
     ./firefox.nix
     ./telegram.nix
+    ./vlc.nix
   ];
 
   fonts.fontconfig.enable = true;
