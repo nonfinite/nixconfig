@@ -1,7 +1,7 @@
 {
   imports = [
     ./global
-    ./features/common
+    ./features/desktop/common
     ./features/desktop/gnome.nix
   ];
 }
