@@ -4,6 +4,7 @@
     ./codium.nix
     ./discord.nix
     ./firefox.nix
+    ./telegram.nix
   ];
 
   fonts.fontconfig.enable = true;
