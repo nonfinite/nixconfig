@@ -5,9 +5,10 @@
   ];
 
   home = {
+    stateVersion = lib.mkDefault "23.05";
+
     username = lib.mkDefault "nonfinite";
     homeDirectory = lib.mkDefault "/home/${config.home.username}";
-    stateVersion = lib.mkDefault "23.05";
 
     persistence."/nix/persist/home/nonfinite" = {
       allowOther = true;
@@ -21,6 +22,11 @@
         "Videos"
         "VirtualBox VMs"
       ];
+    };
+
+    shellAliases = {
+      ll = "ls -la";
+      cls = "clear";
     };
   };
 }

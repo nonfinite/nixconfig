@@ -1,2 +1,3 @@
 #!/usr/bin/env bash
-sudo nixos-rebuild switch --flake .
+flake="$( dirname "${BASH_SOURCE[0]}" )"
+sudo nixos-rebuild switch --flake $flake
