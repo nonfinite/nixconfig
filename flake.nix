@@ -21,6 +21,13 @@
     {
       inherit lib;
 
+      nix = {
+        settings = {
+          experimental-features = [ "nix-command" "flakes" "repl-flake" ];
+          warn-dirty = false;
+        };
+      };
+
       nixosConfigurations = {
         vbox = lib.nixosSystem {
           system = lib.mkDefault "x86_64-linux";
