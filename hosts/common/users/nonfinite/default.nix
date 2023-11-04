@@ -11,5 +11,5 @@ in
     };
   };
 
-  home-manager.users.nonfinite = import ../../../../home/nonfinite/vbox.nix;
+  home-manager.users.nonfinite = import ../../../../home/nonfinite/${config.networking.hostName}.nix;
 }
