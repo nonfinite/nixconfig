@@ -2,6 +2,7 @@
 {
   imports = [
     ./codium.nix
+    ./discord.nix
     ./firefox.nix
   ];
 
