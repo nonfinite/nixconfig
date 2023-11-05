@@ -3,6 +3,10 @@
     explorer = "nautilus";
   };
 
+  home.sessionVariables = {
+    QT_QPA_PLATFORM = "wayland";
+  };
+
   dconf.settings = {
     "org/gnome/gnome-session" = {
       logout-prompt = false;
