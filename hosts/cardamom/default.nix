@@ -1,7 +1,7 @@
 args@{ lib, pkgs, ... }:
 let
   diskConfig = {
-    device = "/dev/disk/by-uuid/13d43151-c652-44ef-8601-f0a4924c7f21";
+    device = "/dev/disk/by-id/nvme-SAMSUNG_MZVL21T0HCLR-00BL7_S64PNX0TA24210";
     tmpfsSize = "4G";
   };
 in
