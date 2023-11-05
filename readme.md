@@ -2,9 +2,9 @@
 
 From a NixOS live system run: 
 
-```
-sudo nixos-install --flake github:nonfinite/nixconfig#HOST
-```
+1. Set password for root: `sudo passwd`
+2. Install nix command: `nix-shell -p nix`
+3. Install via nixos-anywhere: `sudo nix --experimental-features "nix-command flakes" run github:nix-community/nixos-anywhere -- --flake github:nonfinite/nixconfig#<HOST> root@localhost`
 
 Remember to test with `--vm-test` as part of the nix run command.
 
