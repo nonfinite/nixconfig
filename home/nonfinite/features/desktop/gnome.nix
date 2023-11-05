@@ -32,7 +32,6 @@
     "org/gnome/shell" = {
       enabled-extensions = [
         "appindicatorsupport@rgcjonas.gmail.com"
-        "drive-menu@gnome-shell-extensions.gcampax.github.com"
         "Move_Clock@rmy.pobox.com"
         "native-window-placement@gnome-shell-extensions.gcampax.github.com"
         "NotificationCounter@coolllsk"
