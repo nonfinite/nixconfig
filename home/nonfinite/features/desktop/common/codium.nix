@@ -4,12 +4,22 @@
     enable = true;
     package = pkgs.vscodium;
     extensions = with pkgs; [
+      vscode-extensions.bodil.file-browser
       vscode-extensions.jnoortheen.nix-ide
     ];
     keybindings = [
       {
         key = "shift+alt+l";
         command = "workbench.files.action.showActiveFileInExplorer";
+      }
+      {
+        key = "ctrl+e ctrl+f";
+        command = "editor.action.formatDocument";
+        when = "editorHasDocumentFormattingProvider && editorTextFocus && !editorReadonly && !inCompositeEditor";
+      }
+      {
+        key = "ctrl+o";
+        command = "file-browser.open";
       }
     ];
     userSettings = {
@@ -36,5 +46,12 @@
 
   home.shellAliases = {
     code = "codium";
+  };
+
+  home.persistence."/nix/persist/home/nonfinite" = {
+    allowOther = true;
+    directories = [
+      ".vscode-oss"
+    ];
   };
 }

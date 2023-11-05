@@ -39,6 +39,8 @@
         "Pictures"
         "Videos"
         "VirtualBox VMs"
+
+        ".ssh"
       ];
     };
 

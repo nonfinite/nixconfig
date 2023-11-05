@@ -6,7 +6,9 @@
 
   environment.persistence."/nix/persist" = {
     hideMounts = true;
-    directories = [ ];
+    directories = [
+      "/etc/NetworkManager/system-connections" # allow saving wifi passwords
+    ];
     files = [ ];
   };
 

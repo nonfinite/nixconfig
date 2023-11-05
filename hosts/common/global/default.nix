@@ -34,4 +34,9 @@
       "home-manager=${inputs.home-manager.outPath}"
     ];
   };
+
+  environment.shellAliases = {
+    ll = "ls -la";
+    cls = "clear";
+  };
 }
