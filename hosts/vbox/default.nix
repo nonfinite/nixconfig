@@ -13,9 +13,6 @@ in
     ../common/global
     ../common/users/nonfinite
     (import ../common/users/autologin.nix "nonfinite")
-
-    ../common/desktop/gnome
-    ../common/games
   ];
 
   networking = {
