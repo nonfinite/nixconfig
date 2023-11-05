@@ -17,6 +17,7 @@ in
 
     ../common/desktop/gnome
     ../common/games
+    ../common/hardware/fingerprint.nix
   ];
 
   networking = {
