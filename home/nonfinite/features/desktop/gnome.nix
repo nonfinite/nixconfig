@@ -38,6 +38,14 @@
         "NotificationCounter@coolllsk"
         "places-menu@gnome-shell-extensions.gcampax.github.com"
       ];
+      favorite-apps = [
+        "org.gnome.Console.desktop"
+        "org.gnome.Nautilus.desktop"
+        "firefox.desktop"
+        "org.telegram.desktop.desktop"
+        "discord.desktop"
+        "steam.desktop"
+      ];
     };
     "org/gnome/settings-daemon/plugins/power" = {
       power-button-action = "nothing";
