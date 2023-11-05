@@ -15,6 +15,7 @@ in
     (import ../common/users/autologin.nix (args // { user = "nonfinite"; }))
 
     ../common/desktop/gnome
+    ../common/games
   ];
 
   networking = {
