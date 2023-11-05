@@ -12,7 +12,7 @@ in
 
     ../common/global
     ../common/users/nonfinite
-    (import ../common/users/autologin.nix (args // { user = "nonfinite"; }))
+    (import ../common/users/autologin.nix "nonfinite")
 
     ../common/desktop/gnome
     ../common/games

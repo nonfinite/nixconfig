@@ -1,16 +1,19 @@
 args@{ lib, pkgs, ... }:
 let
-  device = "/dev/disk/by-uuid/13d43151-c652-44ef-8601-f0a4924c7f21";
+  diskConfig = {
+    device = "/dev/disk/by-uuid/13d43151-c652-44ef-8601-f0a4924c7f21";
+    tmpfsSize = "4G";
+  };
 in
 {
   imports = [
     ./hardware-configuration.nix
 
-    (import ../common/disk-configs/impermanent (args // { device = device; }))
+    (import ../common/disk-configs/impermanent (args // diskConfig))
 
     ../common/global
     ../common/users/nonfinite
-    (import ../common/users/autologin.nix (args // { user = "nonfinite"; }))
+    (import ../common/users/autologin.nix "nonfinite")
 
     ../common/desktop/gnome
     ../common/games
@@ -24,7 +27,7 @@ in
   security.sudo.wheelNeedsPassword = false;
 
   boot.loader.grub = {
-    device = device;
+    device = diskConfig.device;
     efiSupport = true;
     efiInstallAsRemovable = true;
   };
