@@ -10,6 +10,7 @@ in
     ./hardware-configuration.nix
 
     (import ../common/disk-configs/impermanent (args // diskConfig))
+    (import ../common/boot/grub.nix (args // diskConfig))
 
     ../common/global
     ../common/users/nonfinite
@@ -26,12 +27,6 @@ in
   };
 
   security.sudo.wheelNeedsPassword = false;
-
-  boot.loader.grub = {
-    device = diskConfig.device;
-    efiSupport = true;
-    efiInstallAsRemovable = true;
-  };
   services.openssh.enable = true;
 
   environment.systemPackages = with pkgs; [
