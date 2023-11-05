@@ -19,6 +19,9 @@
       font-antialiasing = "grayscale";
       font-hinting = "slight";
     };
+    "org/gnome/desktop/notifications/application/org-telegram-desktop" = {
+      show-banners = false;
+    };
     "org/gnome/desktop/screensaver" = {
       lock-enabled = false;
     };
