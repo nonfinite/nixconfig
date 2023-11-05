@@ -38,6 +38,11 @@
       };
 
       nixosConfigurations = {
+        cardamom = lib.nixosSystem {
+          system = lib.mkDefault "x86_64-linux";
+          modules = [ ./hosts/cardamom ];
+          specialArgs = { inherit inputs outputs; };
+        };
         vbox = lib.nixosSystem {
           system = lib.mkDefault "x86_64-linux";
           modules = [ ./hosts/vbox ];
@@ -46,6 +51,11 @@
       };
 
       homeConfigurations = {
+        "nonfinite@cardamom" = lib.homeManagerConfiguration {
+          modules = [ ./home/nonfinite/cardamom.nix ];
+          pkgs = pkgsFor.x86_64-linux;
+          extraSpecialArgs = { inherit inputs outputs; };
+        };
         "nonfinite@vbox" = lib.homeManagerConfiguration {
           modules = [ ./home/nonfinite/vbox.nix ];
           pkgs = pkgsFor.x86_64-linux;
