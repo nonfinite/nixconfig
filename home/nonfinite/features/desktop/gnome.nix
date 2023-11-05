@@ -25,6 +25,16 @@
     "org/gnome/desktop/wm/preferences" = {
       button-layout = "appmenu:minimize,maximize,close";
     };
+    "org/gnome/shell" = {
+      enabled-extensions = [
+        "appindicatorsupport@rgcjonas.gmail.com"
+        "drive-menu@gnome-shell-extensions.gcampax.github.com"
+        "Move_Clock@rmy.pobox.com"
+        "native-window-placement@gnome-shell-extensions.gcampax.github.com"
+        "NotificationCounter@coolllsk"
+        "places-menu@gnome-shell-extensions.gcampax.github.com"
+      ];
+    };
     "org/gnome/settings-daemon/plugins/power" = {
       power-button-action = "nothing";
       sleep-inactive-ac-type = "nothing";
