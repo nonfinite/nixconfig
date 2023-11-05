@@ -11,7 +11,7 @@ in
     users.nonfinite = {
       isNormalUser = true;
       extraGroups = [ "wheel" ] ++ ifTheyExist [ "networkmanager" "vboxsf" ];
-      hashedPassword = "$y$jFT$Lcu/HJfbqNAZwh3hSJjZn.$tXbVgaKhg8fOKPvTDlGuDxfmZnRazn9m/q9cz7FNdID";
+      hashedPassword = "$y$jFT$0XD3a2cK1381FJl84/Qql0$XHJbaaJurbFHApb3ocubn5a9HMv/xAxD5lic8k38RM.";
       packages = [ pkgs.home-manager ];
     };
   };
