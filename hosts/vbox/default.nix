@@ -1,7 +1,7 @@
 args@{ lib, modulesPath, pkgs, ... }:
 let
   diskConfig = {
-    device = "/dev/sda";
+    device = "/dev/disk/by-id/ata-VBOX_HARDDISK_VB08f0cfa3-752ef4ec";
   };
 in
 {
