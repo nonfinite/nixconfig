@@ -10,7 +10,7 @@ in
     ./hardware-configuration.nix
 
     (import ../common/disk-configs/impermanent (args // diskConfig))
-    (import ../common/boot/grub.nix (args // diskConfig))
+    (import ../common/boot/grub.nix (args // diskConfig // { fontSize = 36; }))
 
     ../common/global
     ../common/users/nonfinite
