@@ -14,5 +14,8 @@
       # for now just allow it to keep everything
       ".config/syncthing"
     ];
+    files = [
+      ".config/syncthingtray.ini"
+    ];
   };
 }
