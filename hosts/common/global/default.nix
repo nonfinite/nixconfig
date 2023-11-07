@@ -8,7 +8,6 @@
 
   home-manager = {
     extraSpecialArgs = { inherit inputs outputs; };
-    useGlobalPkgs = true;
   };
 
   nixpkgs = {
