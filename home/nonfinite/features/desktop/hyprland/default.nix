@@ -1,7 +1,7 @@
 { pkgs, ... }:
 {
   imports = [
-    ./waybar.nix
+    ./waybar
   ];
 
   wayland.windowManager.hyprland = {

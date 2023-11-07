@@ -9,9 +9,12 @@
         height = 32;
         modules-left = [
           "hyprland/workspaces"
+          "wlr/taskbar"
         ];
+
         modules-center = [
         ];
+
         modules-right = [
           "bluetooth"
           "pulseaudio"
@@ -19,6 +22,11 @@
           "battery"
           "clock"
         ];
+
+        "wlr/taskbar" = {
+          on-click = "activate";
+          on-click-middle = "close";
+        };
 
         "clock" = {
           format = "{:%I:%M %F}";
