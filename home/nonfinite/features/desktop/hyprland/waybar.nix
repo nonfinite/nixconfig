@@ -13,9 +13,10 @@
         modules-center = [
         ];
         modules-right = [
-          "clock"
-          "battery"
+          "bluetooth"
           "network"
+          "battery"
+          "clock"
         ];
 
         "clock" = {
@@ -34,13 +35,21 @@
         };
         "network" = {
           format-wifi = "{icon} {essid}";
-          format-icons = ["󰤫 " "󰤟 " "󰤢 " "󰤥 " "󰤨 "];
+          format-icons = [ "󰤫 " "󰤟 " "󰤢 " "󰤥 " "󰤨 " ];
           format-ethernet = "󱘖  Wired";
           tooltip-format = "󱘖  {ipaddr} {icon} {signalStrength}%\n {bandwidthUpBytes}  {bandwidthDownBytes}";
           format-linked = "󱘖  {ifname} (No IP)";
           format-disconnected = "  Disconnected";
           format-alt = "󰤨  {signalStrength}%";
           interval = 5;
+        };
+        "bluetooth" = {
+          format = "";
+          format-disabled = "";
+          format-connected = " {num_connections}";
+          tooltip-format = " {device_alias}";
+          tooltip-format-connected = "{device_enumerate}";
+          tooltip-format-enumerate-connected = " {device_alias}";
         };
 
         "hyprland/workspaces" = {
