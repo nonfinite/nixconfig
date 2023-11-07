@@ -1,4 +1,5 @@
 {
+  # See https://unicodes.jessetane.com/󰤨 for useful icons
   programs.waybar = {
     enable = true;
     settings = {
@@ -14,7 +15,9 @@
         modules-right = [
           "clock"
           "battery"
+          "network"
         ];
+
         "clock" = {
           format = "{:%I:%M %F}";
         };
@@ -29,6 +32,17 @@
           format-plugged = " {capacity}%";
           format-icons = [ "󰂎" "󰁺" "󰁻" "󰁼" "󰁽" "󰁾" "󰁿" "󰂀" "󰂁" "󰂂" "󰁹" ];
         };
+        "network" = {
+          format-wifi = "{icon} {essid}";
+          format-icons = ["󰤫 " "󰤟 " "󰤢 " "󰤥 " "󰤨 "];
+          format-ethernet = "󱘖  Wired";
+          tooltip-format = "󱘖  {ipaddr} {icon} {signalStrength}%\n {bandwidthUpBytes}  {bandwidthDownBytes}";
+          format-linked = "󱘖  {ifname} (No IP)";
+          format-disconnected = "  Disconnected";
+          format-alt = "󰤨  {signalStrength}%";
+          interval = 5;
+        };
+
         "hyprland/workspaces" = {
           format = "{icon}";
           on-click = "activate";
