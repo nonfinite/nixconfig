@@ -16,7 +16,6 @@ in
     ../common/users/nonfinite
     (import ../common/users/autologin.nix "nonfinite")
 
-    ../common/desktop/gnome
     ../common/desktop/hyprland
     ../common/games
     ../common/hardware/fingerprint.nix
