@@ -14,7 +14,9 @@
     };
   };
 
-  nixpkgs.config.allowUnfree = true;
+  nixpkgs = {
+    config.allowUnfree = true;
+  };
 
   programs = {
     home-manager.enable = true;
@@ -44,6 +46,10 @@
 
         ".ssh"
       ];
+    };
+
+    sessionVariables = {
+      NIXPKGS_ALLOW_UNFREE = "1";
     };
 
     shellAliases = {

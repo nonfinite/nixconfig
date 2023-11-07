@@ -11,7 +11,10 @@
     useGlobalPkgs = true;
   };
 
-  nixpkgs.config.allowUnfree = true;
+  nixpkgs = {
+    overlays = builtins.attrValues outputs.overlays;
+    config.allowUnfree = true;
+  };
   hardware.enableRedistributableFirmware = true;
 
   nix = {
