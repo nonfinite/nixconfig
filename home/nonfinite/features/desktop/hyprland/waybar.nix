@@ -14,6 +14,7 @@
         ];
         modules-right = [
           "bluetooth"
+          "pulseaudio"
           "network"
           "battery"
           "clock"
@@ -42,6 +43,21 @@
           format-disconnected = "  Disconnected";
           format-alt = "󰤨  {signalStrength}%";
           interval = 5;
+        };
+        "pulseaudio" = {
+          format = "{icon} {volume}";
+          format-muted = "🔇";
+          tooltip-format = "{icon} {desc} // {volume}%";
+          scroll-step = 1;
+          format-icons = {
+            headphone = " ";
+            hands-free = " ";
+            headset = " ";
+            phone = " ";
+            portable = " ";
+            car = " ";
+            default = [ " " " " " " ];
+          };
         };
         "bluetooth" = {
           format = "";
