@@ -22,7 +22,6 @@
         "kitty"
         "polkit-kde-agent"
         "waybar"
-        "xdg-desktop-portal"
       ];
 
       env = [
