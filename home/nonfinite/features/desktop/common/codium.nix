@@ -45,7 +45,7 @@
   };
 
   home.shellAliases = {
-    code = "codium";
+    code = "codium --enable-features=UseOzonePlatform --ozone-platform=wayland";
   };
 
   home.persistence."/nix/persist/home/nonfinite" = {
