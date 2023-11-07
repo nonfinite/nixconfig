@@ -28,6 +28,8 @@
     homeDirectory = lib.mkDefault "/home/${config.home.username}";
     sessionPath = [ "$HOME/.local/bin" ];
 
+    file.".config/electron-flags.conf".source = ../.config/electron-flags.conf;
+
     persistence."/nix/persist/home/nonfinite" = {
       allowOther = true;
       directories = [
