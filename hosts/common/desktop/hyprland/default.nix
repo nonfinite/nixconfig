@@ -4,6 +4,22 @@
 
   networking.networkmanager.enable = true;
 
+  services = {
+    pipewire = {
+      enable = true;
+
+      alsa = {
+        enable = true;
+        support32Bit = true;
+      };
+
+      audio.enable = true;
+      jack.enable = true;
+      pulse.enable = true;
+      wireplumber.enable = true;
+    };
+  };
+
   # hyprland uses kitty as the default terminal, so we must ensure it's installed
   environment.systemPackages = with pkgs; [
     kitty

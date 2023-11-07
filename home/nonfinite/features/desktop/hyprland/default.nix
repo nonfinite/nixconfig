@@ -13,6 +13,6 @@
     libsForQt5.qt5.qtwayland
     qt6.qtwayland
     rofi-wayland
-    # xdg-desktop-portal-hyprland
+    xdg-desktop-portal-hyprland
   ];
 }
