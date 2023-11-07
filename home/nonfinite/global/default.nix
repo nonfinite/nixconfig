@@ -1,4 +1,4 @@
-{ config, inputs, lib, pkgs, ... }:
+{ config, inputs, lib, pkgs, outputs, ... }:
 {
   imports = [
     inputs.impermanence.nixosModules.home-manager.impermanence
@@ -15,6 +15,7 @@
   };
 
   nixpkgs = {
+    overlays = builtins.attrValues outputs.overlays;
     config.allowUnfree = true;
   };
 
