@@ -13,9 +13,21 @@
         ];
         modules-right = [
           "clock"
+          "battery"
         ];
         "clock" = {
           format = "{:%I:%M %F}";
+        };
+        "battery" = {
+          states = {
+            good = 95;
+            warning = 30;
+            critical = 20;
+          };
+          format = "{icon} {capacity}%";
+          format-charging = " {capacity}%";
+          format-plugged = " {capacity}%";
+          format-icons = [ "󰂎" "󰁺" "󰁻" "󰁼" "󰁽" "󰁾" "󰁿" "󰂀" "󰂁" "󰂂" "󰁹" ];
         };
         "hyprland/workspaces" = {
           format = "{icon}";
