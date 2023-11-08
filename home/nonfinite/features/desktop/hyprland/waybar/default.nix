@@ -16,12 +16,18 @@
         ];
 
         modules-right = [
+          "tray"
           "bluetooth"
           "pulseaudio"
           "network"
           "battery"
           "clock"
         ];
+
+        "tray" = {
+          icon-size = 18;
+          spacing = 5;
+        };
 
         "wlr/taskbar" = {
           on-click = "activate";
