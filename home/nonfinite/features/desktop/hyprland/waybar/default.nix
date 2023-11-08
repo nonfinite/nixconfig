@@ -1,27 +1,52 @@
+let
+  customPad = {
+    format = " ";
+    interval = "once";
+    tooltip = false;
+  };
+in
 {
   # See https://unicodes.jessetane.com/󰤨 for useful icons
   programs.waybar = {
     enable = true;
+    style = ./waybar.css;
     settings = {
       mainBar = {
         layer = "top";
         position = "top";
         height = 32;
         modules-left = [
+          "custom/padd"
+
+          "custom/l_end"
           "hyprland/workspaces"
+          "custom/r_end"
+
+          "custom/padd"
+
+          "custom/l_end"
           "wlr/taskbar"
+          "custom/r_end"
         ];
 
         modules-center = [
         ];
 
         modules-right = [
+          "custom/l_end"
           "tray"
+          "custom/r_end"
+
+          "custom/padd"
+
+          "custom/l_end"
           "bluetooth"
           "pulseaudio"
           "network"
           "battery"
           "clock"
+          "custom/r_end"
+          "custom/padd"
         ];
 
         "tray" = {
@@ -86,6 +111,11 @@
           format = "{icon}";
           on-click = "activate";
         };
+
+        # Modules for padding
+        "custom/padd" = customPad;
+        "custom/l_end" = customPad;
+        "custom/r_end" = customPad;
       };
     };
   };
