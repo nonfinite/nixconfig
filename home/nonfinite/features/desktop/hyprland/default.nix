@@ -112,7 +112,7 @@
         "$mainMod, Q, exec, kitty"
         "$mainMod, W, killactive, "
         "$mainMod, M, exit, "
-        "$mainMod, E, exec, dolphin"
+        "$mainMod, E, exec, nautilus"
         "$mainMod, V, togglefloating,"
         "$mainMod, P, pseudo,"
         "$mainMod, S, togglesplit,"
@@ -198,12 +198,18 @@
   # home.file.".config/hypr/hyprland.conf".source = ../../../.config/hypr/hyprland.conf;
 
   home.packages = with pkgs; [
-    dolphin
     dunst
+    gnome.nautilus
+    gnome.eog # for thumbnails in nautilus
+    gnome.totem # for thumbnails in nautilus
     libsForQt5.polkit-kde-agent
     libsForQt5.qt5.qtwayland
     qt6.qtwayland
     rofi-wayland
     xdg-desktop-portal-hyprland
   ];
+
+  home.shellAliases = {
+    explorer = "nautilus";
+  };
 }
