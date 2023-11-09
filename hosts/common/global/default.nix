@@ -41,4 +41,6 @@
     ll = "ls -la";
     cls = "clear";
   };
+
+  security.polkit.enable = true;
 }
