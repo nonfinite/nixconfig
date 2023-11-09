@@ -17,11 +17,13 @@
 
       # See https://wiki.hyprland.org/Configuring/Keywords/ for more
       exec-once = [
-        # "1password"
         "dunst"
-        "kitty"
         "polkit-kde-agent"
         "waybar"
+        "kitty"
+        "sleep 1s ; telegram-desktop"
+        "sleep 2s ; discord"
+        "sleep 3s ; 1password"
       ];
 
       env = [
