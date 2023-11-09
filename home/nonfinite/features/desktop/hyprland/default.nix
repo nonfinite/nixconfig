@@ -187,7 +187,7 @@
 
       # Window rules
       windowrulev2 = [
-        "workspace name:󰢁 silent,class:(1Password)"
+        "workspace name:󰢁 silent,class:(1Password),floating:0"
         "workspace name:󰍩 silent,class:(org.telegram.desktop)"
         "workspace name:󰍩 silent,class:(discord)"
         "nomaximizerequest,class:(discord)"
