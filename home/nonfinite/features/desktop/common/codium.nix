@@ -45,7 +45,7 @@
   };
 
   home.shellAliases = {
-    code = "codium --enable-features=UseOzonePlatform --ozone-platform=wayland";
+    code = "codium"; # Note: codium crashes when given the standard flags  --enable-features=UseOzonePlatform --ozone-platform=wayland
   };
 
   home.persistence."/nix/persist/home/nonfinite" = {
