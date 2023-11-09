@@ -121,12 +121,6 @@
         "$mainMod, up, movefocus, u"
         "$mainMod, down, movefocus, d"
 
-        # Move focus with mainMod + hjkl
-        "$mainMod, H, movefocus, l"
-        "$mainMod, L, movefocus, r"
-        "$mainMod, K, movefocus, u"
-        "$mainMod, J, movefocus, d"
-
         # Switch workspaces with mainMod + [0-9]
         "$mainMod, 1, workspace, 1"
         "$mainMod, 2, workspace, 2"
@@ -161,9 +155,26 @@
         "$mainMod SHIFT, K, resizeactive,   0 -10"
         "$mainMod SHIFT, J, resizeactive,   0  10"
 
+        #
+        # Custom
+        #
+
         # App Launcher
         "$mainMod, R, exec, rofi -show drun"
         "$mainMod, TAB, exec, rofi -show window"
+
+
+        # Move focus with mainMod + hjkl
+        "$mainMod, H, movefocus, l"
+        "$mainMod, L, movefocus, r"
+        "$mainMod, K, movefocus, u"
+        "$mainMod, J, movefocus, d"
+
+        # Toggle fullscreen with bars
+        "$mainMod, F, fullscreen, 1"
+
+        # Toggle true fullscreen
+        "$mainMod SHIFT, F, fullscreen, 0"
       ];
 
       bindm = [
