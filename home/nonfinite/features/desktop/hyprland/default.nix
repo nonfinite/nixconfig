@@ -2,6 +2,7 @@
 {
   imports = [
     ./hyprpaper.nix
+    ./screenshot.nix
     ./tty-init.nix
     ./waybar
   ];
