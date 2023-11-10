@@ -1,6 +1,7 @@
 { pkgs, ... }:
 {
   imports = [
+    ./tty-init.nix
     ./waybar
   ];
 
