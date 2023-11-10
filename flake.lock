@@ -129,6 +129,26 @@
         "type": "github"
       }
     },
+    "hyprpicker": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1698684516,
+        "narHash": "sha256-x+6yy526dR75HBmTJvbrzN+sXINVL26yN5TY75Dgpwk=",
+        "owner": "hyprwm",
+        "repo": "hyprpicker",
+        "rev": "b6130e3901ed5c6d423f168705929e555608d870",
+        "type": "github"
+      },
+      "original": {
+        "owner": "hyprwm",
+        "repo": "hyprpicker",
+        "type": "github"
+      }
+    },
     "impermanence": {
       "locked": {
         "lastModified": 1697303681,
@@ -167,6 +187,7 @@
         "hyprland": "hyprland",
         "hyprland-contrib": "hyprland-contrib",
         "hyprland-plugins": "hyprland-plugins",
+        "hyprpicker": "hyprpicker",
         "impermanence": "impermanence",
         "nixpkgs": "nixpkgs"
       }
