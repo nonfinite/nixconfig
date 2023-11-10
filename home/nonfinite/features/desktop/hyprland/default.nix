@@ -189,6 +189,10 @@
       ];
 
       # Window rules
+      windowrule = [
+        "opacity 1.0 override 0.9 override,.*"
+      ];
+
       windowrulev2 = [
         "workspace name:󰢁 silent,class:(1Password),floating:0"
         "workspace name:󰍩 silent,class:(org.telegram.desktop)"
