@@ -1,6 +1,7 @@
 { pkgs, ... }:
 {
   imports = [
+    ./hyprpaper.nix
     ./tty-init.nix
     ./waybar
   ];
@@ -19,6 +20,7 @@
       # See https://wiki.hyprland.org/Configuring/Keywords/ for more
       exec-once = [
         "dunst"
+        "hyprpaper"
         "${pkgs.mate.mate-polkit}/libexec/polkit-mate-authentication-agent-1"
         "waybar"
         "kitty"
