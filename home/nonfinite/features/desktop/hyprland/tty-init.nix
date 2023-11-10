@@ -1,7 +1,8 @@
 {
   programs.bash.profileExtra = ''
     if [ "$(tty)" = "/dev/tty1" ]; then
-      exec Hyprland &> /dev/null
+      mkdir /tmp/log &> /dev/null
+      exec Hyprland &> /tmp/log/hyprland
     fi
   '';
 }

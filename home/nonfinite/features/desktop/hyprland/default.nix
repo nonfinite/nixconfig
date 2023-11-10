@@ -19,7 +19,7 @@
       # See https://wiki.hyprland.org/Configuring/Keywords/ for more
       exec-once = [
         "dunst"
-        "polkit-kde-agent"
+        "${pkgs.mate.mate-polkit}/libexec/polkit-mate-authentication-agent-1"
         "waybar"
         "kitty"
         "sleep 1s ; telegram-desktop"
@@ -203,8 +203,8 @@
     gnome.nautilus
     gnome.eog # for thumbnails in nautilus
     gnome.totem # for thumbnails in nautilus
-    libsForQt5.polkit-kde-agent
     libsForQt5.qt5.qtwayland
+    mate.mate-polkit
     qt6.qtwayland
     rofi-wayland
     xdg-desktop-portal-hyprland
