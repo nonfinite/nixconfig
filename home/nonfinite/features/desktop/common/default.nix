@@ -4,6 +4,7 @@
     ./codium.nix
     ./discord.nix
     ./firefox.nix
+    ./pinta.nix
     ./telegram.nix
     ./vlc.nix
   ];
