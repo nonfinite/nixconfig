@@ -203,6 +203,8 @@
         "workspace name:󰍩 silent,class:(org.telegram.desktop)"
         "workspace name:󰍩 silent,class:(discord)"
         "nomaximizerequest,class:(discord)"
+
+        "dimaround,floating:1,class:(1Password|polkit-mate-authentication-agent-1)"
       ];
     };
   };
