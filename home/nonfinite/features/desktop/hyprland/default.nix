@@ -14,8 +14,12 @@
 
       # See https://wiki.hyprland.org/Configuring/Monitors/
       monitor = [
-        ",preferred,auto,2"
+        ",highres,auto,2"
       ];
+
+      xwayland = {
+        force_zero_scaling = true;
+      };
 
       # See https://wiki.hyprland.org/Configuring/Keywords/ for more
       exec-once = [
@@ -30,6 +34,7 @@
       ];
 
       env = [
+        "GDK_SCALE,2"
         "XCURSOR_SIZE,24"
       ];
 
