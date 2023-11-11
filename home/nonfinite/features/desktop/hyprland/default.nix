@@ -3,6 +3,7 @@
   imports = [
     ./hyprpaper.nix
     ./screenshot.nix
+    ./theme.nix
     ./tty-init.nix
     ./waybar
   ];
