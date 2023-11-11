@@ -31,6 +31,7 @@
         "${pkgs.mate.mate-polkit}/libexec/polkit-mate-authentication-agent-1"
         "waybar"
         "kitty"
+        "sleep 1s ; syncthingtray"
         "sleep 1s ; telegram-desktop"
         "sleep 2s ; discord"
         "sleep 3s ; 1password"
@@ -38,7 +39,7 @@
 
       env = [
         "GDK_SCALE,2"
-        "QT_SCALE_FACTOR,2"
+        # "QT_SCALE_FACTOR,2"
         "XCURSOR_SIZE,24"
       ];
 
@@ -129,6 +130,11 @@
         "nomaximizerequest,class:(discord)"
 
         "dimaround,floating:1,class:(1Password|polkit-mate-authentication-agent-1)"
+
+        # Syncthing popup
+        "float,class:(syncthingtray),title:^Syncthing Tray$"
+        "move onscreen 100%-0 0,class:(syncthingtray),title:^Syncthing Tray$"
+        "dimaround,class:(syncthingtray),title:^Syncthing Tray$"
       ];
     };
   };
