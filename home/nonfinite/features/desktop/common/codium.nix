@@ -30,7 +30,7 @@
       "editor.minimap.enabled" = false;
       "editor.renderWhitespace" = "all";
       "workbench.colorTheme" = "Default Dark Modern";
-      "window.zoomLevel" = 4;
+      "window.zoomLevel" = 1;
       "window.menuBarVisibility" = "classic";
       "window.titleBarStyle" = "custom";
 
