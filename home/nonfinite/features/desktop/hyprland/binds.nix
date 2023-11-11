@@ -7,7 +7,6 @@
       "SUPER, M, exit, "
       "SUPER, E, exec, nautilus"
       "SUPER, V, togglefloating,"
-      "SUPER, P, pseudo,"
       "SUPER, S, togglesplit,"
 
       # Move focus with mainMod + arrow keys
@@ -27,6 +26,8 @@
       "SUPER, 8, workspace, 8"
       "SUPER, 9, workspace, 9"
       "SUPER, 0, workspace, 10"
+      "SUPER, B, workspace, e-1"
+      "SUPER, N, workspace, e+1"
 
       # Move active window to a workspace with mainMod + SHIFT + [0-9]
       "SUPER SHIFT, 1, movetoworkspace, 1"
@@ -39,25 +40,16 @@
       "SUPER SHIFT, 8, movetoworkspace, 8"
       "SUPER SHIFT, 9, movetoworkspace, 9"
       "SUPER SHIFT, 0, movetoworkspace, 10"
+      "SUPER SHIFT, B, movetoworkspace, r-1"
+      "SUPER SHIFT, N, movetoworkspace, r+1"
 
       # Scroll through existing workspaces with mainMod + scroll
       "SUPER, mouse_down, workspace, e+1"
       "SUPER, mouse_up, workspace, e-1"
 
-      # Move/resize windows with mainMod + SHIFT + HJKL
-      "SUPER SHIFT, H, resizeactive, -10   0"
-      "SUPER SHIFT, L, resizeactive,  10   0"
-      "SUPER SHIFT, K, resizeactive,   0 -10"
-      "SUPER SHIFT, J, resizeactive,   0  10"
-
-      #
-      # Custom
-      #
-
       # App Launcher
       "SUPER, R, exec, rofi -show drun"
-      "SUPER, TAB, exec, rofi -show window"
-
+      "ALT, TAB, exec, rofi -show window"
 
       # Move focus with mainMod + hjkl
       "SUPER, H, movefocus, l"
