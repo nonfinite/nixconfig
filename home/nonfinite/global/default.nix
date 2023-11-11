@@ -1,4 +1,4 @@
-{ config, inputs, lib, pkgs, ... }:
+{ config, inputs, lib, pkgs, outputs, ... }:
 {
   imports = [
     inputs.impermanence.nixosModules.home-manager.impermanence
@@ -14,7 +14,10 @@
     };
   };
 
-  nixpkgs.config.allowUnfree = true;
+  nixpkgs = {
+    overlays = builtins.attrValues outputs.overlays;
+    config.allowUnfree = true;
+  };
 
   programs = {
     home-manager.enable = true;
@@ -27,6 +30,8 @@
     username = lib.mkDefault "nonfinite";
     homeDirectory = lib.mkDefault "/home/${config.home.username}";
     sessionPath = [ "$HOME/.local/bin" ];
+
+    file.".config/electron-flags.conf".source = ../.config/electron-flags.conf;
 
     persistence."/nix/persist/home/nonfinite" = {
       allowOther = true;
@@ -42,6 +47,10 @@
 
         ".ssh"
       ];
+    };
+
+    sessionVariables = {
+      NIXPKGS_ALLOW_UNFREE = "1";
     };
 
     shellAliases = {

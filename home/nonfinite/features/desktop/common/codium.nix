@@ -30,6 +30,9 @@
       "editor.minimap.enabled" = false;
       "editor.renderWhitespace" = "all";
       "workbench.colorTheme" = "Default Dark Modern";
+      "window.zoomLevel" = 4;
+      "window.menuBarVisibility" = "classic";
+      "window.titleBarStyle" = "custom";
 
       # Nix
       "nix.enableLanguageServer" = true;
@@ -45,7 +48,7 @@
   };
 
   home.shellAliases = {
-    code = "codium";
+    code = "codium"; # Note: codium crashes when given the standard flags  --enable-features=UseOzonePlatform --ozone-platform=wayland
   };
 
   home.persistence."/nix/persist/home/nonfinite" = {

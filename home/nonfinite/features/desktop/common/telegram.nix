@@ -1,20 +1,7 @@
 { pkgs, ... }:
-
-let
-  # This fixes telegram's display in Wayland
-  telegram-desktop-xcb = pkgs.symlinkJoin {
-    name = "telegram-desktop";
-    paths = [ pkgs.telegram-desktop ];
-    buildInputs = [ pkgs.makeWrapper ];
-    postBuild = ''
-      wrapProgram $out/bin/telegram-desktop \
-        --set QT_QPA_PLATFORM xcb
-    '';
-  };
-in
 {
-  home.packages = [
-    telegram-desktop-xcb
+  home.packages = with pkgs; [
+    telegram-desktop
   ];
 
   home.persistence."/nix/persist/home/nonfinite" = {

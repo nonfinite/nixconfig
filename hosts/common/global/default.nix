@@ -8,10 +8,12 @@
 
   home-manager = {
     extraSpecialArgs = { inherit inputs outputs; };
-    useGlobalPkgs = true;
   };
 
-  nixpkgs.config.allowUnfree = true;
+  nixpkgs = {
+    overlays = builtins.attrValues outputs.overlays;
+    config.allowUnfree = true;
+  };
   hardware.enableRedistributableFirmware = true;
 
   nix = {
@@ -39,4 +41,6 @@
     ll = "ls -la";
     cls = "clear";
   };
+
+  security.polkit.enable = true;
 }
