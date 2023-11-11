@@ -9,6 +9,24 @@
     ./waybar
   ];
 
+  home.packages = with pkgs; [
+    dunst
+    gnome.nautilus
+    gnome.eog # for thumbnails in nautilus
+    gnome.totem # for thumbnails in nautilus
+    pkgs.inputs.hyprpicker.hyprpicker
+    libsForQt5.qt5.qtwayland
+    mate.mate-polkit
+    qt6.qtwayland
+    rofi-wayland
+    xdg-desktop-portal-hyprland
+  ];
+
+  home.shellAliases = {
+    explorer = "nautilus";
+    color-pick = "hyprpicker -a -f hex";
+  };
+
   wayland.windowManager.hyprland = {
     enable = true;
     package = pkgs.inputs.hyprland.hyprland;
@@ -137,23 +155,5 @@
         "dimaround,class:(syncthingtray),title:^Syncthing Tray$"
       ];
     };
-  };
-
-  home.packages = with pkgs; [
-    dunst
-    gnome.nautilus
-    gnome.eog # for thumbnails in nautilus
-    gnome.totem # for thumbnails in nautilus
-    pkgs.inputs.hyprpicker.hyprpicker
-    libsForQt5.qt5.qtwayland
-    mate.mate-polkit
-    qt6.qtwayland
-    rofi-wayland
-    xdg-desktop-portal-hyprland
-  ];
-
-  home.shellAliases = {
-    explorer = "nautilus";
-    color-pick = "hyprpicker -a -f hex";
   };
 }
