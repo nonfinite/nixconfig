@@ -64,6 +64,12 @@
       "SUPER SHIFT, F, fullscreen, 0"
     ];
 
+    binde = [
+      ", XF86AudioRaiseVolume, exec, wpctl set-volume -l 1.5 @DEFAULT_AUDIO_SINK@ 5%+"
+      ", XF86AudioLowerVolume, exec, wpctl set-volume -l 1.5 @DEFAULT_AUDIO_SINK@ 5%-"
+      ", XF86AudioMute, exec, set-sink-mute @DEFAULT_AUDIO_SINK@ toggle"
+    ];
+
     bindm = [
       # Move/resize windows with mainMod + LMB/RMB and dragging
       "SUPER, mouse:272, movewindow"
