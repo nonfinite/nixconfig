@@ -17,6 +17,38 @@
         "privacy.trackingprotection.enabled" = true;
       };
     };
+    profiles.vpn = {
+      id = 1;
+      isDefault = false;
+      path = "vpn";
+      settings = {
+        "browser.disableResetPrompt" = true;
+        "browser.newtabpage.activity-stream.showSponsoredTopSites" = false;
+        "browser.shell.checkDefaultBrowser" = false;
+        "browser.shell.defaultBrowserCheckCount" = 1;
+        "browser.startup.homepage" = "https://start.duckduckgo.com";
+        "dom.security.https_only_mode" = true;
+        "privacy.trackingprotection.enabled" = true;
+        "extensions.activeThemeID" = "firefox-alpenglow@mozilla.org";
+        "network.proxy.backup.ssl" = "";
+        "network.proxy.backup.ssl_port" = 0;
+        "network.proxy.http" = "192.168.122.15";
+        "network.proxy.http_port" = 8118;
+        "network.proxy.share_proxy_settings" = true;
+        "network.proxy.socks_remote_dns" = true;
+        "network.proxy.ssl" = "192.168.122.15";
+        "network.proxy.ssl_port" = 8118;
+        "network.proxy.type" = 1;
+      };
+    };
+  };
+
+  xdg.desktopEntries.firefox-vpn = {
+    name = "Firefox VPN";
+    genericName = "Web Browser (VPN)";
+    exec = "firefox -P vpn %U";
+    terminal = false;
+    categories = [ "Application" "WebBrowser" ];
   };
 
   xdg.mimeApps.defaultApplications = {
@@ -32,6 +64,7 @@
     directories = [
       ".cache/mozilla/firefox/nonfinite"
       ".mozilla/firefox/nonfinite"
+      ".mozilla/firefox/vpn"
     ];
   };
 }
