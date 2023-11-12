@@ -50,9 +50,9 @@
         "waybar"
         "kitty"
         "sleep 1s ; syncthingtray"
-        "sleep 1s ; telegram-desktop"
-        "sleep 2s ; discord"
-        "sleep 3s ; 1password"
+        "sleep 1.1s ; telegram-desktop"
+        "sleep 1.2s ; discord"
+        "sleep 1.3s ; 1password"
       ];
 
       env = [

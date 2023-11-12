@@ -47,6 +47,7 @@ in
           "battery"
           "clock"
           "custom/r_end"
+
           "custom/padd"
         ];
 
