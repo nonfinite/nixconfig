@@ -40,6 +40,7 @@ in
           "custom/padd"
 
           "custom/l_end"
+          "gamemode"
           "bluetooth"
           "pulseaudio"
           "network"
@@ -72,6 +73,18 @@ in
           format-charging = " {capacity}%";
           format-plugged = " {capacity}%";
           format-icons = [ "󰂎" "󰁺" "󰁻" "󰁼" "󰁽" "󰁾" "󰁿" "󰂀" "󰂁" "󰂂" "󰁹" ];
+        };
+        "gamemode" = {
+          format = "{glyph}";
+          format-alt = "{glyph}";
+          glyph = "";
+          hide-not-running = true;
+          use-icon = true;
+          icon-name = "input-gaming-symbolic";
+          icon-spacing = 4;
+          icon-size = 18;
+          tooltip = true;
+          tooltip-format = "Games running: {count}";
         };
         "network" = {
           format-wifi = "{icon} {essid}";

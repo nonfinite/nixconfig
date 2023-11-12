@@ -147,6 +147,8 @@
         "workspace name:󰍩 silent,class:(discord)"
         "nomaximizerequest,class:(discord)"
 
+        "workspace name: silent,title:^Steam$"
+
         "dimaround,floating:1,class:(1Password|polkit-mate-authentication-agent-1)"
 
         # Syncthing popup
