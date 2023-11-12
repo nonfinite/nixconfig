@@ -19,6 +19,7 @@ in
     ../common/desktop/hyprland
     ../common/games
     ../common/hardware/fingerprint.nix
+    ../common/virtualization/podman.nix
   ];
 
   networking = {
