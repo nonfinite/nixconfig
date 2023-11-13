@@ -54,12 +54,8 @@
   home.persistence."/nix/persist/home/nonfinite" = {
     allowOther = true;
     directories = [
-      ".config/VSCodium/Local Storage"
-      ".config/VSCodium/User"
+      ".config/VSCodium"
       ".vscode-oss"
-    ];
-    files = [
-      ".config/VSCodium/Preferences"
     ];
   };
 }
