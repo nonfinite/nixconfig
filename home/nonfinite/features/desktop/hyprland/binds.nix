@@ -62,6 +62,9 @@
 
       # Toggle true fullscreen
       "SUPER SHIFT, F, fullscreen, 0"
+
+      # Lock
+      "SUPER SHIFT, L, exec, swaylock"
     ];
 
     binde = [

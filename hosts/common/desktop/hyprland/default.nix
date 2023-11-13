@@ -20,6 +20,11 @@
     };
   };
 
+  security.pam.services = {
+    # required to allow swaylock to unlock
+    swaylock = { };
+  };
+
   # hyprland uses kitty as the default terminal, so we must ensure it's installed
   environment.systemPackages = with pkgs; [
     kitty

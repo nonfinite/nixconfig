@@ -4,6 +4,7 @@
     ./binds.nix
     ./hyprpaper.nix
     ./screenshot.nix
+    ./swaylock.nix
     ./theme.nix
     ./tty-init.nix
     ./waybar
