@@ -5,7 +5,9 @@
   ];
 
   home.packages = with pkgs; [
-    lsof
+    fend # calculator
+    inotify-tools # watch directories for changes
+    lsof # list files of process
   ];
 
   programs.bash.enable = true;
