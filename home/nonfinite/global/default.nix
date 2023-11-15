@@ -24,6 +24,10 @@
     git.enable = true;
   };
 
+  services = {
+    ssh-agent.enable = true;
+  };
+
   home = {
     stateVersion = lib.mkDefault "23.05";
 
