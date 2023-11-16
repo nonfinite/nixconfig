@@ -47,10 +47,6 @@
       "SUPER, mouse_down, workspace, e+1"
       "SUPER, mouse_up, workspace, e-1"
 
-      # App Launcher
-      "SUPER, R, exec, rofi -show drun"
-      "ALT, TAB, exec, rofi -show window"
-
       # Move focus with mainMod + hjkl
       "SUPER, H, movefocus, l"
       "SUPER, L, movefocus, r"

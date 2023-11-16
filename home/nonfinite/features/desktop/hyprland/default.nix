@@ -1,6 +1,7 @@
 { pkgs, ... }:
 {
   imports = [
+    ../common/rofi
     ./binds.nix
     ./hyprpaper.nix
     ./screenshot.nix
@@ -20,7 +21,6 @@
     libsForQt5.qt5.qtwayland
     mate.mate-polkit
     qt6.qtwayland
-    rofi-wayland
     xdg-desktop-portal-hyprland
   ];
 
