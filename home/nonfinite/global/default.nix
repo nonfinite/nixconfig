@@ -6,6 +6,8 @@
     ./syncthing.nix
   ];
 
+  systemd.user.startServices = "sd-switch";
+
   nix = {
     package = lib.mkDefault pkgs.nix;
     settings = {

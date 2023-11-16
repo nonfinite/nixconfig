@@ -1,9 +1,5 @@
 { pkgs, ... }:
 {
-  # programs.hyprland.enable = true;
-
-  networking.networkmanager.enable = true;
-
   services = {
     pipewire = {
       enable = true;
