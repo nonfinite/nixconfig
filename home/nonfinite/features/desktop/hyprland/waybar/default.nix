@@ -35,6 +35,7 @@ in
         modules-right = [
           "custom/l_end"
           "tray"
+          "idle_inhibitor"
           "custom/r_end"
 
           "custom/padd"
@@ -124,6 +125,16 @@ in
         "hyprland/workspaces" = {
           format = "{icon}";
           on-click = "activate";
+        };
+
+        "idle_inhibitor" = {
+          format = "{icon}";
+          format-icons = {
+            activated = "󰒳";
+            deactivated = "󰒲";
+            tooltip-format-activated = "idle disabled";
+            tooltip-format-deactivated = "idle allowed";
+          };
         };
 
         # Modules for padding
