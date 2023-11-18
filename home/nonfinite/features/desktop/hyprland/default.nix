@@ -157,6 +157,9 @@
         "float,class:(syncthingtray),title:^Syncthing Tray$"
         "move onscreen 100%-0 0,class:(syncthingtray),title:^Syncthing Tray$"
         "dimaround,class:(syncthingtray),title:^Syncthing Tray$"
+
+        # Inhibit idle
+        "idleinhibit always,class:(vlc)"
       ];
     };
   };
