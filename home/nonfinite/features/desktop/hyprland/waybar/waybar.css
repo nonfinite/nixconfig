@@ -93,6 +93,8 @@ tooltip {
     transition: all 0.3s cubic-bezier(.55, -0.68, .48, 1.682);
 }
 
+#backlight,
+#backlight-slider,
 #battery,
 #bluetooth,
 #clock,
@@ -124,6 +126,35 @@ tooltip {
     margin: 4px 0px 4px 0px;
     padding-left: 4px;
     padding-right: 4px;
+}
+
+#backlight-slider {
+    min-width: 100px;
+}
+
+scale,
+scale contents {
+    min-height: 0px;
+}
+
+trough {
+    background: @main-fg;
+    border-radius: 5px;
+    min-height: 4px;
+}
+
+highlight {
+    background: @wb-act-bg;
+    border-radius: 5px;
+    min-height: 4px;
+}
+
+slider {
+    background: @wb-act-bg;
+    border-radius: 5px;
+    min-height: 0px;
+    min-width: 0px;
+    box-shadow: 0 0;
 }
 
 #workspaces,

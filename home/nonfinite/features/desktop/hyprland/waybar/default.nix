@@ -4,6 +4,7 @@ let
     interval = "once";
     tooltip = false;
   };
+  backlight = import ./backlight.nix;
 in
 {
   # See https://unicodes.jessetane.com/󰤨 for useful icons
@@ -45,6 +46,7 @@ in
           "bluetooth"
           "pulseaudio"
           "network"
+          backlight.module
           "battery"
           "clock"
           "custom/r_end"
@@ -141,7 +143,7 @@ in
         "custom/padd" = customPad;
         "custom/l_end" = customPad;
         "custom/r_end" = customPad;
-      };
+      } // backlight.settings;
     };
   };
 }
