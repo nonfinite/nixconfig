@@ -5,6 +5,7 @@
     ./discord.nix
     ./firefox.nix
     ./pinta.nix
+    ./system-monitor.nix
     ./telegram.nix
     ./vlc.nix
   ];
