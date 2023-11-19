@@ -1,17 +1,20 @@
+{ drawer, slider }:
 {
   module = "group/backlight";
 
   settings = {
     "group/backlight" = {
       orientation = "inherit";
-      drawer = {
-        transition-duration = 300;
-        transition-left-to-right = true;
-      };
-      modules = [
-        "backlight"
-        "backlight/slider"
-      ];
+      drawer =
+        if drawer then {
+          transition-duration = 300;
+          transition-left-to-right = true;
+        } else null;
+      modules =
+        if slider then [
+          "backlight"
+          "backlight/slider"
+        ] else [ "backlight" ];
     };
 
     "backlight" = {

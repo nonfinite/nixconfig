@@ -1,16 +1,19 @@
+{ drawer, slider }:
 {
   module = "group/audio";
   settings = {
     "group/audio" = {
       orientation = "inherit";
-      drawer = {
-        transition-duration = 300;
-        transition-left-to-right = true;
-      };
-      modules = [
-        "pulseaudio"
-        "pulseaudio/slider"
-      ];
+      drawer =
+        if drawer then {
+          transition-duration = 300;
+          transition-left-to-right = true;
+        } else null;
+      modules =
+        if slider then [
+          "pulseaudio"
+          "pulseaudio/slider"
+        ] else [ "pulseaudio" ];
       device = "intel_backlight";
       format = "{icon} {percent}%";
       format-icons = [ "󰃚" "󰃛" "󰃜" "󰃝" "󰃞" "󰃟" "󰃠" ];

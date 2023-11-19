@@ -4,8 +4,8 @@ let
     interval = "once";
     tooltip = false;
   };
-  audio = import ./audio.nix;
-  backlight = import ./backlight.nix;
+  audio = import ./audio.nix { drawer = false; slider = false; };
+  backlight = import ./backlight.nix { drawer = false; slider = false; };
   system-monitor = import ./system-monitor.nix;
 in
 {
@@ -51,7 +51,6 @@ in
 
           "custom/l_end"
           "gamemode"
-          "bluetooth"
           audio.module
           "network"
           backlight.module
