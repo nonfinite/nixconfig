@@ -6,6 +6,7 @@ let
   };
   audio = import ./audio.nix;
   backlight = import ./backlight.nix;
+  system-monitor = import ./system-monitor.nix;
 in
 {
   # See https://unicodes.jessetane.com/󰤨 for useful icons
@@ -38,6 +39,12 @@ in
           "custom/l_end"
           "tray"
           "idle_inhibitor"
+          "custom/r_end"
+
+          "custom/padd"
+
+          "custom/l_end"
+          system-monitor.module
           "custom/r_end"
 
           "custom/padd"
@@ -129,7 +136,7 @@ in
         "custom/padd" = customPad;
         "custom/l_end" = customPad;
         "custom/r_end" = customPad;
-      } // audio.settings // backlight.settings;
+      } // audio.settings // backlight.settings // system-monitor.settings;
     };
   };
 }
