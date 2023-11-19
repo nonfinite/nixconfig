@@ -135,9 +135,11 @@ tooltip {
     min-height: 0px;
 }
 
-scale,
-contents {
+scale {
     min-height: 0px;
+    padding: 0px;
+    padding-left: 10px;
+    padding-right: 10px;
 }
 
 trough {
@@ -154,10 +156,12 @@ highlight {
 
 slider {
     background: @wb-act-bg;
+    border-radius: 3px;
     border-radius: 5px;
+    box-shadow: 0 0;
+    margin: -6px;
     min-height: 0px;
     min-width: 0px;
-    box-shadow: 0 0;
 }
 
 #workspaces,
