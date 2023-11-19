@@ -6,7 +6,9 @@
 
   environment.persistence."/nix/persist" = {
     hideMounts = true;
-    directories = [ ];
+    directories = [
+      "/var/log"
+    ];
     files = [
       "/etc/ssh/ssh_host_ed25519_key"
       "/etc/ssh/ssh_host_ed25519_key.pub"
