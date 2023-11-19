@@ -4,6 +4,7 @@ let
     interval = "once";
     tooltip = false;
   };
+  audio = import ./audio.nix;
   backlight = import ./backlight.nix;
 in
 {
@@ -44,7 +45,7 @@ in
           "custom/l_end"
           "gamemode"
           "bluetooth"
-          "pulseaudio"
+          audio.module
           "network"
           backlight.module
           "battery"
@@ -100,21 +101,6 @@ in
           format-alt = "󰤨  {signalStrength}%";
           interval = 5;
         };
-        "pulseaudio" = {
-          format = "{icon} {volume}";
-          format-muted = "🔇";
-          tooltip-format = "{icon} {desc} // {volume}%";
-          scroll-step = 1;
-          format-icons = {
-            headphone = " ";
-            hands-free = " ";
-            headset = " ";
-            phone = " ";
-            portable = " ";
-            car = " ";
-            default = [ " " " " " " ];
-          };
-        };
         "bluetooth" = {
           format = "";
           format-disabled = "";
@@ -143,7 +129,7 @@ in
         "custom/padd" = customPad;
         "custom/l_end" = customPad;
         "custom/r_end" = customPad;
-      } // backlight.settings;
+      } // audio.settings // backlight.settings;
     };
   };
 }

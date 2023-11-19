@@ -114,6 +114,7 @@ tooltip {
 #mpris,
 #network,
 #pulseaudio,
+#pulseaudio-slider,
 #taskbar,
 #tray,
 #window,
@@ -128,12 +129,14 @@ tooltip {
     padding-right: 4px;
 }
 
-#backlight-slider {
+#backlight-slider,
+#pulseaudio-slider {
     min-width: 100px;
+    min-height: 0px;
 }
 
 scale,
-scale contents {
+contents {
     min-height: 0px;
 }
 
