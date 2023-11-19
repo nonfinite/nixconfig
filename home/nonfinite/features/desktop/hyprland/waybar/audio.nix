@@ -18,7 +18,7 @@
 
     "pulseaudio" = {
       format = "{icon} {volume}";
-      format-muted = "🔇";
+      format-muted = "󰖁";
       tooltip-format = "{icon} {desc} // {volume}%";
       scroll-step = 1;
       format-icons = {
@@ -28,7 +28,7 @@
         phone = "";
         portable = "";
         car = "";
-        default = [ "" "" "" ];
+        default = [ "󰕿" "󰖀" "󰕾" ];
       };
     };
 

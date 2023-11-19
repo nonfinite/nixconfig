@@ -93,12 +93,12 @@ in
         };
         "network" = {
           format-wifi = "{icon} {essid}";
-          format-icons = [ "󰤫 " "󰤟 " "󰤢 " "󰤥 " "󰤨 " ];
-          format-ethernet = "󱘖  Wired";
-          tooltip-format = "󱘖  {ipaddr} {icon} {signalStrength}%\n {bandwidthUpBytes}  {bandwidthDownBytes}";
-          format-linked = "󱘖  {ifname} (No IP)";
-          format-disconnected = "  Disconnected";
-          format-alt = "󰤨  {signalStrength}%";
+          format-icons = [ "󰤫" "󰤟" "󰤢" "󰤥" "󰤨" ];
+          format-ethernet = "󱘖 Wired";
+          tooltip-format = "󱘖 {ipaddr} {icon} {signalStrength}%\n {bandwidthUpBytes}  {bandwidthDownBytes}";
+          format-linked = "󱘖 {ifname} (No IP)";
+          format-disconnected = " Disconnected";
+          format-alt = "󰤨 {signalStrength}%";
           interval = 5;
         };
         "bluetooth" = {
