@@ -3,10 +3,10 @@
   imports = [
     ../common/rofi
     ./binds.nix
-    ./hyprpaper.nix
     ./screenshot.nix
     ./swayidle.nix
     ./swaylock.nix
+    ./swww.nix
     ./theme.nix
     ./tty-init.nix
     ./waybar
@@ -40,6 +40,10 @@
         ",highres,auto,2"
       ];
 
+      misc = {
+        disable_hyprland_logo = true;
+      };
+
       xwayland = {
         force_zero_scaling = true;
       };
@@ -47,7 +51,6 @@
       # See https://wiki.hyprland.org/Configuring/Keywords/ for more
       exec-once = [
         "dunst"
-        "hyprpaper"
         "${pkgs.mate.mate-polkit}/libexec/polkit-mate-authentication-agent-1"
         "waybar"
         "kitty"
