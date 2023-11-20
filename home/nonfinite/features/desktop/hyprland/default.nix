@@ -150,6 +150,7 @@
         "nomaximizerequest,class:(discord)"
 
         "workspace name: silent,title:^Steam$"
+        "workspace name: silent,class:(steam)"
 
         "dimaround,floating:1,class:(1Password|polkit-mate-authentication-agent-1)"
 
