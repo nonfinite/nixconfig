@@ -18,7 +18,7 @@ let
       transitions=("simple" "wipe" "any")
       tt=''${transitions[ $RANDOM % ''${#transitions[@]} ]}
 
-      swww img $1 --transition-type $tt --transition-duration 2
+      swww img $1 --transition-type $tt --transition-duration 1.33
     fi
     '';
   };
