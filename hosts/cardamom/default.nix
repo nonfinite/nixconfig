@@ -1,4 +1,4 @@
-args@{ lib, pkgs, ... }:
+args@{ inputs, lib, pkgs, ... }:
 let
   diskConfig = {
     device = "/dev/disk/by-id/nvme-SAMSUNG_MZVL21T0HCLR-00BL7_S64PNX0TA24210";
@@ -8,6 +8,9 @@ in
 {
   imports = [
     ./hardware-configuration.nix
+    inputs.nixos-hardware.nixosModules.common-cpu-intel
+    inputs.nixos-hardware.nixosModules.common-gpu-intel
+    inputs.nixos-hardware.nixosModules.lenovo-thinkpad-t14s
 
     (import ../common/disk-configs/impermanent (args // diskConfig))
     (import ../common/boot/grub.nix (args // diskConfig // { fontSize = 36; }))
