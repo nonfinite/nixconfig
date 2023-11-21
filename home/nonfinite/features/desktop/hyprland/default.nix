@@ -29,6 +29,8 @@
     color-pick = "hyprpicker -a -f hex";
   };
 
+  services.udiskie.enable = true;
+
   wayland.windowManager.hyprland = {
     enable = true;
     package = pkgs.inputs.hyprland.hyprland;
