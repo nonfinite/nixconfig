@@ -18,7 +18,7 @@
     gnome.nautilus
     gnome.eog # for thumbnails in nautilus
     gnome.totem # for thumbnails in nautilus
-    pkgs.inputs.hyprpicker.hyprpicker
+    # pkgs.inputs.hyprpicker.hyprpicker
     libsForQt5.qt5.qtwayland
     mate.mate-polkit
     qt6.qtwayland
