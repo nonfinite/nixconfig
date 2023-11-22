@@ -9,6 +9,7 @@
     ./swww.nix
     ./theme.nix
     ./tty-init.nix
+    ./udiskie.nix
     ./waybar
   ];
 
@@ -28,8 +29,6 @@
     explorer = "nautilus";
     color-pick = "hyprpicker -a -f hex";
   };
-
-  services.udiskie.enable = true;
 
   wayland.windowManager.hyprland = {
     enable = true;

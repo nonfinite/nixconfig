@@ -23,7 +23,7 @@ in
 
     ../common/desktop/hyprland
     ../common/games
-    ../common/hardware/fingerprint.nix
+    # ../common/hardware/fingerprint.nix
     ../common/virtualization/podman.nix
   ];
 
@@ -34,6 +34,7 @@ in
 
   security.sudo.wheelNeedsPassword = false;
   services.openssh.enable = true;
+  services.udisks2.enable = true;
 
   environment.systemPackages = with pkgs; [
     curl
@@ -46,4 +47,7 @@ in
   };
 
   system.stateVersion = "23.05";
+
+  # Intel Hardware
+  boot.kernelParams = [ "i915.force_probe=46a6" ];
 }
