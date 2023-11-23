@@ -158,6 +158,8 @@
 
         "dimaround,floating:1,class:(1Password|polkit-mate-authentication-agent-1)"
 
+        "float,class:(firefox),title:^Save"
+
         # Syncthing popup
         "float,class:(syncthingtray),title:^Syncthing Tray$"
         "move onscreen 100%-0 0,class:(syncthingtray),title:^Syncthing Tray$"
