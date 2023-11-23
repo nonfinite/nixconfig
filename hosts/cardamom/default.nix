@@ -48,8 +48,11 @@ in
 
   system.stateVersion = "23.05";
 
-  # Intel Hardware
-  boot.kernelParams = [ "i915.force_probe=46a6" ];
+  # Intel Hardware fixes
+  boot.kernelParams = [
+    "i915.force_probe=46a6"
+    "ahci.mobile_lpm_policy=1"
+  ];
 
   # nixpkgs.config.packageOverrides = pkgs: {
   #   vaapiIntel = pkgs.vaapiIntel.override { enableHybridCodec = true; };
