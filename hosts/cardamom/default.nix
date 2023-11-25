@@ -48,6 +48,9 @@ in
 
   system.stateVersion = "23.05";
 
+  # use most recent kernel
+  boot.kernelPackages = pkgs.linuxPackages_latest;
+
   # Intel Hardware fixes
   boot.kernelParams = [
     "i915.force_probe=46a6"
