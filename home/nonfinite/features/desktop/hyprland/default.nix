@@ -60,10 +60,11 @@
         "${pkgs.mate.mate-polkit}/libexec/polkit-mate-authentication-agent-1"
         "waybar"
         "kitty"
-        "sleep 1s ; syncthingtray"
+        # waybar must be running before these so they show in the tray
+        "sleep 1.0s ; syncthingtray"
         "sleep 1.1s ; telegram-desktop"
         "sleep 1.2s ; discord"
-        "sleep 1.3s ; 1password"
+        "sleep 1.3s ; 1password --silent"
       ];
 
       env = [
@@ -153,7 +154,6 @@
       ];
 
       windowrulev2 = [
-        "workspace name:󰢁 silent,class:(1Password),floating:0"
         "workspace name:󰍩 silent,class:(org.telegram.desktop)"
         "workspace name:󰍩 silent,class:(discord)"
         "nomaximizerequest,class:(discord)"
