@@ -23,7 +23,12 @@
     mate.mate-polkit
     qt6.qtwayland
     xdg-desktop-portal-hyprland
+    xdg-user-dirs
   ];
+
+  xdg.userDirs = {
+    enable = true;
+  };
 
   home.shellAliases = {
     explorer = "nautilus";
