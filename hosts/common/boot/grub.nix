@@ -10,6 +10,7 @@
       gfxmodeEfi = "2880x1800";
       font = "${pkgs.dejavu_fonts}/share/fonts/truetype/DejaVuSansMono.ttf";
       fontSize = fontSize;
+      memtest86.enable = true;
     };
   };
 }
