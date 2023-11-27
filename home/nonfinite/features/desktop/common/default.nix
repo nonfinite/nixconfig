@@ -1,6 +1,7 @@
 { pkgs, ... }:
 {
   imports = [
+    ./alacritty.nix
     ./codium.nix
     ./discord.nix
     ./firefox.nix

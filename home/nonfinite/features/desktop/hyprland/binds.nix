@@ -61,6 +61,9 @@
 
       # Lock
       "SUPER SHIFT, L, exec, swaylock"
+
+      "SUPER, TAB, changegroupactive"
+      "SUPER, T,   changegroupactive"
     ];
 
     binde = [
