@@ -63,6 +63,7 @@
       ll = "ls -la";
       cls = "clear";
 
+      nd = "nix develop";
       nr = "nixos-rebuild --flake .";
       nrs = "nixos-rebuild --flake . switch";
       snr = "sudo nixos-rebuild --flake .";
