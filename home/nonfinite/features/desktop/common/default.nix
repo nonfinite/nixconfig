@@ -4,6 +4,7 @@
     ./codium.nix
     ./discord.nix
     ./firefox.nix
+    ./obsidian.nix
     ./pinta.nix
     ./system-monitor.nix
     ./telegram.nix
