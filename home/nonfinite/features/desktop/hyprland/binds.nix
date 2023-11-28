@@ -2,12 +2,13 @@
   wayland.windowManager.hyprland.settings = {
     bind = [
       # Example binds, see https://wiki.hyprland.org/Configuring/Binds/ for more
-      "SUPER, Q, exec, kitty"
+      "SUPER, Q, exec, alacritty"
       "SUPER, W, killactive, "
       "SUPER, M, exit, "
       "SUPER, E, exec, nautilus"
       "SUPER, V, togglefloating,"
       "SUPER, S, togglesplit,"
+      "SUPER, U, moveoutofgroup,"
 
       # Move focus with mainMod + arrow keys
       "SUPER, left, movefocus, l"

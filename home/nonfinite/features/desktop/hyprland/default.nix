@@ -59,7 +59,7 @@
         "dunst"
         "${pkgs.mate.mate-polkit}/libexec/polkit-mate-authentication-agent-1"
         "waybar"
-        "kitty"
+        "alacritty"
         # waybar must be running before these so they show in the tray
         "sleep 1.0s ; syncthingtray"
         "sleep 1.1s ; telegram-desktop"
