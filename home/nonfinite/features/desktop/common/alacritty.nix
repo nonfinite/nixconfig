@@ -18,6 +18,18 @@ in
       import = [
         "${themes.outPath}/themes/${theme-name}.yaml"
       ];
+      key_bindings = [
+        { mods = "Control"; key = "T"; action = "CreateNewWindow"; }
+        { mods = "Control"; key = "W"; action = "Quit"; }
+        {
+          mods = "Control";
+          key = "Tab";
+          command = {
+            program = "hyprctl";
+            args = [ "dispatch" "changegroupactive" ];
+          };
+        }
+      ];
     };
   };
 }
