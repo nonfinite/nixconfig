@@ -9,6 +9,7 @@
     directories = [
       # for now just allow it to keep everything
       ".local/share/JetBrains"
+      ".config/JetBrains"
     ];
   };
 }
