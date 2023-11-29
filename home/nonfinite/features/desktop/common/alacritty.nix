@@ -9,7 +9,7 @@ let
 in
 {
   wayland.windowManager.hyprland.settings.windowrulev2 = [
-    "group,class:Alacritty"
+    "group set lock invade,class:Alacritty"
   ];
 
   programs.alacritty = {
