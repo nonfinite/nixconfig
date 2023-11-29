@@ -1,4 +1,10 @@
 { pkgs, ... }:
+let
+  borderActive = "rgba(33ccffee) rgba(00ff99ee) 45deg";
+  borderInactive = "rgba(595959aa)";
+  borderLockedActive = "rgba(33ccffee) rgba(00ff99ee) 45deg";
+  borderLockedInactive = "rgba(595959aa)";
+in
 {
   imports = [
     ../common/rofi
@@ -92,22 +98,27 @@
         gaps_in = 2;
         gaps_out = 2;
         border_size = 2;
-        "col.active_border" = "rgba(33ccffee) rgba(00ff99ee) 45deg";
-        "col.inactive_border" = "rgba(595959aa)";
+        "col.active_border" = borderActive;
+        "col.inactive_border" = borderInactive;
 
         layout = "dwindle";
       };
 
       group = {
-        "col.border_active" = "rgba(33ccffee) rgba(00ff99ee) 45deg";
-        "col.border_inactive" = "rgba(595959aa)";
+        "col.border_active" = borderActive;
+        "col.border_inactive" = borderInactive;
+
+        "col.border_locked_active" = borderLockedActive;
+        "col.border_locked_inactive" = borderLockedInactive;
 
         groupbar = {
           font_family = "DejaVuSansMono Nerd Font";
           font_size = 15;
           gradients = true;
-          "col.active" = "rgba(33ccffee) rgba(00ff99ee) 45deg";
-          "col.inactive" = "rgba(595959aa)";
+          "col.active" = borderActive;
+          "col.inactive" = borderInactive;
+          "col.locked_active" = borderLockedActive;
+          "col.locked_inactive" = borderLockedInactive;
         };
       };
 
