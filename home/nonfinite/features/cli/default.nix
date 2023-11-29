@@ -2,6 +2,7 @@
 {
   imports = [
     ./nix.nix
+    ./starship.nix
   ];
 
   home.packages = with pkgs; [
