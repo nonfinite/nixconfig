@@ -3,6 +3,7 @@
   imports = [
     inputs.impermanence.nixosModules.home-manager.impermanence
     ../features/cli
+    ./git.nix
     ./syncthing.nix
   ];
 
@@ -23,7 +24,6 @@
 
   programs = {
     home-manager.enable = true;
-    git.enable = true;
   };
 
   services = {
