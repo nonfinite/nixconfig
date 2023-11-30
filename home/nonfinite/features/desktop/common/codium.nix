@@ -29,6 +29,7 @@
       "editor.fontFamily" = "'DejaVu Sans Mono Nerd Font', monospace";
       "editor.minimap.enabled" = false;
       "editor.renderWhitespace" = "all";
+      "explorer.confirmDelete" = false;
       "workbench.colorTheme" = "Default Dark Modern";
       "window.zoomLevel" = 1;
       "window.menuBarVisibility" = "classic";
