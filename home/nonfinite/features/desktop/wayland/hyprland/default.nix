@@ -7,16 +7,16 @@ let
 in
 {
   imports = [
-    ../common/rofi
+    ../../common/rofi
+    ../swayidle.nix
+    ../swaylock.nix
+    ../swww.nix
+    ../waybar
     ./binds.nix
     ./screenshot.nix
-    # ./swayidle.nix
-    ./swaylock.nix
-    ./swww.nix
     ./theme.nix
     ./tty-init.nix
     ./udiskie.nix
-    ./waybar
   ];
 
   home.packages = with pkgs; [
