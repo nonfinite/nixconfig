@@ -38,6 +38,7 @@
     sessionPath = [ "$HOME/.local/bin" ];
 
     file.".config/electron-flags.conf".source = ../.config/electron-flags.conf;
+    file.".config/pnpm/rc".text = "store-dir=/home/nonfinite/.pnpm-store";
 
     persistence."/nix/persist/home/nonfinite" = {
       allowOther = true;
@@ -51,6 +52,7 @@
         "Videos"
         "VirtualBox VMs"
 
+        ".pnpm-store"
         ".ssh"
       ];
     };
