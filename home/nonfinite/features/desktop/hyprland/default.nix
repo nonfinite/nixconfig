@@ -10,7 +10,7 @@ in
     ../common/rofi
     ./binds.nix
     ./screenshot.nix
-    ./swayidle.nix
+    # ./swayidle.nix
     ./swaylock.nix
     ./swww.nix
     ./theme.nix
