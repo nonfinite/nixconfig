@@ -30,6 +30,7 @@ in
     qt6.qtwayland
     xdg-desktop-portal-hyprland
     xdg-user-dirs
+    xorg.xlsclients # useful for detecting applications running via XWayland
   ];
 
   xdg.userDirs = {
@@ -39,6 +40,10 @@ in
   home.shellAliases = {
     explorer = "nautilus";
     color-pick = "hyprpicker -a -f hex";
+  };
+
+  home.sessionVariables = {
+    NIXOS_OZONE_WL = "1"; # enable wrapped NixOS apps passing wayland flags
   };
 
   wayland.windowManager.hyprland = {
