@@ -75,7 +75,8 @@ in
         "sleep 1.0s ; syncthingtray"
         "sleep 1.1s ; telegram-desktop"
         "sleep 1.2s ; discord"
-        "sleep 1.3s ; 1password --silent"
+        # 1password can have copy problems on wayland, so remove the ozone features if this breaks it
+        "sleep 1.3s ; 1password --silent --enable-features=UseOzonePlatform --ozone-platform=wayland"
       ];
 
       env = [

@@ -49,7 +49,7 @@
   };
 
   home.shellAliases = {
-    code = "codium"; # Note: codium crashes when given the standard flags  --enable-features=UseOzonePlatform --ozone-platform=wayland
+    code = "NIXOS_OZONE_WL= codium"; # Note: codium crashes when given the standard flags  --enable-features=UseOzonePlatform --ozone-platform=wayland
   };
 
   home.persistence."/nix/persist/home/nonfinite" = {
