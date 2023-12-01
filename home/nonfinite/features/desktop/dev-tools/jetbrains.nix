@@ -16,4 +16,9 @@
       ".config/JetBrains"
     ];
   };
+
+  wayland.windowManager.hyprland.settings.windowrulev2 = [
+    # Center popup windows such as the action search window
+    "center,title:^win0$,class:jetbrains-idea"
+  ];
 }
