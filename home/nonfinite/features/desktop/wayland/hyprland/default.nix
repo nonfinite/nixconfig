@@ -74,7 +74,8 @@ in
         # waybar must be running before these so they show in the tray
         "sleep 1.0s ; syncthingtray"
         "sleep 1.1s ; telegram-desktop"
-        "sleep 1.2s ; discord"
+        # discord seems to crash wayland ever so often, so don't start it automatically
+        # "sleep 1.2s ; discord"
         # 1password can have copy problems on wayland, so remove the ozone features if this breaks it
         "sleep 1.3s ; 1password --silent --enable-features=UseOzonePlatform --ozone-platform=wayland"
       ];
