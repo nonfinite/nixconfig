@@ -1,4 +1,4 @@
-{ config, ... }:
+{ ... }:
 let
   customPad = {
     format = " ";
@@ -7,7 +7,6 @@ let
   };
   audio = import ./audio.nix { drawer = false; slider = false; };
   backlight = import ./backlight.nix { drawer = false; slider = false; };
-  workspaces = import ./workspaces.nix { isHyprland = config.wayland.windowManager.hyprland.enable; };
   system-monitor = import ./system-monitor.nix;
 in
 {
@@ -24,7 +23,8 @@ in
           "custom/padd"
 
           "custom/l_end"
-          workspaces.module
+          "hyprland/workspaces"
+          "sway/workspaces"
           "custom/r_end"
 
           "custom/padd"
@@ -128,11 +128,20 @@ in
           };
         };
 
+        "hyprland/workspaces" = {
+          format = "{icon}";
+          on-click = "activate";
+        };
+        "sway/workspaces" = {
+          format = "{icon}";
+          on-click = "activate";
+        };
+
         # Modules for padding
         "custom/padd" = customPad;
         "custom/l_end" = customPad;
         "custom/r_end" = customPad;
-      } // audio.settings // backlight.settings // workspaces.settings // system-monitor.settings;
+      } // audio.settings // backlight.settings // system-monitor.settings;
     };
   };
 }
