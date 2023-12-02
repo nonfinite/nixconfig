@@ -8,6 +8,7 @@ in
 {
   imports = [
     ../../common/rofi
+    ../global.nix
     ../swayidle.nix
     ../swaylock.nix
     ../swww.nix
@@ -25,27 +26,13 @@ in
     gnome.eog # for thumbnails in nautilus
     gnome.totem # for thumbnails in nautilus
     # pkgs.inputs.hyprpicker.hyprpicker
-    libsForQt5.qt5.qtwayland
     mate.mate-polkit
-    qt6.qtwayland
-    wl-clipboard
     xdg-desktop-portal-hyprland
-    xdg-user-dirs
-    xorg.xlsclients # useful for detecting applications running via XWayland
   ];
-
-  xdg.userDirs = {
-    enable = true;
-  };
 
   home.shellAliases = {
     explorer = "nautilus";
     color-pick = "hyprpicker -a -f hex";
-    copy = "wl-copy";
-  };
-
-  home.sessionVariables = {
-    NIXOS_OZONE_WL = "1"; # enable wrapped NixOS apps passing wayland flags
   };
 
   wayland.windowManager.hyprland = {

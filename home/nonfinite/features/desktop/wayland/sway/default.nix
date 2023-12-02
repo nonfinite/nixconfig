@@ -2,6 +2,7 @@
 {
   imports = [
     ../../common/rofi
+    ../global.nix
     ../swayidle.nix
     ../swaylock.nix
     ../swww.nix
