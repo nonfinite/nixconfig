@@ -28,6 +28,7 @@ in
     libsForQt5.qt5.qtwayland
     mate.mate-polkit
     qt6.qtwayland
+    wl-clipboard
     xdg-desktop-portal-hyprland
     xdg-user-dirs
     xorg.xlsclients # useful for detecting applications running via XWayland
@@ -40,6 +41,7 @@ in
   home.shellAliases = {
     explorer = "nautilus";
     color-pick = "hyprpicker -a -f hex";
+    copy = "wl-copy";
   };
 
   home.sessionVariables = {
