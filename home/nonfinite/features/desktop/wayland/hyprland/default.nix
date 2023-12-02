@@ -16,7 +16,7 @@ in
     ./screenshot.nix
     ./theme.nix
     ./tty-init.nix
-    ./udiskie.nix
+    # ./udiskie.nix
   ];
 
   home.packages = with pkgs; [
