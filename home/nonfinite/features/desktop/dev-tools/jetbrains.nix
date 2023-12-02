@@ -12,8 +12,9 @@
     allowOther = true;
     directories = [
       # for now just allow it to keep everything
-      ".local/share/JetBrains"
+      ".cache/JetBrains"
       ".config/JetBrains"
+      ".local/share/JetBrains"
     ];
   };
 
