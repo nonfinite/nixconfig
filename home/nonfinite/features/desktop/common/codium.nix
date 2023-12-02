@@ -49,7 +49,9 @@
   };
 
   home.shellAliases = {
-    code = "NIXOS_OZONE_WL= codium"; # Note: codium crashes when given the standard flags  --enable-features=UseOzonePlatform --ozone-platform=wayland
+    code = "codium";
+    # launch code without wayland flags, as it can sometimes have issues with them: --enable-features=UseOzonePlatform --ozone-platform=wayland
+    xcode = "NIXOS_OZONE_WL= codium";
   };
 
   home.persistence."/nix/persist/home/nonfinite" = {
