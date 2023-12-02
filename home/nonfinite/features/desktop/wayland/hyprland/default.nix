@@ -16,7 +16,6 @@ in
     ./binds.nix
     ./screenshot.nix
     ./theme.nix
-    ./tty-init.nix
     # ./udiskie.nix
   ];
 
