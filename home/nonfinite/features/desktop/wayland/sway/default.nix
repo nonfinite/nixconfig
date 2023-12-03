@@ -8,6 +8,7 @@
     ../swww.nix
     ../waybar
     ./binds.nix
+    ./windows.nix
   ];
 
   home.packages = with pkgs; [
