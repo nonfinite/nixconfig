@@ -48,7 +48,8 @@ tooltip {
     transition: all 0.5s cubic-bezier(.55, -0.68, .48, 1.682);
 }
 
-#workspaces button.active {
+#workspaces button.active,
+#workspaces button.focused {
     background: @wb-act-bg;
     color: @wb-act-fg;
     animation: gradient_f 20s ease-in infinite;
