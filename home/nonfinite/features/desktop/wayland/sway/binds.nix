@@ -5,21 +5,10 @@ let
 in
 {
   wayland.windowManager.sway.config = {
-    modes = {
-      resize = {
-        "Down" = "resize grow height 10 px";
-        "Up" = "resize shrink height 10 px";
-        "j" = "resize grow height 10 px";
-        "k" = "resize shrink height 10 px";
+    bars = [ ]; # handled by waybar
 
-        "Right" = "resize grow width 10 px";
-        "Left" = "resize shrink width 10 px";
-        "l" = "resize grow width 10 px";
-        "h" = "resize shrink width 10 px";
-
-        "Escape" = "mode default";
-        "Return" = "mode default";
-      };
+    focus = {
+      wrapping = "yes";
     };
 
     keybindings = {
@@ -56,6 +45,7 @@ in
       "${mod}+Shift+j" = "move down";
       "${mod}+Shift+k" = "move up";
       "${mod}+Shift+l" = "move right";
+      "${mod}+Tab" = "focus next";
 
       # Workspace functionality by number
       "${mod}+1" = "workspace number 1";
@@ -90,6 +80,23 @@ in
       "${mod}+a" = "focus parent";
       "${mod}+Shift+c" = "reload";
       "${mod}+Shift+e" = "exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -b 'Yes, exit sway' 'swaymsg exit'";
+    };
+
+    modes = {
+      resize = {
+        "Down" = "resize grow height 10 px";
+        "Up" = "resize shrink height 10 px";
+        "j" = "resize grow height 10 px";
+        "k" = "resize shrink height 10 px";
+
+        "Right" = "resize grow width 10 px";
+        "Left" = "resize shrink width 10 px";
+        "l" = "resize grow width 10 px";
+        "h" = "resize shrink width 10 px";
+
+        "Escape" = "mode default";
+        "Return" = "mode default";
+      };
     };
   };
 }
