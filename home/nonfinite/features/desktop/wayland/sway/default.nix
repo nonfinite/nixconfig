@@ -49,5 +49,7 @@
 
   home.shellAliases = {
     Sway = "sway";
+    sm-tree = "swaymsg -t get_tree";
+    sm-app-id = "swaymsg -t get_tree | grep app_id";
   };
 }

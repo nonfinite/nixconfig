@@ -32,8 +32,6 @@ in
   home.shellAliases = {
     explorer = "nautilus";
     color-pick = "hyprpicker -a -f hex";
-    sg-tree = "swaymsg -t get_tree";
-    sg-app-id = "swaymsg -t get_tree | grep app_id";
   };
 
   wayland.windowManager.hyprland = {
