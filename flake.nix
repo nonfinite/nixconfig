@@ -3,39 +3,18 @@
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-23.11";
     nixos-hardware.url = "github:NixOS/nixos-hardware";
 
-    agenix = {
-      url = "github:ryantm/agenix";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
     disko = {
       url = "github:nix-community/disko";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
     home-manager = {
       url = "github:nix-community/home-manager/release-23.11";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    impermanence.url = "github:nix-community/impermanence";
-
-    hyprland = {
-      url = "github:hyprwm/hyprland";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-    hyprland-contrib = {
-      url = "github:hyprwm/contrib";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-    hyprland-plugins = {
-      url = "github:hyprwm/hyprland-plugins";
-      inputs.hyprland.follows = "hyprland";
-    };
-    hyprpicker = {
-      url = "github:hyprwm/hyprpicker";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
   };
 
-  outputs = { self, nixpkgs, home-manager, ... }@inputs:
+  outputs = { self, nixpkgs, disko, home-manager, ... }@inputs:
     let
       inherit (self) outputs;
       lib = nixpkgs.lib // home-manager.lib;
@@ -48,8 +27,6 @@
     in
     {
       inherit lib;
-
-      overlays = import ./overlays { inherit inputs outputs; };
 
       devShells = forEachSystem (pkgs: import ./shell.nix { inherit pkgs; });
       formatter = forEachSystem (pkgs: pkgs.nixpkgs-fmt);
@@ -67,21 +44,11 @@
           modules = [ ./hosts/cardamom ];
           specialArgs = { inherit inputs outputs; };
         };
-        vbox = lib.nixosSystem {
-          system = lib.mkDefault "x86_64-linux";
-          modules = [ ./hosts/vbox ];
-          specialArgs = { inherit inputs outputs; };
-        };
       };
 
       homeConfigurations = {
         "nonfinite@cardamom" = lib.homeManagerConfiguration {
           modules = [ ./home/nonfinite/cardamom.nix ];
-          pkgs = pkgsFor.x86_64-linux;
-          extraSpecialArgs = { inherit inputs outputs; };
-        };
-        "nonfinite@vbox" = lib.homeManagerConfiguration {
-          modules = [ ./home/nonfinite/vbox.nix ];
           pkgs = pkgsFor.x86_64-linux;
           extraSpecialArgs = { inherit inputs outputs; };
         };
