@@ -21,7 +21,7 @@ in
     ../common/users/nonfinite
     (import ../common/users/autologin.nix "nonfinite")
 
-    ../common/desktop/hyprland
+    ../common/desktop/sway
     ../common/games
     # ../common/hardware/fingerprint.nix
     ../common/virtualization/podman.nix
@@ -63,6 +63,8 @@ in
   # nixpkgs.config.packageOverrides = pkgs: {
   #   vaapiIntel = pkgs.vaapiIntel.override { enableHybridCodec = true; };
   # };
+
+  programs.light.enable = true;
 
   hardware.opengl = {
     enable = true;

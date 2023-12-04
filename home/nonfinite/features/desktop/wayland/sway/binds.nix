@@ -80,6 +80,14 @@ in
       "${mod}+a" = "focus parent";
       "${mod}+Shift+c" = "reload";
       "${mod}+Shift+e" = "exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -b 'Yes, exit sway' 'swaymsg exit'";
+
+      # Laptop keys
+      "XF86MonBrightnessDown" = "exec light -U 10";
+      "XF86MonBrightnessUp" = "exec light -A 10";
+      "XF86AudioRaiseVolume" = "pactl set-sink-volume @DEFAULT_SINK@ +1%";
+      "XF86AudioLowerVolume" = "pactl set-sink-volume @DEFAULT_SINK@ -1%";
+      "XF86AudioMute" = "pactl set-sink-mute @DEFAULT_SINK@ toggle";
+
     };
 
     modes = {

@@ -1,5 +1,11 @@
 { pkgs, ... }:
 {
+  home.packages = with pkgs; [
+    egl-wayland
+    libGL
+    libglvnd
+  ];
+
   programs.vscode = {
     enable = true;
     package = pkgs.vscodium;
