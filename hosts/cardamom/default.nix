@@ -11,7 +11,7 @@ in
     inputs.disko.nixosModules.disko
     (import ../../disko/btrfs.nix device)
 
-    ../common/networking
+    ../common/desktop/gnome
     ../common/users/nonfinite.nix
     (import ../common/users/autologin.nix "nonfinite")
 
