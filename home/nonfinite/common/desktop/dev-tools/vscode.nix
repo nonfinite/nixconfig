@@ -1,4 +1,4 @@
-{pkgs, ...}:
+{ pkgs, ... }:
 {
   home.packages = with pkgs; [
     nixpkgs-fmt
@@ -12,7 +12,7 @@
   programs.vscode = {
     enable = true;
     package = pkgs.vscodium;
-    
+
     extensions = with pkgs; [
       vscode-extensions.jnoortheen.nix-ide
     ];

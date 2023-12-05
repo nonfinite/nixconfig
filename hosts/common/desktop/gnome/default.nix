@@ -1,6 +1,7 @@
 { pkgs, ... }:
 {
   environment.systemPackages = with pkgs; [
+    gnome.dconf-editor
     gnomeExtensions.appindicator
     gnomeExtensions.material-shell
     gnomeExtensions.pop-shell
@@ -15,6 +16,7 @@
       enable = true;
       displayManager.gdm.enable = true;
       desktopManager.gnome.enable = true;
+      xkb.options = "caps:super";
     };
   };
 
