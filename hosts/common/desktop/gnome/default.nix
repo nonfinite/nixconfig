@@ -2,6 +2,8 @@
 {
   environment.systemPackages = with pkgs; [
     gnomeExtensions.appindicator
+    gnomeExtensions.material-shell
+    gnomeExtensions.pop-shell
   ];
 
   services = {
