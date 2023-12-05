@@ -10,6 +10,8 @@ in
 
     inputs.disko.nixosModules.disko
     (import ../../disko/btrfs.nix device)
+
+    ../common/users/nonfinite.nix
   ];
 
   boot.loader = {
@@ -36,6 +38,7 @@ in
   };
 
   security.sudo.wheelNeedsPassword = false;
+
   services = {
     openssh.enable = true;
   };
