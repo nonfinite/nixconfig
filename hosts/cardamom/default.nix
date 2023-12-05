@@ -13,6 +13,7 @@ in
 
     ../common/networking
     ../common/users/nonfinite.nix
+    (import ../common/users/autologin.nix "nonfinite")
 
     ../global
   ];
