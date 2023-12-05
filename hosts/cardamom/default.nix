@@ -11,6 +11,7 @@ in
     inputs.disko.nixosModules.disko
     (import ../../disko/btrfs.nix device)
 
+    ../common/networking
     ../common/users/nonfinite.nix
 
     ../global
