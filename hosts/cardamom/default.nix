@@ -12,6 +12,8 @@ in
     (import ../../disko/btrfs.nix device)
 
     ../common/users/nonfinite.nix
+
+    ../global
   ];
 
   boot.loader = {
