@@ -30,6 +30,10 @@ in
     glxinfo
   ];
 
+  environment.variables = {
+    FS = device;
+  };
+
   hardware = {
     enableRedistributableFirmware = true;
     opengl = {
