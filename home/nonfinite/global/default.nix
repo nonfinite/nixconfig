@@ -25,5 +25,13 @@
 
     username = lib.mkDefault "nonfinite";
     homeDirectory = lib.mkDefault "/home/${config.home.username}";
+
+    keyboard.options = [
+      "caps:super"
+    ];
+
+    shellAliases = {
+      hms = "home-manager switch --flake .";
+    };
   };
 }
