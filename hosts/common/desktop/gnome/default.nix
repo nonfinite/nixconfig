@@ -4,6 +4,7 @@
     gnome.dconf-editor
     gnomeExtensions.appindicator
     gnomeExtensions.material-shell
+    gnomeExtensions.paperwm
     gnomeExtensions.pop-shell
   ];
 
