@@ -14,30 +14,37 @@
     "org/gnome/desktop/peripherals/touchpad" = {
       tap-to-click = true;
     };
+    "org/gnome/desktop/wm/preferences" = {
+      focus-mode = "sloppy";
+      num-workspaces = 5;
+      workspace-names = [ "1" "2" "3" "4" "5" ];
+    };
     "org/gnome/gnome-session" = {
       logout-prompt = false;
     };
     "org/gnome/shell" = {
       enabled-extensions = [
+        "appindicatorsupport@rgcjonas.gmail.com"
         "paperwm@paperwm.github.com"
       ];
     };
     "org/gnome/shell/extensions/paperwm" = {
-      window-gap = 0;
+      cycle-width-steps = [ 0.3 0.5 0.7 ];
       horizontal-margin = 0;
       vertical-margin = 0;
       vertical-margin-bottom = 0;
+      window-gap = 0;
     };
     "org/gnome/shell/extensions/paperwm/keybindings" = {
       close-window = [ "<Super>BackSpace" "<Super>w" ];
-      move-down-workspace = [ "<Shift><Super>k" ];
+      move-down-workspace = [ "<Shift><Super>j" ];
       move-left = [ "<Shift><Super>h" ];
       move-right = [ "<Shift><Super>l" ];
-      move-up-workspace = [ "<Shift><Super>j" ];
-      switch-down-workspace = [ "<Super>k" ];
+      move-up-workspace = [ "<Shift><Super>k" ];
+      switch-down-workspace = [ "<Super>j" ];
       switch-left = [ "<Super>h" ];
       switch-right = [ "<Super>l" ];
-      switch-up-workspace = [ "<Super>j" ];
+      switch-up-workspace = [ "<Super>k" ];
     };
     "org/gtk/gtk4/settings/file-chooser" = {
       show-hidden = true;
