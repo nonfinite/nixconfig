@@ -1,6 +1,7 @@
 args@{ inputs, lib, pkgs, ... }:
 let
-  device = "/dev/disk/by-id/usb-Samsung_PSSD_T7_S5T3NJ0N902439F-0:0";
+  # device = "/dev/disk/by-id/usb-Samsung_PSSD_T7_S5T3NJ0N902439F-0:0";
+  device = "/dev/disk/by-id/usb-Mass_Storage_Device_121220160204-0:0";
 in
 {
   system.stateVersion = "23.11";
