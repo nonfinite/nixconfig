@@ -1,7 +1,7 @@
 {
   dconf.settings = {
     "org/gnome/desktop/input-sources" = {
-      xkb-options = "caps:super";
+      xkb-options = [ "caps:super" ];
     };
     "org/gnome/desktop/interface" = {
       clock-format = "12h";
