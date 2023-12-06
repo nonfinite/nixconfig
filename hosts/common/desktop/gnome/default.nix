@@ -2,8 +2,8 @@
 {
   environment.systemPackages = with pkgs; [
     gnome.dconf-editor
+    gnome.gnome-tweaks
     gnomeExtensions.appindicator
-    gnomeExtensions.material-shell
     gnomeExtensions.paperwm
     gnomeExtensions.pop-shell
   ];
