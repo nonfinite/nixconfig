@@ -41,6 +41,7 @@
       move-left = [ "<Shift><Super>h" ];
       move-right = [ "<Shift><Super>l" ];
       move-up-workspace = [ "<Shift><Super>k" ];
+      new-window = [ "<Super>n" ];
       switch-down-workspace = [ "<Super>j" ];
       switch-left = [ "<Super>h" ];
       switch-right = [ "<Super>l" ];
