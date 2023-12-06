@@ -15,7 +15,7 @@
       tap-to-click = true;
     };
     "org/gnome/desktop/wm/preferences" = {
-      focus-mode = "sloppy";
+      # focus-mode = "sloppy";
       num-workspaces = 5;
       workspace-names = [ "1" "2" "3" "4" "5" ];
     };
