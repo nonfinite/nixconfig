@@ -6,5 +6,5 @@ let
   systems = [ cardamom ];
 in
 {
-  "wifi-environment.age".publicKeys = users ++ systems;
+  "wifi-home.nmconnection.age".publicKeys = users ++ systems;
 }

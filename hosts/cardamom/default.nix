@@ -16,7 +16,6 @@ in
     (import ../common/boot/grub.nix (args // diskConfig // { fontSize = 36; }))
 
     ../common/secrets
-    # ../common/wifi.nix
     ../common/global
     ../common/users/nonfinite
     (import ../common/users/autologin.nix "nonfinite")

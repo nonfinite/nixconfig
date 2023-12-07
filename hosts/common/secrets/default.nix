@@ -12,10 +12,9 @@
   system.activationScripts.agenixInstall.deps = [ "persist-files" ];
 
   age.secrets = {
-    # Should conform to networking.wireless.environmentFile
-    # Current keys are LavenirPass=<password>
-    wifi-environment = {
-      file = ../../../secrets/wifi-environment.age;
+    wifi-home = {
+      file = ../../../secrets/wifi-home.nmconnection.age;
+      path = "/etc/NetworkManager/system-connections/wifi-home.nmconnection";
     };
   };
 }
