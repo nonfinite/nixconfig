@@ -3,8 +3,7 @@
     ./global
     ./features/desktop/common
     ./features/desktop/dev-tools
-    ./features/desktop/wayland/sway
-    ./features/desktop/wayland/sway/tty-init.nix
+    ./features/desktop/gnome
     ./features/games
     ./features/virtualization/podman.nix
   ];

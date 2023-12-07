@@ -1,27 +1,31 @@
 { pkgs, ... }: {
+  environment.systemPackages = with pkgs; [
+    gnome.dconf-editor
+    gnome.gnome-tweaks
+    gnomeExtensions.appindicator
+    gnomeExtensions.move-clock
+    gnomeExtensions.notification-counter
+    gnomeExtensions.paperwm
+    gnomeExtensions.pop-shell
+  ];
+
+  programs.dconf.enable = true;
+
   services = {
-    udev.packages = with pkgs; [ gnome.gnome-settings-daemon ];
+    udev.packages = with pkgs; [
+      gnome.gnome-settings-daemon
+    ];
+
     xserver = {
       enable = true;
       displayManager.gdm.enable = true;
       desktopManager.gnome.enable = true;
+      xkb.options = "caps:super";
       excludePackages = [ pkgs.xterm ];
     };
   };
 
-  programs.dconf.enable = true;
-
-  environment.systemPackages = with pkgs; [
-    gnome.adwaita-icon-theme
-    gnome.dconf-editor
-    gnome.gnome-settings-daemon
-    gnome3.gnome-tweaks
-    gnomeExtensions.appindicator
-    gnomeExtensions.move-clock
-    gnomeExtensions.notification-counter
-  ];
-
-  # workaround for auto-login to function correctly
+  # Fix for autologin
   systemd.services."getty@tty1".enable = false;
   systemd.services."autovt@tty1".enable = false;
 
