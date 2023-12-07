@@ -23,7 +23,6 @@ in
           "custom/padd"
 
           "custom/l_end"
-          "hyprland/workspaces"
           "sway/workspaces"
           "custom/r_end"
 
@@ -128,10 +127,6 @@ in
           };
         };
 
-        "hyprland/workspaces" = {
-          format = "{icon}";
-          on-click = "activate";
-        };
         "sway/workspaces" = {
           format = "{icon}";
           on-click = "activate";

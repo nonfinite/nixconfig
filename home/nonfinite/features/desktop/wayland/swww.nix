@@ -50,14 +50,4 @@ in
     set-wp-random
     swww
   ];
-
-  wayland.windowManager.hyprland.settings = {
-    exec-once = [
-      "set-wp-random"
-    ];
-
-    bind = [
-      "SUPER, P, exec, set-wp-random"
-    ];
-  };
 }

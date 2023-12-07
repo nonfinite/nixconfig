@@ -16,23 +16,6 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     impermanence.url = "github:nix-community/impermanence";
-
-    hyprland = {
-      url = "github:hyprwm/hyprland";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-    hyprland-contrib = {
-      url = "github:hyprwm/contrib";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-    hyprland-plugins = {
-      url = "github:hyprwm/hyprland-plugins";
-      inputs.hyprland.follows = "hyprland";
-    };
-    hyprpicker = {
-      url = "github:hyprwm/hyprpicker";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
   };
 
   outputs = { self, nixpkgs, home-manager, ... }@inputs:
@@ -65,11 +48,6 @@
         cardamom = lib.nixosSystem {
           system = lib.mkDefault "x86_64-linux";
           modules = [ ./hosts/cardamom ];
-          specialArgs = { inherit inputs outputs; };
-        };
-        vbox = lib.nixosSystem {
-          system = lib.mkDefault "x86_64-linux";
-          modules = [ ./hosts/vbox ];
           specialArgs = { inherit inputs outputs; };
         };
       };

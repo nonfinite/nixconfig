@@ -8,10 +8,6 @@ let
   theme-name = "citylights";
 in
 {
-  wayland.windowManager.hyprland.settings.windowrulev2 = [
-    "group set lock invade,class:Alacritty"
-  ];
-
   programs.alacritty = {
     enable = true;
     settings = {
