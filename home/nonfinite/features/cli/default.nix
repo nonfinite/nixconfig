@@ -8,6 +8,7 @@
   home.packages = with pkgs; [
     fend # calculator
     htop # system monitor
+    fatrace # watch all system file changes
     inotify-tools # watch directories for changes
     lsof # list files of process
   ];
