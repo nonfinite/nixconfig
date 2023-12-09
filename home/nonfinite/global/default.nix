@@ -52,6 +52,7 @@
         "Videos"
         "VirtualBox VMs"
 
+        ".cargo"
         ".pnpm-store"
         ".ssh"
       ];
