@@ -42,4 +42,8 @@
   };
 
   security.polkit.enable = true;
+
+  networking.hosts = {
+    "172.168.122.15" = [ "fennel" ];
+  };
 }
