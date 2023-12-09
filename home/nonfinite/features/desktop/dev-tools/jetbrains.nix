@@ -5,7 +5,7 @@
   ];
 
   home.shellAliases = {
-    idea = "idea-ultimate &> /tmp/log/idea-ultimate";
+    idea = "idea-ultimate &> /dev/null";
   };
 
   home.persistence."/nix/persist/home/nonfinite" = {
