@@ -1,4 +1,8 @@
 {
+  imports = [
+    ./paperwm.nix
+  ];
+
   home.shellAliases = {
     explorer = "nautilus";
   };
@@ -31,7 +35,6 @@
       lock-enabled = false;
     };
     "org/gnome/desktop/wm/preferences" = {
-      # focus-mode = "sloppy";
       num-workspaces = 5;
       workspace-names = [ "1" "2" "3" "4" "5" ];
     };
@@ -44,7 +47,6 @@
         "Move_Clock@rmy.pobox.com"
         "native-window-placement@gnome-shell-extensions.gcampax.github.com"
         "NotificationCounter@coolllsk"
-        "paperwm@paperwm.github.com"
         "places-menu@gnome-shell-extensions.gcampax.github.com"
       ];
       favorite-apps = [
@@ -55,25 +57,6 @@
         "discord.desktop"
         "steam.desktop"
       ];
-    };
-    "org/gnome/shell/extensions/paperwm" = {
-      cycle-width-steps = [ 0.3 0.5 0.7 ];
-      horizontal-margin = 0;
-      vertical-margin = 0;
-      vertical-margin-bottom = 0;
-      window-gap = 0;
-    };
-    "org/gnome/shell/extensions/paperwm/keybindings" = {
-      close-window = [ "<Super>BackSpace" "<Super>w" ];
-      move-down-workspace = [ "<Shift><Super>j" ];
-      move-left = [ "<Shift><Super>h" ];
-      move-right = [ "<Shift><Super>l" ];
-      move-up-workspace = [ "<Shift><Super>k" ];
-      new-window = [ "<Super>n" ];
-      switch-down-workspace = [ "<Super>j" ];
-      switch-left = [ "<Super>h" ];
-      switch-right = [ "<Super>l" ];
-      switch-up-workspace = [ "<Super>k" ];
     };
     "org/gtk/gtk4/settings/file-chooser" = {
       show-hidden = true;
