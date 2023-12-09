@@ -1,16 +1,17 @@
 { pkgs, ... }:
 {
   home.packages = with pkgs; [
-    discord
+    # discord
+    webcord
   ];
 
   home.persistence."/nix/persist/home/nonfinite" = {
     allowOther = true;
     directories = [
-      # for now just allow discord to keep everything
       ".config/discord"
+      ".config/WebCord"
     ];
   };
 
-  exec-once.commands = [ "discord" ];
+  exec-once.commands = [ "webcord" ];
 }

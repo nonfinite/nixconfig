@@ -18,6 +18,7 @@ in
         let lines = builtins.concatStringsSep "\n" (builtins.map (command: "${command} &") cfg.commands);
         in ''
           #!/usr/bin/env bash
+          sleep 1s
           ${lines}
         '';
     };
