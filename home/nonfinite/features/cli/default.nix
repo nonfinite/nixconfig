@@ -13,5 +13,8 @@
     lsof # list files of process
   ];
 
-  programs.bash.enable = true;
+  programs = {
+    bash.enable = true;
+    direnv.enable = true;
+  };
 }
