@@ -22,8 +22,8 @@ in
 
     ../common/desktop/gnome
     ../common/games
-    # ../common/hardware/fingerprint.nix
-    ../common/virtualization/podman.nix
+    ../common/virtualization/docker.nix
+    # ../common/virtualization/podman.nix
   ];
 
   networking = {
