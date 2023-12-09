@@ -24,6 +24,7 @@
       enable-hot-corners = false;
       font-antialiasing = "grayscale";
       font-hinting = "slight";
+      gtk-enable-primary-paste = false;
     };
     "org/gnome/desktop/notifications/application/org-telegram-desktop" = {
       show-banners = false;
