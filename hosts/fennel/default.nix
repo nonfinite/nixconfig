@@ -44,5 +44,12 @@ in
     ];
   };
 
+  swapDevices = [
+    {
+      device = "/nix/persist/swapfile";
+      size = 102410;
+    }
+  ];
+
   system.stateVersion = "23.11";
 }
