@@ -29,6 +29,9 @@
     "org/gnome/desktop/notifications/application/org-telegram-desktop" = {
       show-banners = false;
     };
+    "org/gnome/desktop/notifications/application/webcord" = {
+      show-banners = false;
+    };
     "org/gnome/desktop/peripherals/touchpad" = {
       tap-to-click = true;
     };
