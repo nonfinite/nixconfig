@@ -46,6 +46,7 @@
       enabled-extensions = [
         "appindicatorsupport@rgcjonas.gmail.com"
         "auto-move-windows@gnome-shell-extensions.gcampax.github.com"
+        "launch-new-instance@gnome-shell-extensions.gcampax.github.com"
         "Move_Clock@rmy.pobox.com"
         "native-window-placement@gnome-shell-extensions.gcampax.github.com"
         "NotificationCounter@coolllsk"
