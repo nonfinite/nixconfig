@@ -8,11 +8,19 @@
       ];
     };
     "org/gnome/shell/extensions/paperwm" = {
-      cycle-width-steps = [ 0.3 0.5 0.7 ];
+      cycle-width-steps = [ 0.5 1.0 ];
       horizontal-margin = 0;
       vertical-margin = 0;
       vertical-margin-bottom = 0;
       window-gap = 0;
+      # Note: find wm_class with Looking Glass: https://wiki.gnome.org/Projects/GnomeShell/LookingGlass
+      # Alt+F2, lg, enter
+      winprops = with builtins; map toJSON [
+        { wm_class = "Alacritty"; preferredWidth = "100%"; }
+        { wm_class = "firefox"; preferredWidth = "100%"; }
+        { wm_class = "org.telegram.desktop"; preferredWidth = "100%"; }
+        { wm_class = "WebCord"; preferredWidth = "100%"; }
+      ];
     };
     "org/gnome/shell/extensions/paperwm/keybindings" = {
       close-window = [ "<Super>BackSpace" "<Super>w" ];
