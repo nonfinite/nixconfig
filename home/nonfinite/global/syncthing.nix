@@ -18,4 +18,8 @@
       ".config/syncthingtray.ini"
     ];
   };
+
+  exec-once.commands = [
+    "syncthingtray"
+  ];
 }
