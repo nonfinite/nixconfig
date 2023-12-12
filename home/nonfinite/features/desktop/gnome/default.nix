@@ -42,6 +42,11 @@
       num-workspaces = 5;
       workspace-names = [ "1" "2" "3" "4" "5" ];
     };
+    # list all current keybindings with `gsettings list-recursively org.gnome.desktop.wm.keybindings`
+    "org/gnome/desktop/wm/keybindings" = {
+      switch-to-workspace-down = [ ];
+      switch-to-workspace-up = [ ];
+    };
     "org/gnome/gnome-session" = {
       logout-prompt = false;
     };
