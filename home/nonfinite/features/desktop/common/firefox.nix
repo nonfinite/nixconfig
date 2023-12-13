@@ -44,7 +44,7 @@
   };
 
   xdg.desktopEntries.firefox-vpn = {
-    name = "Firefox VPN";
+    name = "FF VPN";
     genericName = "Web Browser (VPN)";
     exec = "firefox -P vpn %U";
     terminal = false;
