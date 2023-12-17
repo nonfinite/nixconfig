@@ -11,5 +11,8 @@
     loop=1
     [qt]
     qt-privacy-ask=0
+    qt-video-autoresize=0
+    [core]
+    video-title-show=0
   '';
 }
