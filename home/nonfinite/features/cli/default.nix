@@ -17,4 +17,8 @@
     bash.enable = true;
     direnv.enable = true;
   };
+
+  home.shellAliases = {
+    da = "direnv allow";
+  };
 }
