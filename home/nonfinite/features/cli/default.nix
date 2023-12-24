@@ -21,4 +21,8 @@
   home.shellAliases = {
     da = "direnv allow";
   };
+
+  programs.bash.bashrcExtra = ''
+    ulimit -n hard
+  '';
 }

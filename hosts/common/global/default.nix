@@ -42,14 +42,6 @@
   };
 
   security.polkit.enable = true;
-  security.pam.loginLimits = [
-    {
-      domain = "*";
-      type = "soft";
-      item = "nofile";
-      value = "8192";
-    }
-  ];
 
   networking.hosts = {
     "172.168.122.15" = [ "fennel" ];
