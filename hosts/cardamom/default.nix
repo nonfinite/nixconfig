@@ -24,6 +24,7 @@ in
     ../common/games
     ../common/virtualization/docker.nix
     # ../common/virtualization/podman.nix
+    ../common/nofile-increase.nix
   ];
 
   networking = {
@@ -81,9 +82,4 @@ in
       libvdpau-va-gl
     ];
   };
-
-  # https://unix.stackexchange.com/a/10694
-  environment.etc."limits.conf".text = ''
-    * - nofile 50000
-  '';
 }
