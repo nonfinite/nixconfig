@@ -6,7 +6,7 @@
     ./discord.nix
     ./firefox.nix
     ./meld.nix
-    ./obsidian.nix
+    # ./obsidian.nix # currently insecure due to outdated electron
     ./pinta.nix
     ./system-monitor.nix
     ./telegram.nix
