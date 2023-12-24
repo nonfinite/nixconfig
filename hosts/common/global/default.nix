@@ -44,9 +44,6 @@
   security.polkit.enable = true;
 
   # increase open file limits
-  # boot.kernel.sysctl = {
-  #   "fs.file-max" = 262144;
-  # };
   security.pam.loginLimits = [
     {
       domain = "*";
