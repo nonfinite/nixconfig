@@ -16,21 +16,5 @@ in
     };
   };
 
-  # increase open file limits
-  security.pam.loginLimits = [
-    {
-      domain = "nonfinite";
-      type = "hard";
-      item = "nofile";
-      value = "unlimited";
-    }
-    {
-      domain = "nonfinite";
-      type = "soft";
-      item = "nofile";
-      value = "unlimited";
-    }
-  ];
-
   home-manager.users.nonfinite = import ../../../../home/nonfinite/${config.networking.hostName}.nix;
 }

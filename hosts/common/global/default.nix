@@ -43,6 +43,19 @@
 
   security.polkit.enable = true;
 
+  # increase open file limits
+  # boot.kernel.sysctl = {
+  #   "fs.file-max" = 262144;
+  # };
+  security.pam.loginLimits = [
+    {
+      domain = "*";
+      type = "soft";
+      item = "nofile";
+      value = "10240";
+    }
+  ];
+
   networking.hosts = {
     "172.168.122.15" = [ "fennel" ];
   };

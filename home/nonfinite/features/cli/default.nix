@@ -22,10 +22,6 @@
     da = "direnv allow";
   };
 
-  programs.bash.bashrcExtra = ''
-    ulimit -n hard
-  '';
-
   home.persistence."/nix/persist/home/nonfinite" = {
     allowOther = true;
     directories = [
