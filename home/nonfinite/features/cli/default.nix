@@ -28,4 +28,8 @@
       ".local/share/direnv"
     ];
   };
+
+  programs.bash.bashrcExtra = ''
+    ulimit -n 10240
+  '';
 }
