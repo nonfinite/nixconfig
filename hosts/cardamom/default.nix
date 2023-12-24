@@ -81,4 +81,9 @@ in
       libvdpau-va-gl
     ];
   };
+
+  # https://unix.stackexchange.com/a/10694
+  environment.etc."limits.conf".text = ''
+    * - nofile 50000
+  '';
 }
