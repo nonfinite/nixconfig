@@ -8,6 +8,7 @@
     ./meld.nix
     # ./obsidian.nix # currently insecure due to outdated electron
     ./pinta.nix
+    ./rdp.nix
     ./system-monitor.nix
     ./telegram.nix
     ./vlc.nix
