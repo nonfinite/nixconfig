@@ -2,6 +2,6 @@
 {
   imports = [
     ./beekeeper-studio.nix
-    ./jetbrains.nix
+    ./jetbrains-toolbox.nix
   ];
 }
