@@ -7,7 +7,7 @@ let
 in
 {
   home.packages = [
-    pkgs.jetbrains.idea-ultimate
+    pkgs-unstable.jetbrains.idea-ultimate
     pkgs-unstable.jetbrains.rust-rover
   ];
 
