@@ -6,6 +6,7 @@
     ./features/desktop/dev-tools
     ./features/desktop/gnome
     ./features/games
+    ./features/rust.nix
     ./features/virtualization/podman.nix
   ];
 
