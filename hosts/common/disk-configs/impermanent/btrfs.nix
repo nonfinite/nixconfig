@@ -9,7 +9,7 @@ let
         mountOptions = [ "compress=zstd" "noatime" ];
       };
       "/persist" = {
-        mountpoint = "/persist";
+        mountpoint = "/nix/persist";
         mountOptions = [ "compress=zstd" "noatime" ];
       };
       "/nix" = {
@@ -45,14 +45,9 @@ in
       content = {
         type = "gpt";
         partitions = {
-          # /dev/disk/by-partlabel/disk-main-boot
-          boot = {
-            name = "boot";
-            size = "1M";
-            type = "EF02";
-          };
           # /dev/disk/by-partlabel/disk-main-ESP
           esp = {
+            priority = 1;
             name = "ESP";
             size = "500M";
             type = "EF00";
