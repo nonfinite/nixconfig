@@ -12,7 +12,7 @@ in
     (import ../common/disk-configs/impermanent/btrfs.nix (args // diskConfig))
     (import ../common/boot/grub.nix (args // diskConfig))
 
-    ../common/boot/network-luks-unlock.nix
+    (import ../common/boot/network-luks-unlock.nix { networkKernelModule = ""; })
     ../common/global
     ../common/zfs.nix
     ../common/virtualization/docker.nix
