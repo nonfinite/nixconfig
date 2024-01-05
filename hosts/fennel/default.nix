@@ -2,15 +2,14 @@ args@{ inputs, lib, pkgs, ... }:
 let
   pk = ../../pub-keys.nix;
   diskConfig = {
-    device = "/dev/vda";
-    tmpfsSize = "2G";
+    device = "/dev/sda";
   };
 in
 {
   imports = [
     ./hardware-configuration.nix
 
-    (import ../common/disk-configs/impermanent (args // diskConfig))
+    (import ../common/disk-configs/impermanent/btrfs.nix (args // diskConfig))
     (import ../common/boot/grub.nix (args // diskConfig))
 
     ../common/boot/network-luks-unlock.nix
