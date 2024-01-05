@@ -2,7 +2,7 @@
 # networkKernelModule = lspci -v | grep -iA8 'network\|ethernet'
 { networkKernelModule }:
 let
-  pk = ../../../pub-keys.nix;
+  pk = import ../../../pub-keys.nix;
 in
 {
   boot.initrd.network.enable = true;

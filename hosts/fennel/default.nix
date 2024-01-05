@@ -1,6 +1,6 @@
 args@{ inputs, lib, pkgs, ... }:
 let
-  pk = ../../pub-keys.nix;
+  pk = import ../../pub-keys.nix;
   diskConfig = {
     device = "/dev/sda";
   };
