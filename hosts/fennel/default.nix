@@ -1,5 +1,6 @@
 args@{ inputs, lib, pkgs, ... }:
 let
+  pk = ../../pub-keys.nix;
   diskConfig = {
     device = "/dev/vda";
     tmpfsSize = "2G";
@@ -12,6 +13,7 @@ in
     (import ../common/disk-configs/impermanent (args // diskConfig))
     (import ../common/boot/grub.nix (args // diskConfig))
 
+    ../common/boot/network-luks-unlock.nix
     ../common/global
     ../common/zfs.nix
     ../common/virtualization/docker.nix
@@ -39,7 +41,7 @@ in
 
   users.users.root = {
     openssh.authorizedKeys.keys = [
-      "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIN1FEtYVAP1ZxuvBuW+OvvTyYztsVuHwAQw3Va4jDqtt"
+      pk.users.nonfinite
     ];
   };
 
