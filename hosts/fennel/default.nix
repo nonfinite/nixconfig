@@ -19,6 +19,7 @@ in
 
   networking = {
     hostName = "fennel-dev";
+    hostId = "fcc06b17";
     useDHCP = lib.mkDefault true;
   };
 

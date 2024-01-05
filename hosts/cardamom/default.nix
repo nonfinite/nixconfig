@@ -30,6 +30,7 @@ in
 
   networking = {
     hostName = "cardamom";
+    hostId = "b626bba8";
     useDHCP = lib.mkDefault true;
   };
 
