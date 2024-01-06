@@ -75,6 +75,8 @@ in
     };
   };
 
+  fileSystems."/nix/persist".neededForBoot = true;
+
   # From https://github.com/nix-community/impermanence
   boot.initrd.postDeviceCommands = lib.mkAfter ''
     mkdir /btrfs_tmp
