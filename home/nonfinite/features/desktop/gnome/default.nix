@@ -50,6 +50,9 @@
     "org/gnome/gnome-session" = {
       logout-prompt = false;
     };
+    "org/gnome/nautilus/preferences" = {
+      search-filter-time-type = "last_modified";
+    };
     "org/gnome/shell" = {
       enabled-extensions = [
         "appindicatorsupport@rgcjonas.gmail.com"
