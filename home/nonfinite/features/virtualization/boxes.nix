@@ -1,5 +1,6 @@
 { pkgs, ... }:
 {
+  # Note: boxes doesn't play nice with impermanence
   home.packages = with pkgs; [
     gnome.gnome-boxes
   ];
