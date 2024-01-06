@@ -3,16 +3,17 @@ let
   pk = import ../../pub-keys.nix;
   diskConfig = {
     device = "/dev/vda";
+    tmpfsSize = "2G";
   };
 in
 {
   imports = [
     ./hardware-configuration.nix
 
-    (import ../common/disk-configs/impermanent/btrfs.nix (args // diskConfig))
+    (import ../common/disk-configs/impermanent (args // diskConfig))
     (import ../common/boot/grub.nix (args // diskConfig))
 
-    (import ../common/boot/network-luks-unlock.nix { networkKernelModule = "virtio-pci"; })
+    # (import ../common/boot/network-luks-unlock.nix { networkKernelModule = "virtio-pci"; })
     ../common/global
     ../common/users/nonfinite
     ../common/zfs.nix
