@@ -12,4 +12,11 @@
   ];
 
   exec-once.commands = [ "1password --silent" ];
+
+  dconf.settings = {
+    "org/virt-manager/virt-manager/vms/4a69e3b8ab34492b88b7945c658619dc" = {
+      autoconnect = 1;
+      scaling = 2;
+    };
+  };
 }
