@@ -2,7 +2,7 @@ args@{ inputs, lib, pkgs, ... }:
 let
   pk = import ../../pub-keys.nix;
   diskConfig = {
-    device = "/dev/sda";
+    device = "/dev/vda";
   };
 in
 {
@@ -12,7 +12,7 @@ in
     (import ../common/disk-configs/impermanent/btrfs.nix (args // diskConfig))
     (import ../common/boot/grub.nix (args // diskConfig))
 
-    (import ../common/boot/network-luks-unlock.nix { networkKernelModule = ""; })
+    (import ../common/boot/network-luks-unlock.nix { networkKernelModule = "virtio-pci"; })
     ../common/global
     ../common/users/nonfinite
     ../common/zfs.nix
