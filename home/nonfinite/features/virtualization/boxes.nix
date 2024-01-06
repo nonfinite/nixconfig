@@ -13,6 +13,7 @@
 
   home.persistence."/nix/persist/home/nonfinite" = {
     directories = [
+      ".config/gnome-boxes"
       ".local/share/gnome-boxes"
     ];
   };
