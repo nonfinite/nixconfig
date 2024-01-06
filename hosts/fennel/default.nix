@@ -14,6 +14,7 @@ in
 
     (import ../common/boot/network-luks-unlock.nix { networkKernelModule = ""; })
     ../common/global
+    ../common/users/nonfinite
     ../common/zfs.nix
     ../common/virtualization/docker.nix
   ];

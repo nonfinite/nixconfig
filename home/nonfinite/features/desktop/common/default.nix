@@ -9,6 +9,7 @@
     # ./obsidian.nix # currently insecure due to outdated electron
     ./pinta.nix
     ./rdp.nix
+    ./syncthing.nix
     ./system-monitor.nix
     ./telegram.nix
     ./vlc.nix

@@ -4,7 +4,6 @@
     inputs.impermanence.nixosModules.home-manager.impermanence
     ../features/cli
     ./git.nix
-    ./syncthing.nix
   ];
 
   systemd.user.startServices = "sd-switch";
