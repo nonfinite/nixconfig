@@ -5,6 +5,7 @@ let
   pk = import ../../../pub-keys.nix;
 in
 {
+  boot.initrd.systemd.enable = true;
   boot.initrd.network.enable = true;
   boot.initrd.availableKernelModules = [
     networkKernelModule
@@ -12,7 +13,7 @@ in
   boot.initrd.network.ssh = {
     enable = true;
     port = 23;
-    shell = "/bin/cryptsetup-askpass";
+    shell = "/bin/systemd-tty-ask-password-agent";
     authorizedKeys = [ pk.users.nonfinite ];
     hostKeys = [
       "/etc/secrets/initrd/ssh_host_ed25519_key"
