@@ -1,3 +1,4 @@
+{ pkgs, ... }:
 {
   virtualisation = {
     podman = {
@@ -11,6 +12,14 @@
       defaultNetwork.settings.dns_enabled = true;
     };
   };
+
+  environment.shellAliases = {
+    pc = "podman-compose";
+  };
+
+  environment.systemPackages = with pkgs; [
+    podman-compose
+  ];
 
   environment.persistence."/nix/persist" = {
     directories = [
