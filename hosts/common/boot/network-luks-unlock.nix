@@ -11,11 +11,10 @@ in
   ];
   boot.initrd.network.ssh = {
     enable = true;
-    port = 22;
+    port = 23;
     shell = "/bin/cryptsetup-askpass";
     authorizedKeys = [ pk.users.nonfinite ];
     hostKeys = [
-      "/etc/secrets/initrd/ssh_host_rsa_key"
       "/etc/secrets/initrd/ssh_host_ed25519_key"
     ];
   };
