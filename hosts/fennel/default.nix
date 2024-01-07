@@ -13,7 +13,7 @@ in
     (import ../common/disk-configs/impermanent (args // diskConfig))
     (import ../common/boot/grub.nix (args // diskConfig))
 
-    # (import ../common/boot/network-luks-unlock.nix { networkKernelModule = "virtio-pci"; })
+    (import ../common/boot/network-luks-unlock.nix { networkKernelModule = "igb"; })
     ../common/global
     ../common/users/nonfinite
     # ../common/zfs.nix
