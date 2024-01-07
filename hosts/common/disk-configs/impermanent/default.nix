@@ -1,4 +1,4 @@
-{ device, inputs, lib, tmpfsSize ? "2G", keyFile ? null, ... }:
+{ device, inputs, lib, tmpfsSize ? "2G", ... }:
 {
   imports = [
     inputs.disko.nixosModules.disko
@@ -37,11 +37,8 @@
               type = "luks";
               name = "crypted";
               extraOpenArgs = [ "--allow-discards" ];
-              askPassword = keyFile == null;
+              askPassword = true;
               initrdUnlock = true;
-              settings = {
-                keyFile = keyFile;
-              };
               content = {
                 type = "filesystem";
                 format = "ext4";
