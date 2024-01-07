@@ -5,5 +5,7 @@ let
   systems = [ pk.systems.cardamom ];
 in
 {
+  # edit with `agenix -e file`
   "wifi-home.nmconnection.age".publicKeys = users ++ systems;
+  "netdata.claim-token.age".publicKeys = [ pk.users.nonfinite pk.systems.fennel ];
 }
