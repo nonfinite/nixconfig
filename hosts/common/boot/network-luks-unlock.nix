@@ -10,15 +10,16 @@ in
   boot.initrd.availableKernelModules = [
     networkKernelModule
   ];
+
   boot.initrd.network.ssh = {
     enable = true;
     port = 23;
-    shell = "/bin/systemd-tty-ask-password-agent";
     authorizedKeys = [ pk.users.nonfinite ];
     hostKeys = [
       "/etc/secrets/initrd/ssh_host_ed25519_key"
     ];
   };
+  boot.initrd.systemd.users.root.shell = "/bin/systemd-tty-ask-password-agent";
   boot.kernelParams = [ "ip=dhcp" ];
 
   environment.persistence."/nix/persist" = {
