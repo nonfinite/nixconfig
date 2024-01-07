@@ -16,9 +16,5 @@
       file = ../../../secrets/wifi-home.nmconnection.age;
       path = "/etc/NetworkManager/system-connections/wifi-home.nmconnection";
     };
-    netdata-claim-token = {
-      file = ../../../secrets/netdata.claim-token.age;
-      path = "/var/lib/netdata/cloud.d/token";
-    };
   };
 }

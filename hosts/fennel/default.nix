@@ -16,7 +16,6 @@ in
 
     (import ../common/boot/network-luks-unlock.nix { networkKernelModule = "igb"; })
     ../common/global
-    ../common/netdata.nix
     ../common/secrets
     ../common/users/nonfinite
     ../common/virtualization/podman.nix
