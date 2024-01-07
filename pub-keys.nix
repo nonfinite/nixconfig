@@ -4,6 +4,7 @@
   };
   systems = {
     cardamom = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAILmIKj59zeVYsTpBwEiYMH2++qfOdowWq4h1DJbUFT0t";
+    fennel = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIM9ts4d3lsLEKdTENj/0auhGAxem0/4wx+vCsKbfD0tE";
     fennel-initrd = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIP+W3n55+4S5zeJc6HFf+4xRKfFHGpUMZqlhC4Fnr1xz";
   };
 }
