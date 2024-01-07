@@ -60,17 +60,35 @@
           modules = [ ./hosts/cardamom ];
           specialArgs = { inherit inputs outputs; };
         };
-        fennel = lib.nixosSystem
-          {
-            system = lib.mkDefault "x86_64-linux";
-            modules = [ ./hosts/fennel ];
-            specialArgs = { inherit inputs outputs; };
-          };
+
+        fennel = lib.nixosSystem {
+          system = lib.mkDefault "x86_64-linux";
+          modules = [ ./hosts/fennel ];
+          specialArgs = { inherit inputs outputs; };
+        };
+
+        fennel-dev = lib.nixosSystem {
+          system = lib.mkDefault "x86_64-linux";
+          modules = [ ./hosts/fennel ];
+          specialArgs = { inherit inputs outputs; };
+        };
       };
 
       homeConfigurations = {
         "nonfinite@cardamom" = lib.homeManagerConfiguration {
           modules = [ ./home/nonfinite/cardamom.nix ];
+          pkgs = pkgsFor.x86_64-linux;
+          extraSpecialArgs = { inherit inputs outputs; };
+        };
+
+        "nonfinite@fennel" = lib.homeManagerConfiguration {
+          modules = [ ./home/nonfinite/fennel.nix ];
+          pkgs = pkgsFor.x86_64-linux;
+          extraSpecialArgs = { inherit inputs outputs; };
+        };
+
+        "nonfinite@fennel-dev" = lib.homeManagerConfiguration {
+          modules = [ ./home/nonfinite/fennel.nix ];
           pkgs = pkgsFor.x86_64-linux;
           extraSpecialArgs = { inherit inputs outputs; };
         };
