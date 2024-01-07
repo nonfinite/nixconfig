@@ -9,6 +9,7 @@ in
 {
   imports = [
     ./hardware-configuration.nix
+    ./zfs.nix
 
     (import ../common/disk-configs/impermanent (args // diskConfig))
     (import ../common/boot/grub.nix (args // diskConfig))
@@ -17,7 +18,6 @@ in
     ../common/global
     ../common/netdata.nix
     ../common/users/nonfinite
-    ../common/zfs.nix
     ../common/virtualization/podman.nix
   ];
 
