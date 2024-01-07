@@ -2,7 +2,7 @@ args@{ inputs, lib, pkgs, ... }:
 let
   pk = import ../../pub-keys.nix;
   diskConfig = {
-    device = "/dev/vda";
+    device = "/dev/disk/by-id/wwn-0x5f8db4c23440026d";
     tmpfsSize = "2G";
   };
 in
