@@ -35,7 +35,10 @@ in
   };
 
   security.sudo.wheelNeedsPassword = false;
-  services.openssh.enable = true;
+  services.openssh = {
+    enable = true;
+    allowSFTP = true;
+  };
   services.udisks2.enable = true;
 
   environment.systemPackages = with pkgs; [

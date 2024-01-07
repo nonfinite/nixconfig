@@ -32,6 +32,7 @@ in
   services = {
     openssh = {
       enable = true;
+      allowSFTP = true;
       settings.PasswordAuthentication = false;
       settings.KbdInteractiveAuthentication = false;
     };
@@ -40,6 +41,7 @@ in
   environment.systemPackages = with pkgs; [
     curl
     git
+    sshfs
   ];
 
   users.users.root = {
