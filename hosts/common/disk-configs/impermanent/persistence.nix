@@ -4,6 +4,11 @@
     inputs.impermanence.nixosModules.impermanence
   ];
 
+  # This is required for /var/log in case it doesn't exist in
+  # /nix/persist at boot time: https://github.com/nix-community/impermanence/issues/121
+  boot.initrd.systemd.enable = true;
+  boot.loader.efi.canTouchEfiVariables = true;
+
   environment.persistence."/nix/persist" = {
     hideMounts = true;
     directories = [
