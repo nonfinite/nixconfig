@@ -45,6 +45,7 @@ in
     curl
     git
     glxinfo # debug utilities for opengl, e.g. eglinfo
+    sshfs
   ];
 
   users.users.root = {

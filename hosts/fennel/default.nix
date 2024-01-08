@@ -41,7 +41,6 @@ in
   environment.systemPackages = with pkgs; [
     curl
     git
-    sshfs
   ];
 
   users.users.root = {
