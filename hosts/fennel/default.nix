@@ -28,6 +28,10 @@ in
     useDHCP = lib.mkDefault true;
   };
 
+  boot.kernel.sysctl = {
+    "net.ipv4.ip_unprivileged_port_start" = "80"; # allow podman/traefik to bind to port 80 from non-root
+  };
+
   security.sudo.wheelNeedsPassword = false;
   services = {
     openssh = {
