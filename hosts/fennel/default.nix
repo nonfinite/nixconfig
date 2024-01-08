@@ -19,7 +19,7 @@ in
     ../common/monit.nix
     # ../common/secrets
     ../common/users/nonfinite
-    ../common/virtualization/podman.nix
+    ../common/virtualization/docker.nix
   ];
 
   networking = {
