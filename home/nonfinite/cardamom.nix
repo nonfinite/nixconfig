@@ -9,6 +9,7 @@
     ./features/rust.nix
     ./features/virtualization/podman.nix
     ./features/virtualization/virt-manager.nix
+    ./features/wakeonlan.nix
   ];
 
   exec-once.commands = [ "1password --silent" ];
