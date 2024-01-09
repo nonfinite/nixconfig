@@ -9,6 +9,7 @@ in
 {
   imports = [
     ./hardware-configuration.nix
+    ./containers
     ./zfs.nix
 
     (import ../common/disk-configs/impermanent (args // diskConfig))
@@ -24,6 +25,7 @@ in
 
   networking = {
     hostName = "fennel-dev";
+    domain = "fennel-dev.duckdns.org";
     hostId = "fcc06b17";
     useDHCP = lib.mkDefault true;
   };
