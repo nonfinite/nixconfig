@@ -6,7 +6,7 @@ let
 
   traefikConfig = {
     api = {
-      insecure = true;
+      dashboard = true;
     };
 
     log = {
@@ -78,7 +78,12 @@ in
         # needs to contain DUCKDNS_TOKEN
         "/enc/containers/traefik/.env"
       ];
-      labels = { };
+      labels = {
+        "traefik.enable" = "true";
+        "traefik.http.routers.route-traefik.rule" = "Host(`traefik.${domain}`)";
+        "traefik.http.routers.route-traefik.service" = "api@internal";
+        "traefik.http.routers.route-traefik.entrypoints" = "https";
+      };
       ports = [
         "80:80"
         "443:443"
@@ -98,8 +103,8 @@ in
       hostname = "whoami";
       labels = {
         "traefik.enable" = "true";
-        "traefik.http.routers.whoami.rule" = "Host(`whoami.${domain}`)";
-        "traefik.http.routers.whoami.entrypoints" = "https";
+        "traefik.http.routers.route-whoami.rule" = "Host(`whoami.${domain}`)";
+        "traefik.http.routers.route-whoami.entrypoints" = "https";
       };
     };
   };
