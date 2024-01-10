@@ -4,7 +4,7 @@ let
 
   yaml = pkgs.formats.yaml { };
 
-  traefikConfig = {
+  traefikDotYml = yaml.generate "traefik.yml" {
     api = {
       dashboard = true;
     };
@@ -22,6 +22,9 @@ let
     providers = {
       docker = {
         exposedByDefault = false;
+      };
+      file = {
+        directory = "/conf.d";
       };
     };
 
@@ -50,6 +53,9 @@ let
               }
             ];
           };
+          middlewares = [
+            "default@file"
+          ];
         };
       };
     };
@@ -65,7 +71,48 @@ let
     };
   };
 
-  configFile = yaml.generate "traefik.yml" traefikConfig;
+  traefikDynamicDefaultDotYml = yaml.generate "traefik_dynamic_default.yml" {
+    http = {
+      middlewares = {
+        default = {
+          chain = {
+            middlewares = [
+              "default-security-headers"
+              "gzip"
+            ];
+          };
+        };
+
+        default-security-headers = {
+          headers = {
+            browserXssFilter = true; # X-XSS-Protection=1; mode=block
+            contentTypeNosniff = true; # X-Content-Type-Options=nosniff
+            customResponseHeaders = {
+              X-Robots-Tag = "noindex, nofollow";
+            };
+            forceSTSHeader = true; # Add the Strict-Transport-Security header even when the connection is HTTP
+            frameDeny = true; # X-Frame-Options=deny
+            referrerPolicy = "strict-origin-when-cross-origin";
+            stsIncludeSubdomains = true; # Add includeSubdomains to the Strict-Transport-Security header
+            stsPreload = true; # Add preload flag appended to the Strict-Transport-Security header
+            stsSeconds = 63072000; # Set the max-age of the Strict-Transport-Security header (63072000 = 2 years)
+          };
+        };
+
+        gzip = {
+          compress = { };
+        };
+      };
+    };
+
+    tls = {
+      options = {
+        default = {
+          sniStrict = true;
+        };
+      };
+    };
+  };
 in
 {
   virtualisation.oci-containers.containers = {
@@ -91,7 +138,8 @@ in
       ];
       user = null;
       volumes = [
-        "${configFile}:/etc/traefik/traefik.yml"
+        "${traefikDotYml}:/etc/traefik/traefik.yml"
+        "${traefikDynamicDefaultDotYml}:/conf.d/traefik_dynamic_default.yml"
         "/enc/containers/traefik/logs:/logs"
         "/enc/containers/traefik/letsencrypt:/letsencrypt"
         "/var/run/docker.sock:/var/run/docker.sock:ro"
