@@ -91,7 +91,6 @@ let
               X-Robots-Tag = "noindex, nofollow";
             };
             forceSTSHeader = true; # Add the Strict-Transport-Security header even when the connection is HTTP
-            frameDeny = true; # X-Frame-Options=deny
             referrerPolicy = "strict-origin-when-cross-origin";
             stsIncludeSubdomains = true; # Add includeSubdomains to the Strict-Transport-Security header
             stsPreload = true; # Add preload flag appended to the Strict-Transport-Security header

@@ -1,5 +1,6 @@
 {
   imports = [
+    ./keycloak.nix
     ./traefik.nix
   ];
 
