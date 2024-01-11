@@ -1,6 +1,7 @@
 { pkgs, ... }:
 {
   home.packages = with pkgs; [
+    caddy # required for vscode-extensions.matthewpi.caddyfile-support
     egl-wayland
     libGL
     libglvnd
@@ -10,8 +11,8 @@
     enable = true;
     package = pkgs.vscodium;
     extensions = with pkgs; [
-      vscode-extensions.bodil.file-browser
       vscode-extensions.jnoortheen.nix-ide
+      vscode-extensions.matthewpi.caddyfile-support
     ];
     keybindings = [
       {
