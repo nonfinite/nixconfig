@@ -68,6 +68,8 @@
       nd = "nix develop";
       hm = "home-manager --flake .";
       hms = "home-manager --flake . switch";
+
+      docker-restart-all = "sudo docker restart $(sudo docker ps -q)";
     };
   };
 }

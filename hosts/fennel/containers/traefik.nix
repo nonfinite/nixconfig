@@ -1,4 +1,5 @@
 { config, pkgs, ... }:
+# sudo docker network create -d bridge docker-bridge
 let
   domain = config.networking.domain;
 
@@ -112,12 +113,43 @@ let
       };
     };
   };
+
+  traefikDynamicAuthDotYml = yaml.generate "traefik_dynamic_auth.yml" {
+    http = {
+      middlewares = {
+        oauth = {
+          chain = {
+            middlewares = [
+              "oauth-signin"
+              "oauth-verify"
+            ];
+          };
+        };
+
+        oauth-signin = {
+          errors = {
+            service = "route-authproxy@docker";
+            status = "401";
+            query = "/oauth2/sign_in";
+          };
+        };
+
+        oauth-verify = {
+          forwardAuth = {
+            address = "http://oauth2proxy:4180/oauth2/auth";
+            authResponseHeaders = "X-Auth-Request-Preferred-Username";
+          };
+        };
+      };
+    };
+  };
 in
 {
   virtualisation.oci-containers.containers = {
     traefik = {
       image = "docker.io/traefik:v2.10";
       hostname = "traefik";
+      extraOptions = [ "--network=fennel" ];
       cmd = [ ];
       dependsOn = [ ];
       environmentFiles = [
@@ -139,6 +171,7 @@ in
       volumes = [
         "${traefikDotYml}:/etc/traefik/traefik.yml"
         "${traefikDynamicDefaultDotYml}:/conf.d/traefik_dynamic_default.yml"
+        "${traefikDynamicAuthDotYml}:/conf.d/traefik_dynamic_auth.yml"
         "/enc/containers/traefik/logs:/logs"
         "/enc/containers/traefik/letsencrypt:/letsencrypt"
         "/var/run/docker.sock:/var/run/docker.sock:ro"
@@ -148,10 +181,13 @@ in
     whoami = {
       image = "docker.io/traefik/whoami";
       hostname = "whoami";
+      extraOptions = [ "--network=fennel" ];
       labels = {
         "traefik.enable" = "true";
         "traefik.http.routers.route-whoami.rule" = "Host(`whoami.${domain}`)";
         "traefik.http.routers.route-whoami.entrypoints" = "https";
+        "traefik.http.routers.route-whoami.middlewares" = "oauth@file";
+        "traefik.http.services.route-whoami.loadbalancer.server.port" = "80";
       };
     };
   };
