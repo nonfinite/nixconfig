@@ -12,6 +12,7 @@ in
         "start"
         "--features=declarative-user-profile"
       ];
+      dependsOn = [ "traefik" ];
       environment = {
         KC_HOSTNAME_URL = "https://${domain}:8443/";
         KC_PROXY = "edge";
@@ -65,6 +66,7 @@ in
       };
       dependsOn = [
         "keycloak"
+        "traefik"
       ];
       environmentFiles = [
         "/enc/containers/oauth2proxy/.env"
@@ -78,5 +80,12 @@ in
         "/enc/containers/oauth2proxy/templates:/templates:ro"
       ];
     };
+  };
+
+  # oauth2proxy often fails to start initially if traefik isn't fully started
+  # as it will try to load the oauth config immediately.
+  # This ensures it doesn't trigger the burst limit when it retries.
+  systemd.services.docker-oauth2proxy.serviceConfig = {
+    RestartSec = "5s";
   };
 }

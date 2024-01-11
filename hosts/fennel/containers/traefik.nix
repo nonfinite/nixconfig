@@ -181,6 +181,7 @@ in
     whoami = {
       image = "docker.io/traefik/whoami";
       hostname = "whoami";
+      dependsOn = [ "traefik" ];
       extraOptions = [ "--network=fennel" ];
       labels = {
         "traefik.enable" = "true";
