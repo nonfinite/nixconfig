@@ -61,15 +61,9 @@
           specialArgs = { inherit inputs outputs; };
         };
 
-        fennel = lib.nixosSystem {
+        mizuna = lib.nixosSystem {
           system = lib.mkDefault "x86_64-linux";
-          modules = [ ./hosts/fennel ];
-          specialArgs = { inherit inputs outputs; };
-        };
-
-        fennel-dev = lib.nixosSystem {
-          system = lib.mkDefault "x86_64-linux";
-          modules = [ ./hosts/fennel ];
+          modules = [ ./hosts/mizuna ];
           specialArgs = { inherit inputs outputs; };
         };
       };
@@ -81,14 +75,8 @@
           extraSpecialArgs = { inherit inputs outputs; };
         };
 
-        "nonfinite@fennel" = lib.homeManagerConfiguration {
-          modules = [ ./home/nonfinite/fennel.nix ];
-          pkgs = pkgsFor.x86_64-linux;
-          extraSpecialArgs = { inherit inputs outputs; };
-        };
-
-        "nonfinite@fennel-dev" = lib.homeManagerConfiguration {
-          modules = [ ./home/nonfinite/fennel.nix ];
+        "nonfinite@mizuna" = lib.homeManagerConfiguration {
+          modules = [ ./home/nonfinite/mizuna.nix ];
           pkgs = pkgsFor.x86_64-linux;
           extraSpecialArgs = { inherit inputs outputs; };
         };

@@ -24,8 +24,8 @@ in
   ];
 
   networking = {
-    hostName = "fennel-dev";
-    domain = "fennel-dev.duckdns.org";
+    hostName = "mizuna";
+    domain = "mizuna.dev";
     hostId = "fcc06b17";
     useDHCP = lib.mkDefault true;
   };

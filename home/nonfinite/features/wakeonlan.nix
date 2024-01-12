@@ -5,6 +5,6 @@
   ];
 
   home.shellAliases = {
-    wake-fennel = "wakeonlan 5c:ed:8c:e8:ec:ee";
+    wake-mizuna = "wakeonlan 5c:ed:8c:e8:ec:ee";
   };
 }
