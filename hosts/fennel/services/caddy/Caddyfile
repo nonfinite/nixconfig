@@ -7,7 +7,7 @@
 
 	log default {
 		output file /enc/containers/caddy/log.json
-		format console
+		# format console
 	}
 }
 
