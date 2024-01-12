@@ -1,0 +1,23 @@
+{
+	# use staging ca for testing:
+	# acme_ca https://acme-staging-v02.api.letsencrypt.org/directory
+
+	storage file_system /enc/containers/caddy/data
+	persist_config off
+
+	log default {
+		output file /enc/containers/caddy/log.json
+		format console
+	}
+}
+
+# Note: when adding a new site, remember to
+# forward 80 and 443 to this server for certs
+
+auth.mizuna.dev {
+	respond "Auth"
+}
+
+home.mizuna.dev {
+	respond "TODO: show home"
+}

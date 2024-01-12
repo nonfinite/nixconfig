@@ -9,7 +9,7 @@ in
 {
   imports = [
     ./hardware-configuration.nix
-    # ./containers
+    ./services
     ./zfs.nix
 
     (import ../common/disk-configs/impermanent (args // diskConfig))
