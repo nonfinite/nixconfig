@@ -69,7 +69,7 @@
       hm = "home-manager --flake .";
       hms = "home-manager --flake . switch";
 
-      docker-restart-all = "sudo docker restart $(sudo docker ps -q)";
+      pw-gen = "tr -dc A-Za-z0-9 </dev/urandom | head -c";
     };
   };
 }
