@@ -9,7 +9,7 @@ in
 {
   imports = [
     ./hardware-configuration.nix
-    ./containers
+    # ./containers
     ./zfs.nix
 
     (import ../common/disk-configs/impermanent (args // diskConfig))
@@ -20,7 +20,7 @@ in
     ../common/monit.nix
     # ../common/secrets
     ../common/users/nonfinite
-    ../common/virtualization/docker.nix
+    ../common/virtualization/podman.nix
   ];
 
   networking = {
@@ -28,6 +28,11 @@ in
     domain = "fennel-dev.duckdns.org";
     hostId = "fcc06b17";
     useDHCP = lib.mkDefault true;
+  };
+
+  services.ddclient = {
+    enable = true;
+    configFile = "/enc/containers/ddclient/ddclient.conf";
   };
 
   boot.kernel.sysctl = {
