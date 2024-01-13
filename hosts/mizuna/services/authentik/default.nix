@@ -75,8 +75,9 @@ in
       environmentFiles = [ env ];
       ports = [ "9000:9000" ];
       volumes = [
-        "/enc/containers/authentik/server/media:/media"
-        "/enc/containers/authentik/server/templates:/templates"
+        "/enc/containers/authentik/server/media:/media:ro"
+        "/enc/containers/authentik/server/templates:/templates:ro"
+        "/enc/containers/authentik/server/custom.css:/web/dist/custom.css:ro"
       ];
     };
 
