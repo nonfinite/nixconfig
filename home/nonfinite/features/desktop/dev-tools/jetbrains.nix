@@ -1,14 +1,8 @@
-{ inputs, pkgs, ... }:
-let
-  pkgs-unstable = import inputs.nixpkgs-unstable {
-    system = pkgs.system;
-    config.allowUnfree = true;
-  };
-in
+{ pkgs, ... }:
 {
   home.packages = [
-    pkgs-unstable.jetbrains.idea-ultimate
-    pkgs-unstable.jetbrains.rust-rover
+    pkgs.unstable.jetbrains.idea-ultimate
+    pkgs.unstable.jetbrains.rust-rover
   ];
 
   home.shellAliases = {
