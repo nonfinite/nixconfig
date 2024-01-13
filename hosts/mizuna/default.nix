@@ -20,7 +20,7 @@ in
     ../common/monit.nix
     # ../common/secrets
     ../common/users/nonfinite
-    ../common/virtualization/podman.nix
+    ../common/virtualization/docker.nix
   ];
 
   networking = {
@@ -33,10 +33,6 @@ in
   services.ddclient = {
     enable = true;
     configFile = "/enc/containers/ddclient/ddclient.conf";
-  };
-
-  boot.kernel.sysctl = {
-    "net.ipv4.ip_unprivileged_port_start" = "80"; # allow podman/traefik to bind to port 80 from non-root
   };
 
   security.sudo.wheelNeedsPassword = false;

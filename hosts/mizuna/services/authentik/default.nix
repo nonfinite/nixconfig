@@ -3,31 +3,34 @@ let
   storage = "/enc/containers/authentik";
   env = "${storage}/.env";
   user = "1000:100";
-  podname = "authentik";
-  extraOptions = [ "--pod=${podname}" ];
+  network = "authentik";
+  extraOptions = [ "--network=${network}" ];
   authentikTag = "2023.10.6";
 in
 {
-  # https://discourse.nixos.org/t/podman-container-to-container-networking/11647/2
-  systemd.services.podman-authentik-create-pod = rec {
+  systemd.services.docker-network-create-authentik = rec {
     serviceConfig = {
       Type = "oneshot";
       RemainAfterExit = "yes";
     };
     wantedBy = [
-      "podman-authentik-db.service"
-      "podman-authentik-redis.service"
+      "docker-authentik-db.service"
+      "docker-authentik-redis.service"
+      "docker-authentik-server.service"
+      "docker-authentik-worker.service"
     ];
     before = wantedBy;
     script = ''
-      ${pkgs.podman}/bin/podman pod exists ${podname} || \
-        ${pkgs.podman}/bin/podman pod create -n ${podname} -p 127.0.0.1:9000:9000 -p 127.0.0.1:9443:9443
+      if ! ${pkgs.docker}/bin/docker network inspect ${network}; then
+        ${pkgs.docker}/bin/docker network create ${network}
+      fi
     '';
   };
 
   virtualisation.oci-containers.containers = {
     authentik-db = {
       image = "docker.io/library/postgres:12-alpine";
+      hostname = "authentik-db";
       user = user;
       extraOptions = extraOptions;
       environment = {
@@ -43,6 +46,7 @@ in
 
     authentik-redis = {
       image = "docker.io/library/redis:7-alpine";
+      hostname = "authentik-redis";
       user = user;
       extraOptions = extraOptions;
       cmd = [ "--save" "60" "1" "--loglevel" "warning" ];
@@ -53,6 +57,7 @@ in
 
     authentik-server = {
       image = "ghcr.io/goauthentik/server:${authentikTag}";
+      hostname = "authentik-server";
       user = user;
       extraOptions = extraOptions;
       cmd = [ "server" ];
@@ -61,13 +66,14 @@ in
         "authentik-redis"
       ];
       environment = {
-        "AUTHENTIK_REDIS__HOST" = "localhost";
-        "AUTHENTIK_POSTGRESQL__HOST" = "localhost";
+        "AUTHENTIK_REDIS__HOST" = "authentik-redis";
+        "AUTHENTIK_POSTGRESQL__HOST" = "authentik-db";
         "AUTHENTIK_POSTGRESQL__USER" = "authentik";
         "AUTHENTIK_POSTGRESQL__NAME" = "authentik";
         "AUTHENTIK_POSTGRESQL__PASSWORD" = "\${PG_PASS}";
       };
       environmentFiles = [ env ];
+      ports = [ "9000:9000" ];
       volumes = [
         "/enc/containers/authentik/server/media:/media"
         "/enc/containers/authentik/server/templates:/templates"
@@ -76,6 +82,7 @@ in
 
     authentik-worker = {
       image = "ghcr.io/goauthentik/server:${authentikTag}";
+      hostname = "authentik-worker";
       user = user;
       extraOptions = extraOptions;
       cmd = [ "worker" ];
@@ -84,8 +91,8 @@ in
         "authentik-redis"
       ];
       environment = {
-        "AUTHENTIK_REDIS__HOST" = "localhost";
-        "AUTHENTIK_POSTGRESQL__HOST" = "localhost";
+        "AUTHENTIK_REDIS__HOST" = "authentik-redis";
+        "AUTHENTIK_POSTGRESQL__HOST" = "authentik-db";
         "AUTHENTIK_POSTGRESQL__USER" = "authentik";
         "AUTHENTIK_POSTGRESQL__NAME" = "authentik";
         "AUTHENTIK_POSTGRESQL__PASSWORD" = "\${PG_PASS}";
