@@ -15,7 +15,7 @@
 # forward 80 and 443 to this server for certs
 
 auth.mizuna.dev {
-	respond "Auth"
+	reverse_proxy :9000
 }
 
 home.mizuna.dev {

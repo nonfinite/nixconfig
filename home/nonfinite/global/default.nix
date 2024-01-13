@@ -70,6 +70,7 @@
       hms = "home-manager --flake . switch";
 
       pw-gen = "tr -dc A-Za-z0-9 </dev/urandom | head -c";
+      pod-ps = "podman ps --format \"table {{.Image}}\\t{{.Ports}}\\t{{.Status}}\\t{{.Names}}\"";
     };
   };
 }
