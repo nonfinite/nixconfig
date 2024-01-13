@@ -75,16 +75,16 @@ in
       environmentFiles = [ env ];
       ports = [ "9000:9000" ];
       volumes = [
-        "/enc/containers/authentik/server/media:/media:ro"
-        "/enc/containers/authentik/server/templates:/templates:ro"
-        "/enc/containers/authentik/server/custom.css:/web/dist/custom.css:ro"
+        "/enc/containers/authentik/server/media:/media"
+        "/enc/containers/authentik/server/templates:/templates"
+        "/enc/containers/authentik/server/custom.css:/web/dist/custom.css"
       ];
     };
 
     authentik-worker = {
       image = "ghcr.io/goauthentik/server:${authentikTag}";
       hostname = "authentik-worker";
-      user = user;
+      user = "root:root";
       extraOptions = extraOptions;
       cmd = [ "worker" ];
       dependsOn = [
@@ -100,6 +100,7 @@ in
       };
       environmentFiles = [ env ];
       volumes = [
+        "/var/run/docker.sock:/var/run/docker.sock"
         "/enc/containers/authentik/server/media:/media"
         "/enc/containers/authentik/server/certs:/certs"
         "/enc/containers/authentik/server/templates:/templates"
