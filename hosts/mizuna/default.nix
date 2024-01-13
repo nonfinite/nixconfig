@@ -1,6 +1,6 @@
-args@{ inputs, lib, pkgs, ... }:
+args@{ lib, pkgs, globals, ... }:
 let
-  pk = import ../../pub-keys.nix;
+  pk = globals.pubKeys;
   diskConfig = {
     device = "/dev/disk/by-id/wwn-0x5f8db4c23440026d";
     tmpfsSize = "2G";
@@ -15,7 +15,7 @@ in
     (import ../common/disk-configs/impermanent (args // diskConfig))
     (import ../common/boot/grub.nix (args // diskConfig))
 
-    (import ../common/boot/network-luks-unlock.nix { networkKernelModule = "igb"; })
+    (import ../common/boot/network-luks-unlock.nix { networkKernelModule = "igb"; inherit globals; })
     ../common/global
     ../common/monit.nix
     # ../common/secrets

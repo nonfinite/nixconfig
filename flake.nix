@@ -38,6 +38,7 @@
         inherit system;
         config.allowUnfree = true;
       });
+      globals = import ./globals;
     in
     {
       inherit lib;
@@ -58,13 +59,13 @@
         cardamom = lib.nixosSystem {
           system = lib.mkDefault "x86_64-linux";
           modules = [ ./hosts/cardamom ];
-          specialArgs = { inherit inputs outputs; };
+          specialArgs = { inherit inputs outputs globals; };
         };
 
         mizuna = lib.nixosSystem {
           system = lib.mkDefault "x86_64-linux";
           modules = [ ./hosts/mizuna ];
-          specialArgs = { inherit inputs outputs; };
+          specialArgs = { inherit inputs outputs globals; };
         };
       };
 
@@ -72,13 +73,13 @@
         "nonfinite@cardamom" = lib.homeManagerConfiguration {
           modules = [ ./home/nonfinite/cardamom.nix ];
           pkgs = pkgsFor.x86_64-linux;
-          extraSpecialArgs = { inherit inputs outputs; };
+          extraSpecialArgs = { inherit inputs outputs globals; };
         };
 
         "nonfinite@mizuna" = lib.homeManagerConfiguration {
           modules = [ ./home/nonfinite/mizuna.nix ];
           pkgs = pkgsFor.x86_64-linux;
-          extraSpecialArgs = { inherit inputs outputs; };
+          extraSpecialArgs = { inherit inputs outputs globals; };
         };
       };
     };

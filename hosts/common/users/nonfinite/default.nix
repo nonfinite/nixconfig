@@ -1,7 +1,7 @@
-{ config, pkgs, ... }:
+{ config, pkgs, globals, ... }:
 let
   ifTheyExist = groups: builtins.filter (group: builtins.hasAttr group config.users.groups) groups;
-  pk = import ../../../../pub-keys.nix;
+  pk = globals.pubKeys;
 in
 {
   imports = [

@@ -1,8 +1,8 @@
 # based on https://nixos.wiki/wiki/Remote_LUKS_Unlocking
 # networkKernelModule = lspci -v | grep -iA8 'network\|ethernet'
-{ networkKernelModule }:
+{ networkKernelModule, globals, ... }:
 let
-  pk = import ../../../pub-keys.nix;
+  pk = globals.pubKeys;
 in
 {
   boot.initrd.systemd.enable = true;
