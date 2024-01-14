@@ -22,6 +22,11 @@ home.mizuna.dev {
 	respond "TODO: show home"
 }
 
+recipes.mizuna.dev {
+	# reverse_proxy :8150
+	respond "TODO: recipes"
+}
+
 sync.mizuna.dev {
 	reverse_proxy /outpost.goauthentik.io/* http://localhost:9000
 
