@@ -12,6 +12,46 @@ let
   };
 
   folders = {
+    documents-art = {
+      id = "jvz4q-nhazm";
+      label = "Documents/Art";
+      path = "${paths.data}/Documents/Art";
+      devices = [
+        devices.cardamom.name
+        devices.mizuna.name
+      ];
+    };
+
+    documents-logseq = {
+      id = "sx9vy-avxhx";
+      label = "Documents/Logseq";
+      path = "${paths.data}/Documents/Logseq";
+      devices = [
+        devices.cardamom.name
+        devices.mizuna.name
+      ];
+    };
+
+    documents-recipes = {
+      id = "r3xfj-4hgsz";
+      label = "Documents/Recipes";
+      path = "${paths.data}/Documents/Recipes";
+      devices = [
+        devices.cardamom.name
+        devices.mizuna.name
+      ];
+    };
+
+    documents-sync = {
+      id = "uhzz7-8ci9n";
+      label = "Documents/Sync";
+      path = "${paths.data}/Documents/Sync";
+      devices = [
+        devices.cardamom.name
+        devices.mizuna.name
+      ];
+    };
+
     pictures-backgrounds = {
       id = "diz2l-1sn3a";
       label = "Pictures/Backgrounds";
