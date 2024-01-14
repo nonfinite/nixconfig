@@ -19,7 +19,7 @@ auth.mizuna.dev {
 }
 
 home.mizuna.dev {
-	respond "TODO: show home"
+	reverse_proxy :9090
 }
 
 recipes.mizuna.dev {
