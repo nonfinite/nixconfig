@@ -19,7 +19,7 @@ auth.mizuna.dev {
 }
 
 home.mizuna.dev {
-	reverse_proxy :9090
+	reverse_proxy :9999
 }
 
 recipes.mizuna.dev {
