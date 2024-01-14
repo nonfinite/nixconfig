@@ -88,6 +88,16 @@ let
       ];
     };
 
+    music = {
+      id = "amkxr-tdqkv";
+      label = "Music";
+      path = "${paths.data}/Music";
+      devices = [
+        devices.fennel.name
+        devices.mizuna.name
+      ];
+    };
+
     pictures-backgrounds = {
       id = "diz2l-1sn3a";
       label = "Pictures/Backgrounds";
@@ -104,6 +114,36 @@ let
       path = "${paths.data}/Pictures/Saved";
       devices = [
         devices.cardamom.name
+        devices.mizuna.name
+      ];
+    };
+
+    videos-movies = {
+      id = "fagam-a5fda";
+      label = "Videos/Movies";
+      path = "${paths.data}/Videos/Movies";
+      devices = [
+        devices.fennel.name
+        devices.mizuna.name
+      ];
+    };
+
+    videos-shows = {
+      id = "7nwsg-xcbkm";
+      label = "Videos/Shows";
+      path = "${paths.data}/Videos/Shows";
+      devices = [
+        devices.fennel.name
+        devices.mizuna.name
+      ];
+    };
+
+    videos-youtube = {
+      id = "f4xdp-gjqsw";
+      label = "Videos/YouTube";
+      path = "${paths.data}/Videos/YouTube";
+      devices = [
+        devices.fennel.name
         devices.mizuna.name
       ];
     };
