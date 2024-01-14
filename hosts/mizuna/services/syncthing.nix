@@ -5,6 +5,10 @@ let
       id = "TA7W2SP-S4ECH55-EVGZY3N-CLU67CF-VNEL5EY-PIHICGU-R2MMW6K-YCXSUA4";
       name = "cardamom";
     };
+    fennel = {
+      id = "PX2DM2G-KYOTRQN-ZAWVAEY-CM2C44K-YKMZZQL-CKAUNNH-4EEJFTJ-7SCNPAR";
+      name = "fennel";
+    };
     mizuna = {
       id = "IAEFJXY-QJSHL2U-LTSVJLT-X5IDPD7-DCCQ6AA-YVIVVAC-DYUAAUE-ZUKN5AI";
       name = "mizuna";
@@ -48,6 +52,38 @@ let
       path = "${paths.data}/Documents/Sync";
       devices = [
         devices.cardamom.name
+        devices.mizuna.name
+      ];
+    };
+
+    menagerie-archive = {
+      id = "63suq-kvmj4";
+      label = "Menagerie/Archive";
+      path = "${paths.data}/Menagerie/Archive";
+      devices = [
+        devices.fennel.name
+        devices.mizuna.name
+      ];
+    };
+
+    menagerie-phone = {
+      id = "payvw-mhmxl";
+      label = "Menagerie/Phone";
+      path = "${paths.data}/Menagerie/Phone";
+      devices = [
+        devices.cardamom.name
+        devices.fennel.name
+        devices.mizuna.name
+      ];
+    };
+
+    menagerie-saved = {
+      id = "nrwmm-jsnrz";
+      label = "Menagerie/Saved";
+      path = "${paths.data}/Menagerie/Saved";
+      devices = [
+        devices.cardamom.name
+        devices.fennel.name
         devices.mizuna.name
       ];
     };
