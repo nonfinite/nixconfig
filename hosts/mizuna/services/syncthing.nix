@@ -1,3 +1,7 @@
+{ globals, ... }:
+let
+  data = "/enc/data";
+in
 {
   services.syncthing = {
     enable = true;
@@ -9,10 +13,15 @@
     overrideFolders = true;
     settings = {
       devices = {
-
+        cardamom = globals.syncthing.devices.cardamom;
+        mizuna = globals.syncthing.devices.mizuna;
       };
-      folders = {
-
+      folders = with globals.syncthing.folders; {
+        pictures-saved = with pictures-saved; {
+          inherit id label devices;
+          enable = true;
+          path = "${data}/${path}";
+        };
       };
       options = {
         localAnnounceEnabled = true;
