@@ -65,7 +65,10 @@
         mizuna = lib.nixosSystem {
           system = lib.mkDefault "x86_64-linux";
           modules = [ ./hosts/mizuna ];
-          specialArgs = { inherit inputs outputs globals; };
+          specialArgs = {
+            inherit inputs outputs globals;
+            mizuna = import ./hosts/mizuna/config.nix;
+          };
         };
       };
 

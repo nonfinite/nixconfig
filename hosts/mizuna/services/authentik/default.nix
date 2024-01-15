@@ -1,8 +1,7 @@
-{ pkgs, ... }:
+{ pkgs, mizuna, ... }:
 let
   storage = "/enc/containers/authentik";
   env = "${storage}/.env";
-  user = "1000:100";
   network = "authentik";
   extraOptions = [ "--network=${network}" ];
   authentikTag = "2023.10.6";
@@ -31,7 +30,7 @@ in
     authentik-db = {
       image = "docker.io/library/postgres:12-alpine";
       hostname = "authentik-db";
-      user = user;
+      user = mizuna.defaultUserGroup;
       extraOptions = extraOptions;
       environment = {
         "POSTGRES_PASSWORD" = "\${PG_PASS}";
@@ -47,7 +46,7 @@ in
     authentik-redis = {
       image = "docker.io/library/redis:7-alpine";
       hostname = "authentik-redis";
-      user = user;
+      user = mizuna.defaultUserGroup;
       extraOptions = extraOptions;
       cmd = [ "--save" "60" "1" "--loglevel" "warning" ];
       volumes = [
@@ -58,7 +57,7 @@ in
     authentik-server = {
       image = "ghcr.io/goauthentik/server:${authentikTag}";
       hostname = "authentik-server";
-      user = user;
+      user = mizuna.defaultUserGroup;
       extraOptions = extraOptions;
       cmd = [ "server" ];
       dependsOn = [

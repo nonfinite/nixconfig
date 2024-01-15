@@ -1,11 +1,10 @@
-{ config, ... }:
+{ config, mizuna, ... }:
 {
   services.prometheus = {
     enable = true;
     listenAddress = "localhost";
-    port = 9090;
+    port = mizuna.ports.prometheus.main;
     stateDir = "prometheus2";
-    webExternalUrl = "https://home.mizuna.dev:8443/";
 
     globalConfig = {
       scrape_interval = "15s";
@@ -20,7 +19,7 @@
         scrape_interval = "5s";
         static_configs = [
           {
-            targets = [ "localhost:9090" ];
+            targets = [ "localhost:${mizuna.ports.str.prometheus.main}" ];
           }
         ];
       }

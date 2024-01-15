@@ -1,9 +1,7 @@
-{ config, ... }:
+{ mizuna, ... }:
 let
-  domain = config.networking.domain;
   storage = "/enc/containers/cooksrv";
   env = "${storage}/.env";
-  user = "1000:100";
   extraOptions = [ ];
 in
 {
@@ -11,14 +9,14 @@ in
     cooksrv-web = {
       image = "ghcr.io/nonfinite/cooksrv:main";
       hostname = "cooksrv-web";
-      user = user;
+      user = mizuna.defaultUserGroup;
       extraOptions = extraOptions;
       environment = {
-        ORIGIN = "https://recipes.${domain}:8443";
+        ORIGIN = mizuna.urls.cooksrv;
       };
       environmentFiles = [ env ];
       ports = [
-        "8150:80"
+        "${mizuna.ports.str.cooksrv}:80"
       ];
       volumes = [
         "${storage}:/config"
