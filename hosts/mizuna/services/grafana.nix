@@ -20,8 +20,19 @@
         auth_url = "${mizuna.urls.auth}/application/o/authorize/";
         api_url = "${mizuna.urls.auth}/application/o/userinfo/";
         token_url = "${mizuna.urls.auth}/application/o/token/";
+        role_attribute_path = "contains(groups, 'grafana-admins') && 'Admin' || contains(groups, 'grafana-editors') && 'Editor' || 'Viewer'";
       };
     };
+
+    provision.datasources.settings.datasources = [
+      {
+        # https://grafana.com/docs/grafana/latest/datasources/prometheus/
+        name = "Prometheus";
+        type = "prometheus";
+        access = "proxy";
+        url = "http://localhost:${mizuna.ports.str.prometheus.main}";
+      }
+    ];
   };
 
   environment.persistence."/nix/persist" = {

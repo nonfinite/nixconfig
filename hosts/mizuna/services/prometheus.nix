@@ -16,14 +16,17 @@
     scrapeConfigs = [
       {
         job_name = "prometheus";
-        scrape_interval = "5s";
-        static_configs = [
-          {
-            targets = [ "localhost:${mizuna.ports.str.prometheus.main}" ];
-          }
-        ];
+        static_configs = [{
+          targets = [ "localhost:${mizuna.ports.str.prometheus.node}" ];
+        }];
       }
     ];
+
+    exporters.node = {
+      enable = true;
+      enabledCollectors = [ "systemd" ];
+      port = mizuna.ports.prometheus.node;
+    };
   };
 
   environment.persistence."/nix/persist" = {
