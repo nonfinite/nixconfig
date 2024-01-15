@@ -7,6 +7,9 @@ let
 
     grafana = 9999;
 
+    loki = 3100;
+    promtail.http = 3101;
+
     prometheus = {
       main = 9998;
       node = 9900;
