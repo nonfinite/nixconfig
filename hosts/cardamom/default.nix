@@ -88,4 +88,11 @@ in
       libvdpau-va-gl
     ];
   };
+
+  systemd.extraConfig = ''
+    DefaultLimitNOFILE=65535
+  '';
+  systemd.user.extraConfig = ''
+    DefaultLimitNOFILE=65535
+  '';
 }
