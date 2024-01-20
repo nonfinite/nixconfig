@@ -9,10 +9,14 @@
   boot.initrd.systemd.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
+  # the limited amount of space on tmpfs can cause problems
+  # when unpacking large files to tmp, so instead persist /tmp and clear it on boot
+  boot.tmp.cleanOnBoot = true;
   environment.persistence."/nix/persist" = {
     hideMounts = true;
     directories = [
       "/var/log"
+      "/tmp"
     ];
     files = [
       "/etc/ssh/ssh_host_ed25519_key"
