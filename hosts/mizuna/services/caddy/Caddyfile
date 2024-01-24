@@ -26,6 +26,10 @@ ha.mizuna.dev {
 	reverse_proxy :8123
 }
 
+plex.mizuna.dev {
+	reverse_proxy http://localhost:32400
+}
+
 recipes.mizuna.dev {
 	reverse_proxy /outpost.goauthentik.io/* http://localhost:9000
 
