@@ -50,15 +50,15 @@ let
         ${yt-dlp}/bin/yt-dlp --config-location ${yt-dlp-conf} -a ${data}/.script/yt-dlp-channels.txt --max-downloads 10
         fc2=$(find ${data} -name \*.* -print | wc -l)
 
-        for d in ${data}/*/; do
-            ${imagemagick}/bin/mogrify -format jpg "$d/*.webp" || true
-            bn=$(basename "$d")
-            mv "${data}/$bn/"*.webp "${data}/.meta/$bn/"
-        done
-
         if [[ $fc1 -eq $fc2 ]]; then
             break
         fi
+
+        for d in ${data}/*/; do
+            ${imagemagick}/bin/mogrify -format jpg "$d/*.webp"
+            bn=$(basename "$d")
+            mv "${data}/$bn/"*.webp "${data}/.meta/$bn/"
+        done
     done
 
     echo 'Downloading completed'
