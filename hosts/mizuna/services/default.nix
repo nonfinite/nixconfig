@@ -4,6 +4,7 @@
     ./cooksrv.nix
     ./authentik
     ./home-assistant.nix
+    ./gluetun.nix
     ./grafana.nix
     ./plex.nix
     ./prometheus.nix
