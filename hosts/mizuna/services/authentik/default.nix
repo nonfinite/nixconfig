@@ -85,7 +85,7 @@ in
       hostname = "authentik-worker";
       user = "root:root";
       # Authentik Worker has a bug where large nofile values cause it to use excessive CPU
-      extraOptions = extraOptions ++ ["--ulimit" "nofile=10240:10240"];
+      extraOptions = extraOptions ++ [ "--ulimit" "nofile=10240:10240" ];
       cmd = [ "worker" ];
       dependsOn = [
         "authentik-db"
