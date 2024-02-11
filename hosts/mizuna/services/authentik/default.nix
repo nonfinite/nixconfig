@@ -84,7 +84,8 @@ in
       image = "ghcr.io/goauthentik/server:${authentikTag}";
       hostname = "authentik-worker";
       user = "root:root";
-      extraOptions = extraOptions;
+      # Authentik Worker has a bug where large nofile values cause it to use excessive CPU
+      extraOptions = extraOptions ++ ["--ulimit" "nofile=10240:10240"];
       cmd = [ "worker" ];
       dependsOn = [
         "authentik-db"
