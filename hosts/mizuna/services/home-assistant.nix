@@ -28,9 +28,11 @@ in
       settings.allow_anonymous = false;
       users = {
         hass = {
+          acl = [ "readwrite #" ];
           hashedPassword = "$7$101$Vh1mNv58vYlhEWib$ojxlkMVt7QWvaebjfVpw7g3feXl7t9nCzbQiAt70h7UbG4FF/SO59nlLEv+O4CgCsAVSuo0xyKJ3bkEHZB/1zw==";
         };
         iot = {
+          acl = [ "readwrite #" ];
           hashedPassword = "$7$101$tksx+1SxRAAiNIIq$ZWR9lAWVese2bNy26W07NxoiK06NJn/aHF+0Vv5O1U0rw8O43YZzuUczhXyYj2f3wRY2XQbRB95iddw9h5Po0Q==";
         };
       };
