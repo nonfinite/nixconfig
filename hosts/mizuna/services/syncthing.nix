@@ -13,6 +13,10 @@ let
       id = "IAEFJXY-QJSHL2U-LTSVJLT-X5IDPD7-DCCQ6AA-YVIVVAC-DYUAAUE-ZUKN5AI";
       name = "mizuna";
     };
+    xiaomi13 = {
+      id = "JLBMBR2-ZHOK3V6-P4SQAF7-M2ROPIT-WVXQMHM-L6IIHYP-AR2XXZH-RTBT7AZ";
+      name = "xiaomi13";
+    };
   };
 
   folders = {
@@ -36,6 +40,17 @@ let
       ];
     };
 
+    documents-obsidian = {
+      id = "alfya-r6e0v";
+      label = "Documents/Obsidian";
+      path = "${paths.data}/Documents/Obsidian";
+      devices = [
+        devices.cardamom.name
+        devices.mizuna.name
+        devices.xiaomi13.name
+      ];
+    };
+
     documents-recipes = {
       id = "r3xfj-4hgsz";
       label = "Documents/Recipes";
@@ -53,6 +68,7 @@ let
       devices = [
         devices.cardamom.name
         devices.mizuna.name
+        devices.xiaomi13.name
       ];
     };
 
@@ -74,6 +90,7 @@ let
         devices.cardamom.name
         devices.fennel.name
         devices.mizuna.name
+        devices.xiaomi13.name
       ];
     };
 
@@ -115,6 +132,7 @@ let
       devices = [
         devices.cardamom.name
         devices.mizuna.name
+        devices.xiaomi13.name
       ];
     };
 
