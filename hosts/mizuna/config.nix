@@ -1,7 +1,7 @@
 let
   defaultPorts = {
-    http = 8080;
-    https = 8443;
+    http = 80;
+    https = 443;
 
     cooksrv = 8150;
 
