@@ -32,11 +32,11 @@
         "extensions.activeThemeID" = "firefox-alpenglow@mozilla.org";
         "network.proxy.backup.ssl" = "";
         "network.proxy.backup.ssl_port" = 0;
-        "network.proxy.http" = "192.168.122.15";
+        "network.proxy.http" = "192.168.122.18";
         "network.proxy.http_port" = 8118;
         "network.proxy.share_proxy_settings" = true;
         "network.proxy.socks_remote_dns" = true;
-        "network.proxy.ssl" = "192.168.122.15";
+        "network.proxy.ssl" = "192.168.122.18";
         "network.proxy.ssl_port" = 8118;
         "network.proxy.type" = 1;
       };
