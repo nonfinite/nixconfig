@@ -17,6 +17,7 @@ in
         "libvirtd"
         "networkmanager"
         "onepassword-cli"
+        "podman"
         "vboxsf"
         "video"
       ];
