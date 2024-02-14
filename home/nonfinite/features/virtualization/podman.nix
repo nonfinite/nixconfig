@@ -11,4 +11,10 @@
       ".local/share/containers"
     ];
   };
+
+  home.file.".config/containers/storage.conf".text = ''
+    [storage]
+      driver = "overlay"
+      graphroot = "/nix/persist/home/nonfinite/.local/share/containers"
+  '';
 }
