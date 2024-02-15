@@ -5,6 +5,10 @@
     pkgs.unstable.dive
   ];
 
+  home.sessionVariables = {
+    DOCKER_HOST = "unix://$XDG_RUNTIME_DIR/podman/podman.sock";
+  };
+
   home.persistence."/nix/persist/home/nonfinite" = {
     directories = [
       ".config/Podman Desktop/Local Storage"
