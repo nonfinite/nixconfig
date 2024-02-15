@@ -2,6 +2,7 @@
 {
   home.packages = with pkgs; [
     podman-desktop
+    pkgs.unstable.dive
   ];
 
   home.persistence."/nix/persist/home/nonfinite" = {
