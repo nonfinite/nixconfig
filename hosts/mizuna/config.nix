@@ -16,6 +16,8 @@ let
       main = 9998;
       node = 9900;
     };
+
+    simmer = 8151;
   };
 
   allToString = builtins.mapAttrs (k: v:
@@ -37,12 +39,13 @@ rec {
   };
 
   domains = {
-    grafana = "home.${domain}:${ports.str.https}";
+    grafana = "home.${domain}";
   };
 
   urls = {
-    auth = "https://auth.${domain}:${ports.str.https}";
-    cooksrv = "https://recipes.${domain}:${ports.str.https}";
+    auth = "https://auth.${domain}";
+    cooksrv = "https://recipes.${domain}";
     grafana = "https://${domains.grafana}";
+    simmer = "https://simmer.${domain}";
   };
 }
