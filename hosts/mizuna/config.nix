@@ -18,6 +18,8 @@ let
     };
 
     simmer = 8151;
+
+    watchtower = 8152;
   };
 
   allToString = builtins.mapAttrs (k: v:
