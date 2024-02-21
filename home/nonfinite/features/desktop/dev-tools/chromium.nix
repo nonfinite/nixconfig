@@ -5,7 +5,7 @@
   ];
 
   home.persistence."/nix/persist/home/nonfinite" = {
-    files = [
+    directories = [
       ".config/chromium/Default/Preferences"
     ];
   };

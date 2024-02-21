@@ -65,12 +65,10 @@
     allowOther = true;
     directories = [
       ".config/VSCodium/Backups"
+      ".config/VSCodium/Preferences"
       ".config/VSCodium/User"
       ".config/VSCodium/Workspaces"
       ".vscode-oss"
-    ];
-    files = [
-      ".config/VSCodium/Preferences"
     ];
   };
 }
