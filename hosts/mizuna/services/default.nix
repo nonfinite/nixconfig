@@ -1,23 +1,31 @@
 { config, lib, pkgs, ... }:
 let
   containers = config.virtualisation.oci-containers.containers;
-  containerNames = lib.lists.sort (a: b: a < b) (lib.lists.unique (builtins.attrNames containers));
-  lines = builtins.map
-    (name: ''
-      if [[ $EUID -ne 0 ]]; then
-        echo "Script must be run as root, elevating..."
-        sudo "$0" "$@"
-        exit $?
-      fi
+  containerNameAndImage = lib.attrsets.mapAttrsToList (name: value: { inherit name; inherit (value) image; }) containers;
+  containersByImage = builtins.groupBy (c: c.image) containerNameAndImage;
+  imageNames = lib.lists.sort (a: b: a < b) (builtins.attrNames containersByImage);
 
-      if ! ${pkgs.docker}/bin/docker pull ${(builtins.getAttr name containers).image} | grep "Image is up to date"; then
-        echo "UPDATED: ${name}"
-        systemctl restart docker-${name}.service
-      fi
-    '')
-    containerNames;
+  lines = builtins.map
+    (image:
+      let
+        containerNames = builtins.getAttr image containersByImage;
+        restartLines = builtins.map (c: "  echo \"UPDATED: ${c.name}\"\n  systemctl restart docker-${c.name}.service\n") containerNames;
+      in
+      ''
+        if ! ${pkgs.docker}/bin/docker pull ${image} | grep "Image is up to date"; then
+        ${builtins.concatStringsSep "\n" restartLines}
+        fi
+      ''
+    )
+    imageNames;
+
   update-containers = pkgs.writeShellScriptBin "update-containers" ''
     export LANG=C
+    if [[ $EUID -ne 0 ]]; then
+      echo "Script must be run as root, elevating..."
+      sudo "$0" "$@"
+      exit $?
+    fi
 
     ${builtins.concatStringsSep "\n\n" lines}
   '';
