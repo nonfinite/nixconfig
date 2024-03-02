@@ -17,6 +17,8 @@ let
       node = 9900;
     };
 
+    seq = 8152;
+    seqIngest = 5341;
     simmer = 8151;
 
     watchtower = 8152;
@@ -48,6 +50,7 @@ rec {
     auth = "https://auth.${domain}";
     cooksrv = "https://recipes.${domain}";
     grafana = "https://${domains.grafana}";
+    seq = "https://seq.${domain}";
     simmer = "https://simmer.${domain}";
   };
 }
