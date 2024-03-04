@@ -42,6 +42,7 @@ in
     ./prometheus.nix
     ./seq.nix
     ./simmer.nix
+    ./transmission.nix
     ./youtube-dl.nix
     (import ./syncthing.nix { config = "/enc/containers"; data = "/enc/data"; })
   ];

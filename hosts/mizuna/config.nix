@@ -21,6 +21,8 @@ let
     seqIngest = 5341;
     simmer = 8151;
 
+    transmission = 9091;
+
     watchtower = 8152;
   };
 
@@ -30,9 +32,11 @@ let
     else
       allToString v
   );
+  host = "mizuna";
+  tld = "dev";
 in
 rec {
-  domain = "mizuna.dev";
+  domain = "${host}.${tld}";
 
   defaultUser = "1000";
   defaultGroup = "100";
@@ -52,5 +56,6 @@ rec {
     grafana = "https://${domains.grafana}";
     seq = "https://seq.${domain}";
     simmer = "https://simmer.${domain}";
+    transmission = "https://trx.${domain}";
   };
 }
