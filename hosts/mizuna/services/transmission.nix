@@ -17,7 +17,7 @@ in
     };
     volumes = [
       "${storage}/config:/config"
-      "/enc/data/temp:/downloads"
+      "/enc/temp/transmission:/downloads"
     ];
   };
 }
