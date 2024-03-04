@@ -48,6 +48,7 @@ in
   environment.systemPackages = with pkgs; [
     curl
     git
+    tmux
   ];
 
   users.users.root = {
