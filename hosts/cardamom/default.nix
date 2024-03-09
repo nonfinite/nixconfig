@@ -32,6 +32,10 @@ in
     hostName = "cardamom";
     hostId = "b626bba8";
     useDHCP = lib.mkDefault true;
+    firewall.allowedTCPPorts = [
+      # Vite dev port
+      5173
+    ];
   };
 
   security.sudo.wheelNeedsPassword = false;
@@ -46,6 +50,7 @@ in
     git
     glxinfo # debug utilities for opengl, e.g. eglinfo
     sshfs
+    android-tools
   ];
 
   users.users.root = {
