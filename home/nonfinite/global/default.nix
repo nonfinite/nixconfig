@@ -51,6 +51,7 @@
         "Videos"
         "VirtualBox VMs"
 
+        ".android"
         ".cargo"
         ".pnpm-store"
         ".ssh"

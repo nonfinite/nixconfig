@@ -13,6 +13,7 @@ in
     users.nonfinite = {
       isNormalUser = true;
       extraGroups = [ "wheel" ] ++ ifTheyExist [
+        "adbusers"
         "caddy"
         "libvirtd"
         "networkmanager"

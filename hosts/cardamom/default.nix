@@ -63,20 +63,10 @@ in
   # use most recent kernel
   boot.kernelPackages = pkgs.linuxPackages_latest;
 
-  # Intel Hardware fixes
-  # boot.kernelParams = [
-  #   # "i915.force_probe=46a6"
-  #   # "ahci.mobile_lpm_policy=1"
-  #   # "processor.nocst"
-  #   # "i915.enable_dc=0"
-  #   # "intel_idle.max_cstate=1"
-  # ];
-
-  # nixpkgs.config.packageOverrides = pkgs: {
-  #   vaapiIntel = pkgs.vaapiIntel.override { enableHybridCodec = true; };
-  # };
-
-  programs.light.enable = true;
+  programs = {
+    adb.enable = true;
+    light.enable = true;
+  };
 
   environment.variables = {
     LIBVA_DRIVER_NAME = "i965";

@@ -1,7 +1,8 @@
-{ ... }:
+{ pkgs, ... }:
 {
   programs.firefox = {
     enable = true;
+    package = pkgs.unstable.firefox;
     profiles.nonfinite = {
       # These are found in .mozilla/firefox/<profile>/prefs.js
       id = 0;
