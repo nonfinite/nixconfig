@@ -23,8 +23,9 @@ in
     ../common/desktop/gnome
     ../common/games
     # ../common/virtualization/docker.nix
-    ../common/virtualization/virt-manager.nix
     ../common/virtualization/podman.nix
+    ../common/virtualization/virt-manager.nix
+    ../common/virtualization/waydroid.nix
     ../common/nofile-increase.nix
   ];
 

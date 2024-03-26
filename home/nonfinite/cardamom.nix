@@ -9,6 +9,7 @@
     ./features/rust.nix
     ./features/virtualization/podman.nix
     ./features/virtualization/virt-manager.nix
+    ./features/virtualization/waydroid.nix
     ./features/wakeonlan.nix
   ];
 
