@@ -5,6 +5,7 @@
     ./features/desktop/common
     ./features/desktop/dev-tools
     ./features/desktop/gnome
+    ./features/desktop/scrcpy.nix
     ./features/games
     ./features/rust.nix
     ./features/virtualization/podman.nix
