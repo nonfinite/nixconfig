@@ -1,7 +1,7 @@
 {
   home.persistence."/nix/persist/home/nonfinite" = {
     directories = [
-      ".local/share/waydroid"
+      { directory = ".local/share/waydroid"; method = "symlink"; }
     ];
   };
 }
