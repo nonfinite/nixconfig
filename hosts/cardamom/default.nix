@@ -45,6 +45,11 @@ in
   };
   services.udisks2.enable = true;
 
+  services.printing = {
+    enable = true;
+    drivers = [ pkgs.hplip ];
+  };
+
   environment.systemPackages = with pkgs; [
     curl
     git
