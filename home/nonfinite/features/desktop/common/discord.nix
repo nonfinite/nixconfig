@@ -1,8 +1,8 @@
 { pkgs, ... }:
 {
-  home.packages = with pkgs; [
-    # discord
-    webcord
+  home.packages = [
+    # pkgs.discord
+    pkgs.unstable.webcord
   ];
 
   home.persistence."/nix/persist/home/nonfinite" = {
