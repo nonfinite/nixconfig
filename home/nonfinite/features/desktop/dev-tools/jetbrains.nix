@@ -2,12 +2,12 @@
 {
   home.packages = [
     pkgs.unstable.jetbrains.idea-ultimate
-    pkgs.unstable.jetbrains.rust-rover
+    # pkgs.unstable.jetbrains.rust-rover
   ];
 
   home.shellAliases = {
     idea = "idea-ultimate . &> /dev/null & disown;";
-    rr = "rust-rover . &> /dev/null & disown;";
+    # rr = "rust-rover . &> /dev/null & disown;";
   };
 
   home.persistence."/nix/persist/home/nonfinite" = {
