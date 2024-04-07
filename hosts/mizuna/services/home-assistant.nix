@@ -39,7 +39,7 @@ in
         INCLUDE_PS4_DEVICES = "false";
         FRONTEND_PORT = mizuna.ports.str.home-assistant-ps5;
         CREDENTIAL_STORAGE_PATH = "/config/credentials.json";
-        DEBUG = "*";
+        DEBUG = "@ha:ps5:*";
         DEVICE_DISCOVERY_BROADCAST_ADDRESS = "192.168.122.44";
         # CONFIG_PATH = "/config/options.json";
       };
