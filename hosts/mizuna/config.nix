@@ -8,6 +8,7 @@ let
     grafana = 9999;
 
     home-assistant = 8123;
+    home-assistant-ps5 = 8645;
 
     loki = 3100;
     promtail.http = 3101;
