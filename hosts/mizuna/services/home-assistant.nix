@@ -7,7 +7,6 @@ in
     home-assistant = {
       image = "ghcr.io/home-assistant/home-assistant:stable";
       hostname = "home-assistant";
-      user = mizuna.defaultUserGroup;
       extraOptions = [
         "--network=host"
       ];
