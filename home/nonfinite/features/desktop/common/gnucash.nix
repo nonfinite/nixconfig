@@ -21,8 +21,17 @@
     "org/gnucash/GnuCash/dialogs/open-save" = {
       last-path = "/home/nonfinite/Documents/Finances";
     };
+    "org/gnucash/GnuCash/general" = {
+      date-completion-thisyear = false;
+      date-format = 3;
+      reversed-accounts-none = false;
+      summarybar-position-top = false;
+    };
     "org/gnucash/GnuCash/history" = {
       file0 = "/home/nonfinite/Documents/Finances/finances.gnucash";
+    };
+    "org/gnucash/GnuCash/warnings/permanent" = {
+      reg-trans-del = -3;
     };
   };
 }
