@@ -35,6 +35,17 @@ let
       ];
     };
 
+    documents-finances = {
+      id = "y3fcz-dyihh";
+      label = "Documents/Finances";
+      path = "${paths.data}/Documents/Finances";
+      devices = [
+        devices.boxie.name
+        devices.cardamom.name
+        devices.mizuna.name
+      ];
+    };
+
     documents-logseq = {
       id = "sx9vy-avxhx";
       label = "Documents/Logseq";
