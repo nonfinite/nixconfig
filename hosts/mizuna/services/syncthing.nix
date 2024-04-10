@@ -1,6 +1,10 @@
 paths@{ config, data }: { config, lib, ... }:
 let
   devices = {
+    boxie = {
+      id = "WZXJ4VW-ZH4GALN-VSMZY2I-MPPRRRI-HFPCREJ-4RDXZ5D-PFOQ7XH-GHKNGQT";
+      name = "boxie";
+    };
     cardamom = {
       id = "TA7W2SP-S4ECH55-EVGZY3N-CLU67CF-VNEL5EY-PIHICGU-R2MMW6K-YCXSUA4";
       name = "cardamom";
@@ -25,6 +29,7 @@ let
       label = "Documents/Art";
       path = "${paths.data}/Documents/Art";
       devices = [
+        devices.boxie.name
         devices.cardamom.name
         devices.mizuna.name
       ];
@@ -35,6 +40,7 @@ let
       label = "Documents/Logseq";
       path = "${paths.data}/Documents/Logseq";
       devices = [
+        devices.boxie.name
         devices.cardamom.name
         devices.mizuna.name
       ];
@@ -45,6 +51,7 @@ let
       label = "Documents/Obsidian";
       path = "${paths.data}/Documents/Obsidian";
       devices = [
+        devices.boxie.name
         devices.cardamom.name
         devices.mizuna.name
         devices.xiaomi13.name
@@ -56,6 +63,7 @@ let
       label = "Documents/Recipes";
       path = "${paths.data}/Documents/Recipes";
       devices = [
+        devices.boxie.name
         devices.cardamom.name
         devices.mizuna.name
       ];
@@ -66,6 +74,7 @@ let
       label = "Documents/Sync";
       path = "${paths.data}/Documents/Sync";
       devices = [
+        devices.boxie.name
         devices.cardamom.name
         devices.mizuna.name
         devices.xiaomi13.name
@@ -77,6 +86,7 @@ let
       label = "Menagerie/Archive";
       path = "${paths.data}/Menagerie/Archive";
       devices = [
+        devices.boxie.name
         devices.fennel.name
         devices.mizuna.name
       ];
@@ -87,6 +97,7 @@ let
       label = "Menagerie/Phone";
       path = "${paths.data}/Menagerie/Phone";
       devices = [
+        devices.boxie.name
         devices.cardamom.name
         devices.fennel.name
         devices.mizuna.name
@@ -99,6 +110,7 @@ let
       label = "Menagerie/Saved";
       path = "${paths.data}/Menagerie/Saved";
       devices = [
+        devices.boxie.name
         devices.cardamom.name
         devices.fennel.name
         devices.mizuna.name
@@ -110,6 +122,7 @@ let
       label = "Music";
       path = "${paths.data}/Music";
       devices = [
+        devices.boxie.name
         devices.fennel.name
         devices.mizuna.name
       ];
@@ -120,6 +133,7 @@ let
       label = "Pictures/Backgrounds";
       path = "${paths.data}/Pictures/Backgrounds";
       devices = [
+        devices.boxie.name
         devices.cardamom.name
         devices.mizuna.name
       ];
@@ -130,6 +144,7 @@ let
       label = "Pictures/Saved";
       path = "${paths.data}/Pictures/Saved";
       devices = [
+        devices.boxie.name
         devices.cardamom.name
         devices.mizuna.name
         devices.xiaomi13.name
@@ -141,6 +156,7 @@ let
       label = "Videos/Movies";
       path = "${paths.data}/Videos/Movies";
       devices = [
+        devices.boxie.name
         devices.fennel.name
         devices.mizuna.name
       ];
@@ -151,6 +167,7 @@ let
       label = "Videos/Shows";
       path = "${paths.data}/Videos/Shows";
       devices = [
+        devices.boxie.name
         devices.fennel.name
         devices.mizuna.name
       ];
@@ -161,6 +178,7 @@ let
       label = "Videos/YouTube";
       path = "${paths.data}/Videos/YouTube";
       devices = [
+        devices.boxie.name
         devices.fennel.name
         devices.mizuna.name
       ];
