@@ -19,10 +19,10 @@
       first-startup = false;
     };
     "org/gnucash/GnuCash/dialogs/open-save" = {
-      last-path = "/home/nonfinite/Documents/Sync/Finances";
+      last-path = "/home/nonfinite/Documents/Finances";
     };
     "org/gnucash/GnuCash/history" = {
-      file0 = "/home/nonfinite/Documents/Sync/Finances/finances.gnucash";
+      file0 = "/home/nonfinite/Documents/Finances/finances.gnucash";
     };
   };
 }
