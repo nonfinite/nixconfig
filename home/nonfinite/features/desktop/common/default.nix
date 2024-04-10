@@ -5,6 +5,7 @@
     ./codium.nix
     ./discord.nix
     ./firefox.nix
+    ./gnucash.nix
     ./meld.nix
     # ./obsidian.nix # currently insecure due to outdated electron
     ./pinta.nix
