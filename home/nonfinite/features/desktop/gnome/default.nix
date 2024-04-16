@@ -38,6 +38,9 @@
     "org/gnome/desktop/screensaver" = {
       lock-enabled = false;
     };
+    "org/gnome/desktop/session" = {
+      idle-delay = 900; # 15 m
+    };
     "org/gnome/desktop/wm/preferences" = {
       num-workspaces = 5;
       workspace-names = [ "1" "2" "3" "4" "5" ];
