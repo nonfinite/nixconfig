@@ -5,6 +5,7 @@
     package = pkgs.unstable.firefox;
     profiles.nonfinite = {
       # These are found in .mozilla/firefox/<profile>/prefs.js
+      # See about:config for options
       id = 0;
       isDefault = true;
       path = "nonfinite";
@@ -42,12 +43,34 @@
         "network.proxy.type" = 1;
       };
     };
+    profiles.nojs = {
+      id = 2;
+      isDefault = false;
+      path = "nojs";
+      settings = {
+        "browser.disableResetPrompt" = true;
+        "browser.newtabpage.activity-stream.showSponsoredTopSites" = false;
+        "browser.shell.checkDefaultBrowser" = false;
+        "browser.shell.defaultBrowserCheckCount" = 1;
+        "dom.security.https_only_mode" = true;
+        "privacy.trackingprotection.enabled" = true;
+        "javascript.enabled" = false;
+      };
+    };
   };
 
   xdg.desktopEntries.firefox-vpn = {
     name = "FF VPN";
     genericName = "Web Browser (VPN)";
     exec = "firefox -P vpn %U";
+    terminal = false;
+    categories = [ "Application" "WebBrowser" ];
+  };
+
+  xdg.desktopEntries.firefox-nojs = {
+    name = "FF No JS";
+    genericName = "Web Browser (No JS)";
+    exec = "firefox -P nojs %U";
     terminal = false;
     categories = [ "Application" "WebBrowser" ];
   };
@@ -78,6 +101,7 @@
       ".cache/mozilla/firefox/nonfinite"
       ".mozilla/firefox/nonfinite"
       ".mozilla/firefox/vpn"
+      ".mozilla/firefox/nojs"
     ];
   };
 }
