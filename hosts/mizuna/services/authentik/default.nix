@@ -4,7 +4,7 @@ let
   env = "${storage}/.env";
   network = "authentik";
   extraOptions = [ "--network=${network}" ];
-  authentikTag = "2023.10.6";
+  authentikTag = "2024.4";
 in
 {
   systemd.services.docker-network-create-authentik = rec {
