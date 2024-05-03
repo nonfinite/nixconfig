@@ -24,10 +24,6 @@
         command = "editor.action.formatDocument";
         when = "editorHasDocumentFormattingProvider && editorTextFocus && !editorReadonly && !inCompositeEditor";
       }
-      {
-        key = "ctrl+o";
-        command = "file-browser.open";
-      }
     ];
     userSettings = {
       "update.mode" = "none";
