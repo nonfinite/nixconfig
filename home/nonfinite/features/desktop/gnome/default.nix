@@ -55,6 +55,7 @@
     };
     "org/gnome/nautilus/preferences" = {
       search-filter-time-type = "last_modified";
+      default-sort-order = "last_modified";
     };
     "org/gnome/shell" = {
       enabled-extensions = [
