@@ -18,6 +18,10 @@ auth.mizuna.dev {
 	reverse_proxy :9000
 }
 
+cloud.mizuna.dev {
+	reverse_proxy :11000
+}
+
 home.mizuna.dev {
 	reverse_proxy :9999
 }
