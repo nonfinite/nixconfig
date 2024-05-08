@@ -13,6 +13,7 @@ let
     loki = 3100;
 
     nextcloud = 11000;
+    onlyoffice = 11001;
 
     promtail.http = 3101;
 

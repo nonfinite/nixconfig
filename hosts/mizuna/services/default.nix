@@ -39,6 +39,7 @@ in
     ./grafana.nix
     ./home-assistant.nix
     ./nextcloud.nix
+    ./onlyoffice.nix
     ./plex.nix
     ./prometheus.nix
     ./seq.nix

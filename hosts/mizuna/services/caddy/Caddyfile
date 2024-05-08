@@ -25,6 +25,10 @@ cloud.mizuna.dev {
 	reverse_proxy :11000
 }
 
+docs.mizuna.dev {
+	reverse_proxy :11001
+}
+
 home.mizuna.dev {
 	reverse_proxy :9999
 }
