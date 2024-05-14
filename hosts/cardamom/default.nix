@@ -49,6 +49,7 @@ in
     curl
     git
     glxinfo # debug utilities for opengl, e.g. eglinfo
+    libva-utils # debug utilities for opengl, vainfo
     sshfs
     android-tools
   ];
@@ -69,7 +70,7 @@ in
   };
 
   environment.variables = {
-    LIBVA_DRIVER_NAME = "i965";
+    LIBVA_DRIVER_NAME = "iHD";
     # MESA_GL_VERSION_OVERRIDE = "4.3";
   };
   hardware.opengl = {
@@ -78,6 +79,7 @@ in
     driSupport32Bit = true;
     extraPackages = with pkgs; [
       intel-media-driver # LIBVA_DRIVER_NAME=iHD
+      intel-vaapi-driver
       vaapiIntel # LIBVA_DRIVER_NAME=i965 (older but works better for Firefox/Chromium)
       vaapiVdpau
       libvdpau-va-gl
