@@ -2,7 +2,7 @@
 {
   programs.firefox = {
     enable = true;
-    package = pkgs.unstable.firefox;
+    package = pkgs.firefox;
     profiles.nonfinite = {
       # These are found in .mozilla/firefox/<profile>/prefs.js
       # See about:config for options
