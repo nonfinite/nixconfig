@@ -8,6 +8,7 @@
 
   home.shellAliases = {
     idea = "idea-ultimate . &> /dev/null & disown;";
+    rider = "rider . &> /dev/null & disown;";
     # rr = "rust-rover . &> /dev/null & disown;";
   };
 
