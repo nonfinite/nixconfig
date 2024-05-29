@@ -3,7 +3,6 @@
   home.packages = [
     pkgs.unstable.jetbrains.idea-ultimate
     pkgs.unstable.jetbrains.rider
-    pkgs.unstable.dotnetCorePackages.sdk_8_0_2xx
   ];
 
   home.shellAliases = {
