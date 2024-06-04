@@ -2,8 +2,9 @@
 {
   imports = [
     ./beekeeper-studio.nix
-    ./jetbrains.nix
     ./chromium.nix
+    ./jetbrains.nix
+    ./nodejs.nix
   ];
 
   home.persistence."/nix/persist/home/nonfinite" = {
