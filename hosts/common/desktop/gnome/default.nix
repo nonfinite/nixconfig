@@ -35,7 +35,7 @@
     cheese # photo booth
     eog # image viewer
     epiphany # web browser
-    gedit # text editor
+    pkgs.gedit # text editor
     simple-scan # document scanner
     # totem       # video player - allowed for thumbnails
     yelp # help viewer
