@@ -72,6 +72,16 @@
               period = "24h";
             };
           }
+          {
+            from = "2024-06-03";
+            store = "tsdb";
+            object_store = "gcs";
+            schema = "v13";
+            index = {
+              prefix = "index_";
+              period = "24h";
+            };
+          }
         ];
       };
     };
