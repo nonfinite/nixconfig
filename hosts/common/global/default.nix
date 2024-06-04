@@ -1,4 +1,4 @@
-{ inputs, outputs, lib, ... }:
+{ inputs, outputs, lib, pkgs, ... }:
 
 {
   imports = [
@@ -62,4 +62,8 @@
   networking.hosts = {
     "172.168.122.15" = [ "fennel" ];
   };
+
+  environment.systemPackages = with pkgs; [
+    progress
+  ];
 }
