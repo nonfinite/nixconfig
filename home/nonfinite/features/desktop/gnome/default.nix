@@ -14,6 +14,14 @@
   };
 
   dconf.settings = {
+    "org/gnome/desktop/background" = {
+      color-shading-type = "solid";
+      picture-options = "zoom";
+      picture-uri = "file://${../../../../../images/clockbirds/aef2cbd2fa4f7c2f4f5931dfa6a60ad0.png}";
+      picture-uri-dark = "file://${../../../../../images/clockbirds/aef2cbd2fa4f7c2f4f5931dfa6a60ad0.png}";
+      primary-color = "#000000000000";
+      secondary-color = "#000000000000";
+    };
     "org/gnome/desktop/input-sources" = {
       xkb-options = [ "caps:super" ];
     };
