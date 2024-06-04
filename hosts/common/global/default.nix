@@ -17,6 +17,12 @@
   hardware.enableRedistributableFirmware = true;
 
   nix = {
+    gc = {
+      automatic = true;
+      dates = "weekly";
+      options = "--delete-older-than 10d";
+    };
+
     settings = {
       trusted-users = [ "root" "@wheel" ];
       auto-optimise-store = lib.mkDefault true;
