@@ -12,10 +12,27 @@
       enable = true;
       interval = "daily";
     };
-    autoSnapshot = {
-      # to enable this for a dataset: zfs set com.sun:auto-snapshot=true DATASET
-      enable = true;
-      flags = "-k -p --utc";
+    # autoSnapshot = {
+    #   # to enable this for a dataset: zfs set com.sun:auto-snapshot=true DATASET
+    #   enable = true;
+    #   flags = "-k -p --utc";
+    # };
+  };
+
+  services.sanoid = {
+    enable = true;
+    interval = "*-*-* *:05:00";
+    extraArgs = [ "--verbose" ];
+    datasets."tank/enc" = {
+      recursive = true;
+      autoprune = true;
+      autosnap = true;
+      hourly = 36;
+      daily = 30;
+      monthly = 3;
+      yearly = 0;
     };
   };
+
+  services.syncoid = { };
 }
