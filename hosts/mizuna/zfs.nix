@@ -27,6 +27,15 @@
       monthly = 3;
       yearly = 0;
     };
+    datasets."tank/enc/temp" = {
+      recursive = true;
+      autoprune = true;
+      autosnap = false;
+      hourly = 0;
+      daily = 0;
+      monthly = 0;
+      yearly = 0;
+    };
   };
 
   services.syncoid = { };
