@@ -71,7 +71,11 @@ in
 
   networking.firewall = {
     enable = true;
-    allowedTCPPorts = [ 1883 mizuna.ports.home-assistant-ps5 ];
+    allowedTCPPorts = [
+      1883
+      mizuna.ports.home-assistant
+      mizuna.ports.home-assistant-ps5
+    ];
   };
 
   environment.persistence."/nix/persist" = {
