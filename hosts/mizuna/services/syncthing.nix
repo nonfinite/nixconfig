@@ -92,6 +92,17 @@ let
       ];
     };
 
+    games-outfox = {
+      id = "cvzv5-zwlr7";
+      label = "Games/OutFox";
+      path = "${paths.data}/Games/OutFox";
+      devices = [
+        devices.boxie.name
+        devices.cardamom.name
+        devices.mizuna.name
+      ];
+    };
+
     menagerie-archive = {
       id = "63suq-kvmj4";
       label = "Menagerie/Archive";
