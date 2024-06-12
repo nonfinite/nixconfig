@@ -41,6 +41,7 @@ in
     ./nextcloud.nix
     ./plex.nix
     ./prometheus.nix
+    ./pyload.nix
     ./seq.nix
     ./simmer.nix
     ./transmission.nix

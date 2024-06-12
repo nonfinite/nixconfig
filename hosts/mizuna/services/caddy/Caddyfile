@@ -37,6 +37,22 @@ plex.mizuna.dev {
 	reverse_proxy http://localhost:32400
 }
 
+dl.mizuna.dev {
+	reverse_proxy /outpost.goauthentik.io/* http://localhost:9000
+
+	forward_auth http://localhost:9000 {
+		uri /outpost.goauthentik.io/auth/caddy
+
+		copy_headers X-Authentik-Username X-Authentik-Groups X-Authentik-Email X-Authentik-Name X-Authentik-Uid X-Authentik-Jwt X-Authentik-Meta-Jwks X-Authentik-Meta-Outpost X-Authentik-Meta-Provider X-Authentik-Meta-App X-Authentik-Meta-Version
+
+		trusted_proxies private_ranges
+	}
+
+	reverse_proxy http://localhost:8153 {
+		header_up Host {upstream_hostport}
+	}
+}
+
 recipes.mizuna.dev {
 	reverse_proxy /outpost.goauthentik.io/* http://localhost:9000
 
