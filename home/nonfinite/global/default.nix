@@ -46,6 +46,7 @@
         "Desktop"
         "Documents"
         "Downloads"
+        "Games"
         "Music"
         "Pictures"
         "Videos"
