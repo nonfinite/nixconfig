@@ -5,7 +5,7 @@ lib: rec {
       name = "boxie";
     };
     cardamom = {
-      id = "TA7W2SP-S4ECH55-EVGZY3N-CLU67CF-VNEL5EY-PIHICGU-R2MMW6K-YCXSUA4";
+      id = "HA36EVF-2NHSFE5-HZNHEU3-K3AZ6XH-UGPZUK7-GJ6UWK2-ZF7OTGH-KKMD4AK";
       name = "cardamom";
     };
     fennel = {
