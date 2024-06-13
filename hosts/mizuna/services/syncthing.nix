@@ -92,6 +92,16 @@ let
       ];
     };
 
+    games-emu = {
+      id = "voxqa-n92qm";
+      label = "Games/Emu";
+      path = "${paths.data}/Games/Emu";
+      devices = [
+        devices.cardamom.name
+        devices.mizuna.name
+      ];
+    };
+
     games-outfox = {
       id = "cvzv5-zwlr7";
       label = "Games/OutFox";
