@@ -1,6 +1,6 @@
 paths@{ config, data }: { config, lib, ... }:
 let
-  st = import ../../../globals/syncthing.nix lib;
+  st = import ../../globals/syncthing.nix lib;
   devices = st.devices;
   folders = st.foldersFor paths;
   foldersForCurrentHost = st.foldersForDevice folders config.networking.hostName;
