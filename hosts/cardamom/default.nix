@@ -22,11 +22,18 @@ in
 
     ../common/desktop/gnome
     ../common/games
+    (import ../common/syncthing.nix { config = "/etc/syncthing"; data = "/home/nonfinite"; })
     # ../common/virtualization/docker.nix
     ../common/virtualization/virt-manager.nix
     ../common/virtualization/podman.nix
     ../common/nofile-increase.nix
   ];
+
+  environment.persistence."/nix/persist" = {
+    directories = [
+      { directory = "/etc/syncthing"; user = "nonfinite"; group = "users"; mode = "u=rw,g=rw,o="; }
+    ];
+  };
 
   networking = {
     hostName = "cardamom";

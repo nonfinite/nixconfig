@@ -46,7 +46,7 @@ in
     ./simmer.nix
     ./transmission.nix
     ./youtube-dl.nix
-    (import ../../common/syncthing.nix { config = "/enc/containers"; data = "/enc/data"; })
+    (import ../../common/syncthing.nix { config = "/enc/containers/syncthing"; data = "/enc/data"; })
   ];
 
   environment.systemPackages = [ update-containers ];

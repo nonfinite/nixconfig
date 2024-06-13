@@ -8,7 +8,7 @@ in
 {
   services.syncthing = {
     enable = true;
-    configDir = "${paths.config}/syncthing";
+    configDir = paths.config;
     group = "users";
     user = "nonfinite";
     openDefaultPorts = true;
