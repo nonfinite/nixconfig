@@ -73,6 +73,12 @@
       };
 
       homeConfigurations = {
+        "deck@crocus" = lib.homeManagerConfiguration {
+          modules = [ ./home/deck/crocus.nix ];
+          pkgs = pkgsFor.x86_64-linux;
+          extraSpecialArgs = { inherit inputs outputs globals; };
+        };
+
         "nonfinite@cardamom" = lib.homeManagerConfiguration {
           modules = [ ./home/nonfinite/cardamom.nix ];
           pkgs = pkgsFor.x86_64-linux;
