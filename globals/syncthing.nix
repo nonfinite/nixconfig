@@ -8,6 +8,10 @@ lib: rec {
       id = "HA36EVF-2NHSFE5-HZNHEU3-K3AZ6XH-UGPZUK7-GJ6UWK2-ZF7OTGH-KKMD4AK";
       name = "cardamom";
     };
+    crocus = {
+      id = "YB4UZ5W-PQW3QVL-3D5BXR2-GVFDWBQ-5OYZXUY-AMJTTMA-HEO5IOW-ORFD5QJ";
+      name = "crocus";
+    };
     fennel = {
       id = "PX2DM2G-KYOTRQN-ZAWVAEY-CM2C44K-YKMZZQL-CKAUNNH-4EEJFTJ-7SCNPAR";
       name = "fennel";
@@ -97,6 +101,7 @@ lib: rec {
       path = "${paths.data}/Games/Emu";
       devices = [
         devices.cardamom.name
+        devices.crocus.name
         devices.mizuna.name
       ];
     };
