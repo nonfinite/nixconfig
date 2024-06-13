@@ -47,6 +47,7 @@
         "Documents"
         "Downloads"
         "Games"
+        "Menagerie"
         "Music"
         "Pictures"
         "Videos"
