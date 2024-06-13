@@ -29,6 +29,8 @@ in
     ../common/nofile-increase.nix
   ];
 
+  # Syncthing Dependencies
+  systemd.services.syncthing.after = [ "home-manager-nonfinite.service" ];
   environment.persistence."/nix/persist" = {
     directories = [
       { directory = "/etc/syncthing"; user = "nonfinite"; group = "users"; mode = "u=rw,g=rw,o="; }

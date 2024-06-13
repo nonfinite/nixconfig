@@ -4,6 +4,7 @@ let
   devices = st.devices;
   folders = st.foldersFor paths;
   foldersForCurrentHost = st.foldersForDevice folders config.networking.hostName;
+  requiredPaths = [ "/var/tmp" ] ++ builtins.map (f: f.path) (lib.attrValues foldersForCurrentHost);
 in
 {
   services.syncthing = {
@@ -29,4 +30,6 @@ in
       };
     };
   };
+
+  systemd.services.syncthing.unitConfig.RequiresMountsFor = requiredPaths;
 }
