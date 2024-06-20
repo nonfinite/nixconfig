@@ -95,7 +95,7 @@ in
   systemd.services.youtube-archive = {
     script = script;
     serviceConfig = {
-      Type = "oneshot";
+      Type = "simple";
       RemainAfterExit = "yes";
       User = "nonfinite";
     };
