@@ -33,6 +33,10 @@ ha.mizuna.dev {
 	reverse_proxy :8123
 }
 
+jellyfin.mizuna.dev {
+	reverse_proxy :8096
+}
+
 plex.mizuna.dev {
 	reverse_proxy http://localhost:32400
 }

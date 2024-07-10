@@ -10,6 +10,13 @@ let
     home-assistant = 8123;
     home-assistant-ps5 = 8645;
 
+    jellyfin = {
+      http = 8096;
+      https = 8929;
+      upd-service-discovery = 1900;
+      upd-client-discovery = 7359;
+    };
+
     loki = 3100;
 
     nextcloud = 11000;

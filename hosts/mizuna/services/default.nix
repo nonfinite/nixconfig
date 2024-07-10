@@ -38,6 +38,7 @@ in
     ./gluetun.nix
     ./grafana.nix
     ./home-assistant.nix
+    ./jellyfin.nix
     ./nextcloud.nix
     ./plex.nix
     ./prometheus.nix
