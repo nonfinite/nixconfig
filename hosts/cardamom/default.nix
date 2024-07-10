@@ -27,6 +27,7 @@ in
     ../common/virtualization/virt-manager.nix
     ../common/virtualization/podman.nix
     ../common/nofile-increase.nix
+    ../common/exfat.nix
   ];
 
   # Syncthing Dependencies
