@@ -8,9 +8,9 @@ let
 
     -P "${data}"
     -P "temp:${data}/.incomplete"
-    -o "%(uploader)s [%(uploader_id)s]/%(upload_date)s - %(title)s - %(resolution)s [%(id)s].%(ext)s"
-    -o "infojson:.meta/%(uploader)s [%(uploader_id)s]/%(upload_date)s - %(title)s - %(resolution)s [%(id)s].%(ext)s"
-    -o "description:.meta/%(uploader)s [%(uploader_id)s]/%(upload_date)s - %(title)s - %(resolution)s [%(id)s].%(ext)s"
+    -o "%(uploader)s [%(uploader_id)s]/%(upload_date>%Y)s/%(upload_date)s - %(title)s - %(resolution)s [%(id)s].%(ext)s"
+    -o "infojson:.meta/%(uploader)s [%(uploader_id)s]/%(upload_date>%Y)s/%(upload_date)s - %(title)s - %(resolution)s [%(id)s].%(ext)s"
+    -o "description:.meta/%(uploader)s [%(uploader_id)s]/%(upload_date>%Y)s/%(upload_date)s - %(title)s - %(resolution)s [%(id)s].%(ext)s"
 
     # Archive Settings
     --download-archive ${data}/.script/yt-dlp-archive.txt
