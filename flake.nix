@@ -49,6 +49,10 @@
       formatter = forEachSystem (pkgs: pkgs.nixpkgs-fmt);
 
       nix = {
+        # download-speed is in kB/s
+        extraOptions = ''
+          download-speed = 10000
+        '';
         settings = {
           experimental-features = [ "nix-command" "flakes" "repl-flake" ];
           warn-dirty = false;
