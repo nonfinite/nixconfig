@@ -6,7 +6,7 @@
 
   home.sessionPath = [ "$HOME/.cache/corepack" ];
   home.shellAliases = {
-    corepack-enable = "corepack enable --install-directory $HOME/.cache/corepack";
+    corepack-enable = "rm $HOME/.cache/corepack/* && corepack enable --install-directory $HOME/.cache/corepack";
     nr = "pnpm run";
   };
 
